@@ -266,6 +266,7 @@ nav ul li {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  display: flex;
 }
 .videoPage a {
   position: absolute;
@@ -281,7 +282,7 @@ nav ul li {
   max-width: 100%;
   height: 706.08px;
   left: 0px;
-  bottom: 0;
+  bottom: -5%;
 
   background: linear-gradient(167.33deg, #ffffff 20.36%, #f1f1f1 88.41%);
 }
@@ -693,7 +694,7 @@ nav ul li {
   background-color: #ffffff;
   box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.07);
   width: 900px;
-  height: 250px;
+  height: 230px;
   top: 80px;
 }
 .page-content {
@@ -787,4 +788,18 @@ nav ul li {
   line-height: 180%;
   color: #ffffff;
   text-align: center;
+}
+.foot-animation{
+    height: 110px;
+}
+.foot-scroll-box {
+  background-color: #cedea2;
+  padding: 30px 0;
+}
+.foot-scroll-box img {
+  margin: 0 20px;
+  opacity: 0.5;
+  width: 175.5px;
+height: 45px;
+
 }

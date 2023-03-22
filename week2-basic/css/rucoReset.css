@@ -54,7 +54,7 @@ h5 {
 h6 {
   font-family: "Ibarra Real Nova";
   font-weight: 600;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   line-height: 100%;
 
   color: #121212;
@@ -607,13 +607,9 @@ nav ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
 }
 .aboutUsPage h3 {
   color: #121212;
-}
-.swiper {
-  width: 1300px;
 }
 .aboutUs-textbox {
   display: flex;
@@ -650,16 +646,67 @@ nav ul li {
   background: #ffffff;
   box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.07);
 }
-
-.footer-base {
-  position: absolute;
-  width: 1920px;
+/* swiper */
+.swiper-container {
+  width: 1200px;
   max-width: 100%;
-  height: 554px;
-  left: 0px;
-  top: 0px;
-
+  margin: 0 auto;
+  height: 45vh;
+  overflow: hidden;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.swiper-slide img {
+  filter: drop-shadow(0px 40px 60px rgba(237, 201, 136, 0.16));
+  position: absolute;
+  z-index: 1;
+}
+.swiper-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  padding-bottom: 25px;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, -5px);
+}
+.swiper-base {
+  background-color: #ffffff;
+  box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.07);
+  width: 900px;
+  height: 250px;
+  top: 80px;
+}
+.page-content {
+  overflow-y: auto;
+  overflow-x: hidden !important;
+}
+/* swiper */
+.footer-box {
   background: #315316;
+}
+
+.footer-top {
+  padding: 120px 0;
 }
 .footer-top-contents {
   width: 1200px;
@@ -667,7 +714,7 @@ nav ul li {
   height: auto;
   margin: 0 auto;
   display: flex;
-  gap: 234px;
+  justify-content: space-evenly;
 }
 .footer-top-box {
   display: flex;
@@ -675,7 +722,9 @@ nav ul li {
   align-items: flex-start;
   gap: 30px;
   z-index: 1;
-  
+}
+.footer-top-box h6 {
+  color: #ffffff;
 }
 .footer-top-top {
   display: flex;
@@ -686,7 +735,7 @@ nav ul li {
 .footer-top-top h1 {
   color: #ffffff;
 }
-.footer-top-top p {
+.footer-top-top ul li a {
   font-size: 1rem;
   line-height: 180%;
   color: #ffffff;
@@ -696,24 +745,46 @@ nav ul li {
   align-items: flex-start;
   gap: 10px;
 }
-
 .footer-facebook {
   background-image: url("../assets/facebook.svg");
   width: 48px;
   height: 48px;
 }
-.footer-twitter{
-    background-image: url('../assets/twitter.svg');
-    width: 48px;
-    height: 48px;
+.footer-twitter {
+  background-image: url("../assets/twitter.svg");
+  width: 48px;
+  height: 48px;
 }
-.footer-youtube{
-    background-image: url('../assets/youtube.svg');
-    width: 48px;
-    height: 48px;
+.footer-youtube {
+  background-image: url("../assets/youtube.svg");
+  width: 48px;
+  height: 48px;
 }
-.footer-instagram{
-    background-image: url('../assets/instagram.svg');
-    width: 48px;
-    height: 48px;
+.footer-instagram {
+  background-image: url("../assets/instagram.svg");
+  width: 48px;
+  height: 48px;
+}
+.footer-service {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-service li a {
+  font-size: 1rem;
+  line-height: 180%;
+  color: #ffffff;
+}
+.footer-bottom {
+  background: #121212;
+  width: 1920px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  line-height: 180%;
+  color: #ffffff;
+  text-align: center;
 }

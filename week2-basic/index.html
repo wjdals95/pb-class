@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 스와이퍼 cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- 구글 폰트 cdn -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -564,18 +560,23 @@
         </section>
       </main>
       <footer>
-        <section class="foot-animation">
-          <marquee behavior="scroll" class="foot-scroll-box">
-            <img src="./assets/footer/Kanba.svg" alt="img" />
-            <img src="./assets/footer/Nirastate.svg" alt="img" />
-            <img src="./assets/footer/Solaytic.svg" alt="img" />
-            <img src="./assets/footer/Utosia 2.svg" alt="img" />
-            <img src="./assets/footer/Earth 2.0.svg" alt="img" />
-            <img src="./assets/footer/Aven.svg" alt="img" />
-            <img src="./assets/footer/Kyan.svg" alt="img" />
-            <img src="./assets/footer/Amara.svg" alt="img" />
-         
-          </marquee>
+        <section class="foot-flow-container">
+          <div class="marquee">
+            <div>
+              <span> <img src="./assets/footer/Kanba.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Nirastate.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Solaytic.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Utosia 2.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Earth 2.0.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Aven.svg" class="foot-flow-wrap" alt="img" /></span>
+              <span> <img src="./assets/footer/Kanba.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Nirastate.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Solaytic.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Utosia 2.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Earth 2.0.svg" class="foot-flow-wrap" alt="img" />
+              <img src="./assets/footer/Aven.svg" class="foot-flow-wrap" alt="img" /></span>
+            </div>
+          </div>
         </section>
         <section class="footer-box">
           <div class="footer-top">
@@ -647,8 +648,7 @@
         </section>
       </footer>
     </div>
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
     <!-- js -->
     <script src="./js/reset.js"></script>
   </body>

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+section {
+  position: relative;
+}
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+nav {
+  width: 90vw;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+#cta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#search {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0px;
+  gap: 10px;
+}
+
+.popular-box {
+  width: 90vw;
+}
+.popular-box h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 0px 64px;
+}
+
+#hotels {
+  padding: 0px 0px 120px;
+  display: flex;
+  justify-content: center;
+}
+.hotels-box {
+  width: 90vw;
+}
+#travel {
+  padding: 0px 0px 120px;
+  display: flex;
+  justify-content: center;
+}
+.travel-box {
+  width: 90vw;
+}
+
+#activities {
+  padding: 0px 0px 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.activities-box {
+  width: 90vw;
+}
+
+#about {
+  padding: 0px 0px 120px;
+  display: flex;
+  justify-content: center;
+}
+.about-box {
+  width: 90vw;
+  gap: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+#footer {
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0px;
+}
+.footer-box {
+  width: 90vw;
+  gap: 10px;
+}

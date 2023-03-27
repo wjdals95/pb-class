@@ -30,6 +30,15 @@ header {
   background-color: aliceblue;
   position: relative;
 }
+button:active,
+button:hover,
+button:focus {
+  background: aliceblue;
+  outline: 0;
+}
+button:disabled {
+  opacity: 0.5;
+}
 .header_a {
   margin: 0 50px;
 }
@@ -43,6 +52,53 @@ header h1 img {
 }
 nav ul {
   display: flex;
+}
+
+.custom_btn {
+  width: 130px;
+  height: 40px;
+  color: #111;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.btn_15 {
+  background: #eff8ff;
+  border: none;
+  z-index: 1;
+}
+.btn_15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.btn_15:hover {
+  color: #fff;
+}
+.btn_15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn_15:active {
+  top: 2px;
 }
 
 .tab_menus {
@@ -62,14 +118,16 @@ nav ul {
   transform: scaleY(1);
   opacity: 1;
   display: flex;
+  transition: height 0.5s ease-in;
 }
 .tab {
   width: 100px;
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   position: relative;
+  margin: 0 10px;
 }
 
 .tab a.tab_show {
@@ -115,4 +173,91 @@ nav ul {
   line-height: 1.5;
   white-space: normal;
   overflow-wrap: normal;
+}
+
+/* 모달 */
+
+#modal.modal_overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+}
+#modal .modal_window {
+  background: aliceblue;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 400px;
+  height: 500px;
+  position: relative;
+  top: -100px;
+  padding: 10px;
+}
+#modal .modal_title {
+  padding-left: 10px;
+  display: inline;
+  text-shadow: 1px 1px 2px gray;
+  color: white;
+}
+#modal .modal_title h3 {
+  display: inline;
+}
+#modal .modal_close_area {
+  display: inline;
+  float: right;
+  padding-right: 10px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px gray;
+  color: white;
+}
+
+#modal .modal_content {
+    margin-top: 50px;
+    padding: 20px 10px;
+    /* text-shadow: 1px 1px 2px gray; */
+    color: white;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+  
+}
+.modal_input_box{
+    margin: 10px 0;
+}
+.modal_input_id {
+  margin-left: 50px;
+}
+.modal_login_button_box{
+    display: flex;
+}
+.modal_login_button{
+    width: 50px;
+    height: 100%;
+    padding: 5px 0;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 0 5px;
+}
+.modal_login_button_a{
+    margin: 0 5px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 5px;
+    padding: 3px;
 }

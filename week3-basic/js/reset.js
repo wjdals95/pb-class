@@ -24,3 +24,30 @@ contents.forEach((content, index) => {
 
   });
 });
+
+//로그인 버튼 누를시 모달창 켜지기
+const modal = document.getElementById("modal")
+
+const btnModal = document.getElementById("btn_modal")
+btnModal.addEventListener("click", e => {
+    modal.style.display = "flex"
+})
+// x버튼 누를시 꺼지기
+const closeBtn = modal.querySelector(".modal_close_area")
+closeBtn.addEventListener("click", e => {
+    modal.style.display = "none"
+})
+
+//모달창 바깥 부분 누르면 꺼지기
+modal.addEventListener("click", e => {
+    if(e.target.classList.contains("modal_overlay")) {
+        modal.style.display = "none"
+    }
+})
+
+//모달창이 켜져있는 상태에서 esc누르면 꺼지기
+window.addEventListener("keyup", e => {
+    if(modal.style.display === "flex" && e.key === "Escape") {
+        modal.style.display = "none"
+    }
+})

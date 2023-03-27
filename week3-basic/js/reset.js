@@ -51,3 +51,15 @@ window.addEventListener("keyup", e => {
         modal.style.display = "none"
     }
 })
+
+const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });                            
+  });
+  
+  document.querySelectorAll('.tab_content').forEach((tab_content) => io.observe(tab_content));

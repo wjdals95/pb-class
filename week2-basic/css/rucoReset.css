@@ -876,7 +876,7 @@ nav ul li {
 }
 
 .fadeUp {
-  transition: transform 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 .fadeUpOut {
   opacity: 0;

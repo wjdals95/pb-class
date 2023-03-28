@@ -25,6 +25,7 @@ contents.forEach((content, index) => {
   });
 });
 
+
 //로그인 버튼 누를시 모달창 켜지기
 const modal = document.getElementById("modal")
 

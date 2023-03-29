@@ -4,88 +4,103 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/reset.css" />
     <title>Document</title>
   </head>
   <body>
-    <section id="header">
+    <!-- <section id="header">
       <div class="logo">C.J.M</div>
       <ul class="portfolio">
         <li><a href="#none">portfolio1</a></li>
         <li><a href="#none">portfolio2</a></li>
         <li><a href="#none">portfolio3</a></li>
       </ul>
-    </section>
-    <section id="banner">
-      <div class="introduce">
-        <div class="introduce_text">
-          <h2>안녕하세요. 최정민입니다.</h2>
-        </div>
-      </div>
-    </section>
-    <section id="list">
-      <ul class="list_box">
-        <li>
-          <a
-            href="https://wjdals95.github.io/pb-class/week1-basic/"
-            target="_blank"
-          >
-            <div class="portfolio_list_box">
-              <div class="portfolio_list_img">
-                <img
-                  src="./assets/2rism-screen.png"
-                  alt="img"
-                  class="portfolio_list_img_size"
-                />
-              </div>
-              <div class="portfolio_list_text">
-                <h4>2rism</h4>
-                <p>2rism clone coding</p>
-              </div>
+    </section> -->
+    <header class="header">
+      <a href="#" class="logo">C.J.M</a>
+      
+      <i class='bx bx-menu' id="menu_icon"></i>
+
+      <nav class="navbar">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+      </nav>
+  </header>
+  <div class="nav_bg"></div>
+
+  <section id="home"> 
+    <div class="introduce">
+    <div class="introduce_text">
+      <h2>안녕하세요. 최정민입니다.</h2>
+    </div>
+  </div>
+  </section>
+  <section id="about">About</section>
+  <section id="portfolio">
+    <ul class="list_box">
+      <li>
+        <a
+          href="https://wjdals95.github.io/pb-class/week1-basic/"
+          target="_blank"
+        >
+          <div class="portfolio_list_box">
+            <div class="portfolio_list_img">
+              <img
+                src="./assets/2rism-screen.png"
+                alt="img"
+                class="portfolio_list_img_size"
+              />
             </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://wjdals95.github.io/pb-class/week2-basic"
-            target="_blank"
-          >
-            <div class="portfolio_list_box">
-              <div class="portfolio_list_img">
-                <img
-                  src="./assets/ruco-screen.png"
-                  alt="img"
-                  class="portfolio_list_img_size"
-                />
-              </div>
-              <div class="portfolio_list_text">
-                <h4>Ruco</h4>
-                <p>Ruco clone coding</p>
-              </div>
-            </div></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://wjdals95.github.io/pb-class/week3-basic"
-            target="_blank"
-          >
-            <div class="portfolio_list_box">
-              <div class="portfolio_list_img">img</div>
-              <div class="portfolio_list_text">
-<<<<<<< HEAD
-                <h4>JavaScript Tab</h4>
-                <p>내용</p>
-=======
-                <h4>제목</h4>
-a                <p>내용</p>
->>>>>>> week1-basic
-              </div>
-            </div></a
-          >
-        </li>
-      </ul>
-    </section>
+            <div class="portfolio_list_text">
+              <h4>2rism</h4>
+              <p>2rism clone coding</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://wjdals95.github.io/pb-class/week2-basic"
+          target="_blank"
+        >
+          <div class="portfolio_list_box">
+            <div class="portfolio_list_img">
+              <img
+                src="./assets/ruco-screen.png"
+                alt="img"
+                class="portfolio_list_img_size"
+              />
+            </div>
+            <div class="portfolio_list_text">
+              <h4>Ruco</h4>
+              <p>Ruco clone coding</p>
+            </div>
+          </div></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://wjdals95.github.io/pb-class/week3-basic"
+          target="_blank"
+        >
+          <div class="portfolio_list_box">
+            <div class="portfolio_list_img">img</div>
+            <div class="portfolio_list_text">
+              <h4>JavaScript Tab</h4>
+              <p>내용</p>
+              <h4>제목</h4>
+              <p>내용</p>
+            </div>
+          </div></a
+        >
+      </li>
+    </ul>
+  </section>
+  <section id="contact">Contact</section>
+
+  <script src="./js/script.js"></script>
   </body>
 </html>

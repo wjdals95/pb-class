@@ -1,8 +1,8 @@
 const menuIcon = document.querySelector("#menu_icon");
 const navBar = document.querySelector(".navbar");
 const navBg = document.querySelector(".nav_bg");
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
 
 menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("bx-x");

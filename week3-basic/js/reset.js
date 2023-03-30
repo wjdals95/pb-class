@@ -1,29 +1,46 @@
 const tabs = document.querySelectorAll(".tab");
+const tabHightlight = document.querySelectorAll(".tab a")
 const contents = document.querySelectorAll(".tab_content");
 const contents1 = document.querySelectorAll(".tab_contents")
+
 
 tabs.forEach((tab, index) => {
   tab.addEventListener("mouseover", () => {
     contents[index].classList.add("show");
-  
+    tabs[index].classList.add('tabActive');
   });
 
   tab.addEventListener("mouseout", () => {
     contents[index].classList.remove("show");
-
+    tabs[index].classList.remove('tabActive');
   });
 });
 
 contents.forEach((content, index) => {
   content.addEventListener("mouseover", () => {
     contents[index].classList.add("show");
+    tabs[index].classList.add('tabActive');
   });
 
   content.addEventListener("mouseout", () => {
     contents[index].classList.remove("show");
+    tabs[index].classList.remove('tabActive');
 
   });
 });
+
+// function tab01() {
+//   tabHightlight.style.transform = "translateX(0)" 
+//   tabHightlight.style.display = "block"
+// }
+// function tab02() {
+//   tabHightlight.style.transform = "translateX(122%)" 
+//   tabHightlight.style.display = "block"
+// }
+// function tab03() {
+//   tabHightlight.style.transform = "translateX(242%)" 
+//   tabHightlight.style.display = "block"
+// }
 
 //로그인 버튼 누를시 모달창 켜지기
 const modal = document.getElementById("modal")

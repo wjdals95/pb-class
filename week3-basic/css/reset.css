@@ -129,11 +129,20 @@ nav ul {
   position: relative;
   margin: 0 10px;
 }
-
-.tab a.tab_show {
-  border-bottom: 2px solid black;
+.tabActive{
+  background: #a9e4e1;
+  transition: all 0.2s;
+  border-radius: 10px;
 }
-
+.tab_highlight {
+  position: absolute;
+  width: 100px;
+  border-bottom: 5px solid red;
+  top: 90%;
+  transition: all 0.4s;
+  left: 37%;
+  display: none;
+}
 .tab_contents .tab_content {
   display: none;
   transform: translateY(-10%);

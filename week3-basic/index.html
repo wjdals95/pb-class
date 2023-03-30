@@ -16,11 +16,13 @@
       ></a>
       <nav>
         <ul class="tab_menus">
-          <li class="tab">
+          <li class="tab" onmouseover="tab01()">
             <a href="#none">New Release</a>
           </li>
-          <li class="tab"><a href="#none">Men & Women</a></li>
-          <li class="tab"><a href="#none">Sale</a></li>
+          <li class="tab" onmouseover="tab02()">
+            <a href="#none">Men & Women</a>
+          </li>
+          <li class="tab" onmouseover="tab03()"><a href="#none">Sale</a></li>
           <span class="tab_highlight"></span>
         </ul>
         <ul class="tab_contents">
@@ -133,19 +135,19 @@
         </div>
         <div class="modal_close_area">X</div>
         <div class="modal_content">
-            <div class="modal_input_box">
-                <label for="html" class="modal_input_id">ID: </label>
-                <input type="text" placeholder="아이디를 입력하세요.">
-            </div>
-            <div class="modal_input_box">
-                <label for="html">Password: </label>
-                <input type="number">
-            </div>
-            <div class="modal_login_button_box">
-                <button type="submit" class="modal_login_button">로그인</button>
-                <a href="#" class="modal_login_button_a">비밀번호 찾기</a>
-                <a href="#" class="modal_login_button_a">회원가입</a>
-            </div>
+          <div class="modal_input_box">
+            <label for="html" class="modal_input_id">ID: </label>
+            <input type="text" placeholder="아이디를 입력하세요." />
+          </div>
+          <div class="modal_input_box">
+            <label for="html">Password: </label>
+            <input type="number" />
+          </div>
+          <div class="modal_login_button_box">
+            <button type="submit" class="modal_login_button">로그인</button>
+            <a href="#" class="modal_login_button_a">비밀번호 찾기</a>
+            <a href="#" class="modal_login_button_a">회원가입</a>
+          </div>
         </div>
       </div>
     </div>

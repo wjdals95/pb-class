@@ -80,6 +80,9 @@ section:nth-child(odd) {
     .header {
       padding: 1.25rem 4%;
     }
+    .list_box_mg{
+        margin: 50px 0;
+    }
   }
   
   @media (max-width: 768px) {
@@ -116,6 +119,15 @@ section:nth-child(odd) {
     .nav_bg.active{
       display: block;
     }
+    .list_box{
+        flex-direction: column;
+    }
+    .portfolio_list_box{
+        width: 80%;
+    }
+    .list_box_mg{
+        margin: 50px 0;
+    }
   }
   
 /* portfolio */
@@ -138,8 +150,9 @@ section:nth-child(odd) {
   justify-content: center;
 }
 .list_box {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .portfolio_list_box {
   background-color: skyblue;
@@ -169,4 +182,7 @@ section:nth-child(odd) {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.list_box_mg{
+    margin: 50px 0;
 }

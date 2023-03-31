@@ -129,7 +129,59 @@ section:nth-child(odd) {
         margin: 50px 0;
     }
   }
-  
+
+/* main */
+.text_wrapper{
+  display: flex;
+}
+.text_wrapper .first_text{
+  font-size: 60px;
+  color: #fff;
+}
+.text_wrapper .second_texts{
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.second_texts li{
+  position: relative;
+  top: 0;
+  font-size: 60px;
+  color: #0ef;
+  list-style: none;
+  padding: 0 20px;
+  text-shadow: 0 0 10px #0ef ;
+  animation: slide 12s steps(4) infinite, colorful 6s infinite;
+}
+@keyframes slide{
+  100%{
+      top: -360px;
+  }
+}
+@keyframes colorful{
+  100%{
+      filter: hue-rotate(360deg);
+  }
+}
+.second_texts li span{
+  position: relative;
+}
+.second_texts li span::before{
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 90px;
+  left: 0;
+  background: #323946;;
+  border-left: 2px solid #0ef;
+  animation: typing 1.5s steps(10) infinite alternate;
+}
+@keyframes typing{
+  100%{
+      left: 100%;
+      margin: 0 -35px 0 35px;
+  }
+}
 /* portfolio */
 .portfolio {
   display: flex;

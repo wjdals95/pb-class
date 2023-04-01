@@ -16,23 +16,27 @@
     <title>2rism</title>
   </head>
   <body>
-    <section id="main">
+    <header>
       <nav>
         <div class="logo">
           <a href="#header"
-            ><img src="./img/header/2rism.png" alt="2rism" />
+            ><img
+              src="./img/header/2rism.png"
+              alt="2rism"
+              class="logo_change"
+            />
             <img src="./img/header/Vector.png" alt="2rism" class="logo-dot" />
           </a>
         </div>
-        <div class="menu">
-          <ul class="d-flex">
-            <li><a href="#none">Popular Destinations</a></li>
-            <li><a href="#none">Hotels&Restaurants</a></li>
-            <li><a href="#none">Travel Tips</a></li>
-            <li><a href="#none">Activities</a></li>
-            <li><a href="#none">About Us</a></li>
-          </ul>
-        </div>
+        <ul class="nav_menu">
+          <li>
+            <a href="#" class="popular_isClicked">Popular Destinations</a>
+          </li>
+          <li><a href="#">Hotels & Restaurants</a></li>
+          <li><a href="#">Travel Tips</a></li>
+          <li><a href="#">Activities</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
         <div class="user">
           <div class="user-bottom">
             <span class="user-top">Holla,</span>Ales Nesetril
@@ -86,9 +90,9 @@
           </a>
         </div>
       </div>
-    </section>
+    </header>
     <section id="contents">
-      <div id="popular" class="animatable">
+      <div id="popular" data-fade="0.5" class="fadein">
         <div class="popular-box">
           <div class="popular-text">
             <h2>Popular Destinations</h2>
@@ -146,7 +150,7 @@
           </div>
         </div>
       </div>
-      <div id="hotels" class="hidden">
+      <div id="hotels" data-fade="0.1" class="fadein">
         <div class="hotels-box">
           <div class="hotels-text">
             <h2>Travel Tips and Advice</h2>
@@ -257,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div id="travel" class="hidden">
+      <div id="travel" data-fade="0.9" class="fadein">
         <div class="travel-box">
           <div class="travel-text">
             <h2>Travel Tips and Advice</h2>
@@ -340,7 +344,7 @@
           </div>
         </div>
       </div>
-      <div id="activities" class="hidden">
+      <div id="activities" data-fade="0.5" class="fadein">
         <div class="activities-box">
           <div class="activities-text">
             <h2>Activities</h2>
@@ -379,7 +383,7 @@
           </div>
         </div>
       </div>
-      <div id="about" class="hidden">
+      <div id="about" data-fade="0.5" class="fadein">
         <div class="about-box">
           <div class="about-text">
             <h2>About Us</h2>
@@ -399,7 +403,7 @@
         </div>
       </div>
     </section>
-    <section id="footer">
+    <footer>
       <div class="footer-box">
         <div class="footer-row">
           <div class="footer-1">
@@ -487,6 +491,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>

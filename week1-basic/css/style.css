@@ -45,7 +45,7 @@ img {
   background-color: #a594f7;
   color: #ffffff;
 }
-#main {
+header {
   background-image: url("../img/bg-image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -64,12 +64,22 @@ img {
   bottom: 0;
   right: -20%;
 }
-.menu li a {
+.nav_menu {
+  display: flex;
+}
+nav.sticky .nav_menu li a {
+  color: #000;
+}
+nav.sticky .nav_menu li a:hover {
+  color: #ff0000;
+}
+.nav_menu li a {
   color: #ffffff;
   opacity: 0.7;
   padding: 0 24px;
+  cursor: pointer;
 }
-.menu li a:hover {
+.nav_menu li a:hover {
   color: #ff0000;
 
   border-radius: 40%;
@@ -574,13 +584,13 @@ img {
   transform: scale(110%);
 }
 
-/*화면에 표출되기 전*/
+/* 화면에 표출되기 전
 .animatable {
 	visibility: hidden; 
 	animation-play-state: paused;
 }
 
-/*화면에 표출된 후*/
+화면에 표출된 후
 .animated {
 	animation-name: fadeInUp; 
 	visibility: visible; 
@@ -622,6 +632,15 @@ img {
   50% {top: 2px}
   100% { top: -2px}
 }
+ */
 
-
-
+ .fadein{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+ }
+ .fadein.active{
+  transform: translateY(0);
+  opacity: 1;
+ }

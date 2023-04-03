@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
     const fadePercent = fadeIn[i].dataset.fade;
     let fadeTop = fadeIn[i].getBoundingClientRect().top;
 
-    if(fadeTop < (windowHeight - fadeTop / fadePercent)){
+    if(fadeTop < (windowHeight * fadePercent)){
       fadeIn[i].classList.add('active')
     }
     else{

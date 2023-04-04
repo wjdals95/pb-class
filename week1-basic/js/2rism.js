@@ -32,6 +32,17 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const navMenu = document.querySelector('.nav_menu');
+
+navMenu.addEventListener("click", (e) => {
+  const target = e.target;
+  const link = target.dataset.link;
+  const elem = document.querySelector(link);
+  elem.scrollIntoView({ behavior: "smooth" });
+});
+
+
+
 let delay = 300;
 let timer = null;
 

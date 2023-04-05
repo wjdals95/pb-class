@@ -32,13 +32,16 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const navMenu = document.querySelector('.nav_menu');
+document.addEventListener('click', function(event) {
+  if (!event.target.matches('.btn-scroll-into')) return;
 
-navMenu.addEventListener("click", (e) => {
-  const target = e.target;
-  const link = target.dataset.link;
-  const elem = document.querySelector(link);
-  elem.scrollIntoView({ behavior: "smooth" });
+  event.preventDefault();
+  
+  const element = document.getElementById(event.target.dataset.target);
+  
+  element.scrollIntoView({behavior: "smooth"});
+
+
 });
 
 

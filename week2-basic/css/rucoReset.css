@@ -701,12 +701,26 @@ nav ul li {
 
 .swiper-pagination {
   position: absolute;
-  width: auto !important;
-  bottom: 90px;
+  bottom: 65px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+}
 .swiper-base {
   background-color: #ffffff;
   box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.07);

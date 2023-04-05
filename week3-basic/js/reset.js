@@ -37,15 +37,12 @@ const closeBtn = modal.querySelector(".modal_close_area");
 
 // const btnFlex = modal.style.display = "flex"
 window.addEventListener("click", (e) => {
-  e.target == btnModal ? (modal.style.display = "flex") : "";
+  e.target == btnModal && (modal.style.display = "flex");
 
-  e.target == closeBtn ? (modal.style.display = "none") : "";
+  e.target == closeBtn && (modal.style.display = "none");
 
-  e.target == modal
-    ? e.target.classList.contains("modal_overlay")
-      ? (modal.style.display = "none")
-      : ""
-    : "";
+  e.target.classList.contains("modal_overlay") &&
+    (modal.style.display = "none");
 });
 
 //모달창이 켜져있는 상태에서 esc누르면 꺼지기

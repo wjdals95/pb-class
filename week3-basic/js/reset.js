@@ -8,13 +8,11 @@ tabs.forEach((tab, index) => {
   tab.addEventListener("mouseover", () => {
     contents[index].classList.add("show");
     tabs[index].classList.add("tabActive");
-    tabContents[index].classList.add("active1");
   });
 
   tab.addEventListener("mouseout", () => {
     contents[index].classList.remove("show");
     tabs[index].classList.remove("tabActive");
-    tabContents[index].classList.remove("active1");
   });
 });
 
@@ -52,14 +50,14 @@ window.addEventListener("keyup", (e) => {
     : "";
 });
 
-const io = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    entry.isIntersecting
-      ? entry.target.classList.add("active")
-      : entry.target.classList.remove("active");
-  });
-});
+// const io = new IntersectionObserver((entries, observer) => {
+//   entries.forEach((entry) => {
+//     entry.isIntersecting
+//       ? entry.target.classList.add("active")
+//       : entry.target.classList.remove("active");
+//   });
+// });
 
-document
-  .querySelectorAll(".tab_content")
-  .forEach((tab_content) => io.observe(tab_content));
+// document
+//   .querySelectorAll(".tab_content")
+//   .forEach((tab_content) => io.observe(tab_content));

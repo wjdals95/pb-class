@@ -1,0 +1,11 @@
+body{
+    height: 2000px;
+}
+body.active{
+    color: #fff;
+    background: #000;
+}
+.scroll_evnet_box{
+    position: sticky;
+    top: 0%;
+}

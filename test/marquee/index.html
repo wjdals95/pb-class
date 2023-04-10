@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #main {
+        border: 1px solid;
+        background: yellow;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .para {
+        color: black;
+        font-weight: bold;
+        white-space: nowrap;
+        clear: both;
+        float: left;
+      }
+
+      .marquee {
+        overflow: hidden;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        display: flex;
+      }
+
+      .marquee h1 {
+        font-size: 5em;
+        margin: 0 10px;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+
+      .list {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        margin-left: 0;
+      }
+      .list__item {
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding: 20px;
+        text-align: center;
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <p class="para" id="para1">
+        Geeksforgeeks | A computer science portal for geeks
+      </p>
+
+      <p class="para" id="para2">This is another text</p>
+
+      <p class="para" id="para3">
+        This is the third line of the example line of the example.
+      </p>
+    </div>
+
+    <div class="marquee">
+      <h1>Nepal * Himalayas * Mountains * Everest *</h1>
+    </div>
+
+    <div class="wrap wrap--logobar" id="containerElem">
+      <ul class="list" id="list">
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+        <li class="list__item"><img src="../../assets/marquee/html5.svg" alt=""></li>
+      </ul>
+    </div>
+
+    <script>
+      //11111111111111111
+      const para1 = document.getElementById("para1");
+      const para2 = document.getElementById("para2");
+      const para3 = document.getElementById("para3");
+
+      animate(para1);
+      animate(para2);
+      animate(para3);
+
+      function animate(element) {
+        let elementWidth = element.offsetWidth;
+        let parentWidth = element.parentElement.offsetWidth;
+        let flag = 0;
+
+        setInterval(() => {
+          element.style.marginLeft = --flag + "px";
+
+          if (elementWidth == -flag) {
+            flag = parentWidth;
+          }
+        }, 10);
+      }
+      //2222222222
+      function Marquee(selector, speed) {
+        const parentSelector = document.querySelector(selector);
+        const clone = parentSelector.innerHTML;
+        const firstElement = parentSelector.children[0];
+        let i = 0;
+        console.log(firstElement);
+        parentSelector.insertAdjacentHTML("beforeend", clone);
+        parentSelector.insertAdjacentHTML("beforeend", clone);
+
+        setInterval(function () {
+          firstElement.style.marginLeft = `-${i}px`;
+          if (i > firstElement.clientWidth) {
+            i = 0;
+          }
+          i = i + speed;
+        }, 0);
+      }
+
+      //after window is completed load
+      //1 class selector for marquee
+      //2 marquee speed 0.2
+      window.addEventListener("load", Marquee(".marquee", 1));
+
+      //333333333
+      document.addEventListener("DOMContentLoaded", (_) => {
+        /*
+    Quick whip-up of an idea posed by a client: a bar filled with logo's that move to the left slowly and infinitely.
+    I checked if the <marquee> tag was still working (and it is), but it's considered invalid html now so I needed something else.
+  */
+
+        const items = [...document.getElementsByClassName("list__item")];
+        const containerElem = document.getElementById("containerElem");
+        const leftSideOfContainer = containerElem.getBoundingClientRect().left;
+        const listElem = document.getElementById("list");
+        let currentLeftValue = 0;
+
+        // Kick off for the animation function.
+        window.setInterval(animationLoop, 50);
+
+        /* 
+    Looks at first item in the list and checks if it goes out of the visible area 
+    by comparing the right position of the first list item to the left position 
+    of the containing element. 
+  */
+        function animationLoop() {
+          const firstListItem = listElem.querySelector(
+            ".list__item:first-child"
+          );
+
+          let rightSideOfFirstItem =
+            firstListItem.getBoundingClientRect().right;
+
+          /* 
+      If first list item is out of viewable area, move it to the end of the list. 
+      Also, set the current left value to -1 so we won't stutter.
+    */
+          if (rightSideOfFirstItem == leftSideOfContainer) {
+            currentLeftValue = -1;
+            listElem.appendChild(firstListItem);
+          }
+
+          // The part that keeps it all going: animating the margin left value of the list.
+          listElem.style.marginLeft = `${currentLeftValue}px`;
+          currentLeftValue--;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -53,7 +53,7 @@ section:nth-child(odd) {
   position: sticky;
   top: 70px;
 }
-/* header */
+/* header css start */
 .header {
   position: fixed;
   top: 0;
@@ -200,66 +200,19 @@ section:nth-child(odd) {
     margin: 0 auto;
   }
 }
+/* header css start */
 
-/* main */
-.txt_container{
-  display: flex;
-  align-items: center;
-}
-.static_txt{
-  font-size: 50px;
-  color: #fff;
-}
-.dynamic_txt{
-  margin-left: 1.2em;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
-}
-.dynamic_txt li{
-  position: relative;
-  top: 0;
-  font-size: 60px;
-  color: #0ef;
-  list-style: none;
-  padding: 0 20px;
-  text-shadow: 0 0 10px #0ef;
-  animation: slide 12s steps(4) infinite, colorful 6s infinite;
-}
-@keyframes slide{
-  100%{
-    top: -360px;
-  }
-}
-@keyframes colorful {
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-.dynamic_txt span{
-  position: relative;
-  margin: 5px 0;
-  line-height: 80px;
-}
-.dynamic_txt span::after{
-  content: "";
+/* main  css start*/
+.home h2{
   position: absolute;
-  left: 0;
-  height: 105%;
-  width: 100%;
-  background: #323946;
-  border-left: 5px solid #0ef;
-  animation: typings 3s steps(10) infinite;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 200px;
+  font-weight: 600;
 }
-@keyframes typings{
-  40%, 60%{
-    left: calc(100% + 30px);
-  }
-  100%{
-    left: 0;
-  }
-}
-/* about*/
+/* main  css end*/
+
+/* about css start*/
 .marquee_box {
   display: flex;
   flex-direction: column;
@@ -308,7 +261,9 @@ section:nth-child(odd) {
 .list__item img {
   width: 100px;
 }
-/* portfolio */
+/* about css start*/
+
+/* portfolio css start */
 .portfolio {
   display: flex;
 }
@@ -369,3 +324,88 @@ section:nth-child(odd) {
 .list_box_mg {
   margin: 50px 0;
 }
+/* portfolio css end */
+
+/* contact css start */
+.contact{
+  position: relative;
+  display: block;
+}
+.contact h2{
+  font-size: 80px;
+  font-weight: 600;
+  text-align: center;
+  margin: 40px 0 ;
+  position: relative;
+}
+.contact .contact_box {
+  position: relative;
+  margin: 0 100px;
+}
+.contact .contact_box .myPhoto{
+  display: inline-block;
+}
+.contact .myPhoto img{
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+.txt_container{
+  display: flex;
+  align-items: center;
+
+}
+.static_txt{
+  font-size: 50px;
+  color: #fff;
+}
+.dynamic_txt{
+  margin-left: 1.2em;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic_txt li{
+  position: relative;
+  top: 0;
+  font-size: 60px;
+  color: #0ef;
+  list-style: none;
+  padding: 0 20px;
+  text-shadow: 0 0 10px #0ef;
+  animation: slide 12s steps(4) infinite, colorful 6s infinite;
+}
+@keyframes slide{
+  100%{
+    top: -360px;
+  }
+}
+@keyframes colorful {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.dynamic_txt span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 80px;
+}
+.dynamic_txt span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 105%;
+  width: 100%;
+  background: #1f242d;
+  border-left: 5px solid #0ef;
+  animation: typings 3s steps(10) infinite;
+}
+@keyframes typings{
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+/* contact css end */

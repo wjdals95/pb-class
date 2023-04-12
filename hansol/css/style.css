@@ -189,6 +189,74 @@ header .spot li a:hover{
     left: 50%;
     top: 175px;
 }
-
-
 /* visual css end */
+
+/* product css start */
+.product a{
+    color: #001829;
+    font-size: 15px;
+    display: block;
+}
+.product a:hover{
+    color: #2d5b79;
+    font-weight: bold;
+}
+.product a::before{
+    content: "";
+    display: block;
+    width: 64px;
+    height: 52px;
+    margin: 0 0 26px;
+    background: url("../assets/sp_com.png") no-repeat;
+}
+.product ul{
+    text-align: center;
+    padding: 46px 0 41px;
+    font-size: 0px;
+}
+.product li{
+    display: inline-block;
+    text-align: center;
+    padding: 0 55px;
+}
+.product li:nth-child(1) a::before{
+    background-position: -3px -118px;
+}
+.product li:nth-child(2) a::before{
+    background-position: -75px -118px;
+}
+.product li:nth-child(3) a::before{
+    background-position: -148px -118px;
+}
+.product li:nth-child(4) a::before{
+    background-position: -219px -118px;
+}
+.product li:nth-child(5) a::before{
+    background-position: -292px -118px;
+}
+.product li:nth-child(6) a::before{
+    background-position: -364px -118px;
+}
+.product li:nth-child(1) a:hover::before{
+    background-position: -3px -184px;
+}
+.product li:nth-child(2) a:hover::before{
+    background-position: -75px -184px;
+}
+.product li:nth-child(3) a:hover::before{
+    background-position: -148px -184px;
+}
+.product li:nth-child(4) a:hover::before{
+    background-position: -219px -184px;
+}
+.product li:nth-child(5) a:hover::before{
+    background-position: -292px -184px;
+}
+.product li:nth-child(6) a:hover::before{
+    background-position: -364px -184px;
+}
+
+
+
+
+/* product css end */

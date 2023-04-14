@@ -15,44 +15,6 @@ li {
 a {
   text-decoration: none;
 }
-section {
-  min-height: 100vh;
-  display: flex;
-  background: #1f242d;
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-}
-
-section:nth-child(odd) {
-  background: #323946;
-}
-.text_sticky_about {
-  padding: 0 15px;
-  display: flex;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-size: 50px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-shadow: 2px 2px 2px #fff;
-  height: 40vh;
-  position: sticky;
-  top: 70px;
-}
-.text_sticky_portfolio {
-  padding: 0 15px;
-  display: flex;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-size: 50px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-shadow: 2px 2px 2px #fff;
-  height: 70vh;
-  position: sticky;
-  top: 70px;
-}
 /* header css start */
 .header {
   position: fixed;
@@ -117,9 +79,6 @@ section:nth-child(odd) {
     justify-content: center;
     align-items: unset;
   }
-  .text_sticky_portfolio {
-    height: 72vh;
-  }
 }
 
 @media (max-width: 768px) {
@@ -156,30 +115,7 @@ section:nth-child(odd) {
   .nav_bg.active {
     display: block;
   }
-  .list_box {
-    flex-direction: column;
-  }
-  .portfolio_list_box {
-    width: 80%;
-  }
-  .list_box_mg {
-    margin: 50px 0;
-  }
-  .text_sticky_portfolio {
-    writing-mode: unset;
-    height: 50px;
-    margin-bottom: 20px;
-    position: relative;
-    top: 0;
-  }
-  .text_sticky_about {
-    writing-mode: unset;
-    height: 50px;
-    position: relative;
-    margin-bottom: 20px;
-    top: 0;
-  }
-  #about{
+  #about {
     min-height: 100vh;
     display: flex;
     color: #fff;
@@ -187,25 +123,28 @@ section:nth-child(odd) {
     align-items: center;
     overflow: hidden;
   }
-  #portfolio {
-    min-height: 100vh;
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .portfolio_list_box {
-    width: 350px;
-    margin: 0 auto;
-  }
 }
 /* header css start */
 
 /* main  css start*/
-.home h2{
+.home {
+  min-height: 100vh;
+  background: #1f242d;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.home h2:nth-child(1) {
   position: absolute;
-  top: 50%;
+  top: 30%;
+  transform: translateY(-50%);
+  font-size: 200px;
+  font-weight: 600;
+}
+.home h2:nth-child(2) {
+  position: absolute;
+  top: 70%;
+  right: 0;
   transform: translateY(-50%);
   font-size: 200px;
   font-weight: 600;
@@ -213,6 +152,20 @@ section:nth-child(odd) {
 /* main  css end*/
 
 /* about css start*/
+.about {
+  min-height: 100vh;
+  background: #323946;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.about h2 {
+  display: block;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 62px;
+  text-align: center;
+}
 .marquee_box {
   display: flex;
   flex-direction: column;
@@ -265,107 +218,112 @@ section:nth-child(odd) {
 
 /* portfolio css start */
 .portfolio {
-  display: flex;
+  background: #fff !important;
+  overflow: unset !important;
+  position: relative;
+  display: block;
+  min-height: 100vh;
+  padding-top: calc(100vw * 0.1);
+  padding-bottom: calc(100vw * 0.1);
 }
-.portfolio li {
-  margin: 0 20px;
+.portfolio > div {
+  width: 1920px;
+  max-width: 100%;
+  display: block;
+  height: 2750px;
 }
-.introduce {
-  margin-bottom: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.portfolio > div .left {
+  position: sticky;
+  top: 70px;
+  background: #fff;
+  width: 50%;
+  height: 100vh;
+  float: left;
+  background: #fff;
+  color: #000;
+  padding: calc((100vw - 180px) * 0.06);
+  border: 3px solid red;
+}
+.portfolio > div .left h2 {
+  font-size: 3vw;
+  line-height: 3.3vw;
+  font-weight: 400;
+}
+.portfolio > div .left h3 {
+  font-size: 2vw;
+  line-height: 2vw;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.portfolio > div .right {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.portfolio > div .right a {
+  display: block;
+  margin: 4vw 0;
+  text-decoration: none;
+  font-size: 2vw;
+  font-weight: 500;
+  line-height: 1.2em;
+  color: #000;
+  border: 1px solid #000;
+}
+.portfolio > div .right a img {
+  width: 100%;
+  height: 60vh;
+}
+.portfolio > div .right a span {
+  display: block;
+  padding: 25px;
 }
 
-.introduce_text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.list_box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0 auto;
-}
-.portfolio_list_box {
-  background-color: #1f242d;
-  border-radius: 15px;
-  width: 400px;
-  height: 600px;
-  margin: 0 30px;
-  padding: 10px 0;
-}
-.portfolio_list_img {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.portfolio_list_text {
-  background-color: #282a3a;
-  color: #fff;
-  width: 300px;
-  height: 200px;
-  margin: 10px auto;
-}
-.portfolio_list_text h4{
-  margin: 0 0 30px 0;
-}
-.portfolio_list_img_size {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.list_box_mg {
-  margin: 50px 0;
-}
 /* portfolio css end */
 
 /* contact css start */
-.contact{
+.contact {
   position: relative;
   display: block;
+  min-height: 100vh;
+  background: #323946;
+  color: #fff;
+  overflow: hidden;
 }
-.contact h2{
+.contact h2 {
   font-size: 80px;
   font-weight: 600;
   text-align: center;
-  margin: 40px 0 ;
+  margin: 40px 0;
   position: relative;
 }
 .contact .contact_box {
   position: relative;
   margin: 0 100px;
 }
-.contact .contact_box .myPhoto{
+.contact .contact_box .myPhoto {
   display: inline-block;
 }
-.contact .myPhoto img{
+.contact .myPhoto img {
   width: 400px;
   height: 600px;
   border-radius: 20px;
 }
-.txt_container{
+.txt_container {
   display: flex;
   align-items: center;
-
 }
-.static_txt{
+.static_txt {
   font-size: 50px;
   color: #fff;
 }
-.dynamic_txt{
+.dynamic_txt {
   margin-left: 1.2em;
   height: 90px;
   line-height: 90px;
   overflow: hidden;
 }
-.dynamic_txt li{
+.dynamic_txt li {
   position: relative;
   top: 0;
   font-size: 60px;
@@ -375,8 +333,8 @@ section:nth-child(odd) {
   text-shadow: 0 0 10px #0ef;
   animation: slide 12s steps(4) infinite, colorful 6s infinite;
 }
-@keyframes slide{
-  100%{
+@keyframes slide {
+  100% {
     top: -360px;
   }
 }
@@ -385,12 +343,12 @@ section:nth-child(odd) {
     filter: hue-rotate(360deg);
   }
 }
-.dynamic_txt span{
+.dynamic_txt span {
   position: relative;
   margin: 5px 0;
   line-height: 80px;
 }
-.dynamic_txt span::after{
+.dynamic_txt span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -400,11 +358,12 @@ section:nth-child(odd) {
   border-left: 5px solid #0ef;
   animation: typings 3s steps(10) infinite;
 }
-@keyframes typings{
-  40%, 60%{
+@keyframes typings {
+  40%,
+  60% {
     left: calc(100% + 30px);
   }
-  100%{
+  100% {
     left: 0;
   }
 }

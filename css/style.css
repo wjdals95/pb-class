@@ -218,7 +218,7 @@ a {
 
 /* portfolio css start */
 .portfolio {
-  background: #fff !important;
+  background: rgb(136 96 96 / 10%);
   overflow: unset !important;
   position: relative;
   display: block;
@@ -235,14 +235,11 @@ a {
 .portfolio > div .left {
   position: sticky;
   top: 70px;
-  background: #fff;
   width: 50%;
   height: 100vh;
   float: left;
-  background: #fff;
   color: #000;
   padding: calc((100vw - 180px) * 0.06);
-  border: 3px solid red;
 }
 .portfolio > div .left h2 {
   font-size: 3vw;
@@ -289,41 +286,49 @@ a {
   background: #323946;
   color: #fff;
   overflow: hidden;
+  width: 1920px;
+  max-width: 100%;
 }
-.contact h2 {
+.contact > h2 {
   font-size: 80px;
   font-weight: 600;
   text-align: center;
-  margin: 40px 0;
+  margin: 80px 0;
   position: relative;
 }
 .contact .contact_box {
   position: relative;
-  margin: 0 100px;
+  width: 1180px;
+  margin: 0 auto;
 }
-.contact .contact_box .myPhoto {
-  display: inline-block;
+.contact .contact_box .left {
+  float: left;
 }
-.contact .myPhoto img {
+.contact .contact_box .left img {
   width: 400px;
   height: 600px;
   border-radius: 20px;
 }
-.txt_container {
+.contact .contact_box .right {
+  float: right;
+  width: 50%;
+}
+.contact .contact_box .right .txt_box {
   display: flex;
   align-items: center;
+  padding: 0 0 25px 0;
 }
-.static_txt {
+.contact .contact_box .right .txt_box .static_txt {
   font-size: 50px;
   color: #fff;
 }
-.dynamic_txt {
+.contact .contact_box .right .txt_box .dynamic_txt {
   margin-left: 1.2em;
   height: 90px;
   line-height: 90px;
   overflow: hidden;
 }
-.dynamic_txt li {
+.contact .contact_box .right .txt_box .dynamic_txt li {
   position: relative;
   top: 0;
   font-size: 60px;
@@ -343,18 +348,18 @@ a {
     filter: hue-rotate(360deg);
   }
 }
-.dynamic_txt span {
+.contact .contact_box .right .txt_box .dynamic_txt span {
   position: relative;
   margin: 5px 0;
   line-height: 80px;
 }
-.dynamic_txt span::after {
+.contact .contact_box .right .txt_box .dynamic_txt span::after {
   content: "";
   position: absolute;
   left: 0;
   height: 105%;
   width: 100%;
-  background: #1f242d;
+  background: #323946;
   border-left: 5px solid #0ef;
   animation: typings 3s steps(10) infinite;
 }
@@ -366,5 +371,66 @@ a {
   100% {
     left: 0;
   }
+}
+
+.contact .contact_box .right .info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 0;
+}
+.contact .contact_box .right .info h2{
+  width: 100%;
+  text-align: start;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact .contact_box .right .info li {
+  width: 50%;
+  color: #08ffc8;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 12px 0;
+}
+.contact .contact_box .right .info li span {
+  font-weight: 400;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.contact .contact_box .right .link{
+  padding: 25px 0;
+}
+.contact .contact_box .right .link h2{
+  text-align: start;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact .contact_box .right .link li{
+  display: inline-block;
+}
+.contact .contact_box .right .link li:nth-child(2) {
+  background: url('../assets/kakaotalk\ 1.svg') no-repeat center;
+}
+.contact .contact_box .right .link li:nth-child(2) a{
+}
+.contact .contact_box .right .link li:nth-child(3) {
+  background: url('../assets/naver\ 1.svg') no-repeat center;
+}
+.contact .contact_box .right .link li:nth-child(4) {
+  background: url('../assets/github\ \(1\)\ 1.svg') no-repeat center;
+}
+.contact .contact_box .right .link li a{
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  text-decoration: none;
+  color: transparent;
+  margin: 5px 15px;
+}
+.contact .contact_box .right .link li a:hover{
+  background: rgba(45, 91, 121, 0.3);
 }
 /* contact css end */

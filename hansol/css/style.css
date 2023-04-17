@@ -369,9 +369,10 @@ header .spot li a:hover{
 .banner.slide .control{
     bottom: 47px;
 }
-.banner.slide .control li{
+.banner.slide .control ul li{
     padding: 0;
     height: 5px;
+    margin: 0 3px;
 }
 .banner.slide .control li.on a{
     background: #2d5b79;
@@ -398,12 +399,11 @@ header .spot li a:hover{
     margin: 0 auto;
     display: flex;
 }
-.banner ul li{
+.banner > ul li{
     flex: 1;
     margin: 0 0 0 20px;
     height: 553px;
     background: #fff;
-
 }
 .banner ul li:first-child{
     margin: 0;
@@ -447,6 +447,80 @@ header .spot li a:hover{
     font-weight: 500;
 }
 /* banner css end */
+
+/* tip css start */
+.tip{
+    padding: 40px 0 90px 0;
+    position: relative;
+}
+.tip.slide .control{
+    bottom: 47px;
+}
+.tip.slide .control ul li{
+    padding: 0;
+    height: 5px;
+    margin: 0 3px;
+}
+.tip.slide .control li.on a{
+    background: #2d5b79;
+}
+.tip.slide .control li a{
+    background: #bbc0bf;
+    display: block;
+    width: 50px;
+    height: 3px;
+}
+.tip h2{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+}
+.tip > p{
+    padding: 3px 0 38px;
+    text-align: center;
+    font-size: 16px;
+}
+.tip ul{
+    width: 1180px;
+    margin: 0 auto;
+    display: flex;
+}
+.tip > ul  li{
+    flex: 1;
+    margin: 0 17px 0 0;
+}
+.tip ul li:last-child{
+    margin: 0;
+}
+.tip ul li a{
+    display: block;
+    width: 280px;
+}
+.tip ul li a img{
+    margin-bottom: 10px;
+    width: 280px;
+}
+.tip ul li a strong{
+    padding: 0 15px;
+    margin-top: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5em;
+    height: 3em;
+    letter-spacing: -1px;
+}
+
+/* tip css end */
 /* notice css start */
 .notice{
     background: url("../assets/bg_main_business.jpg") no-repeat center top;
@@ -602,6 +676,145 @@ header .spot li a:hover{
 
 
 /* footer css start */
+footer{
+    background-color: #4c5459;
+    color: #fff;
+    font-size: 14px;
+}
+footer .top{
+    background: #383f43;
+}
+footer .top > div{
+    width: 1180px;
+    margin: 0 auto;
+    padding: 13px 0;
+}
+footer .top >div ul{
+    float: left;
+}
+footer .top > div ul li{
+    float: left;
+    padding: 0 19px 0 0;
+    position: relative;
+}
+footer .top > div ul li::after{
+    content: "";
+    width: 1px;
+    height: 8px;
+    background: #70767a;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+footer .top > div ul li:last-child::after{
+    display: none;
+}
+footer .top > div ul li a{
+    color: #fff;
+    font-size: 13px;
+    line-height: 45px;
+}
+footer .top >div div{
+    float: right;
+    position: relative;
+    
+}
+footer .top >div div p{
+    display: inline-block;
+    color: #fff;
+    padding: 0 80px;
+    background-color: #2a3033;
+    vertical-align: top;
+    position: relative;
+}
+footer .top >div div p::after{
+    content: "제품구매 문의는 대리점 찾기에서 가까운 매장을 검색 해 주세요";
+    display: inline-block;
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    letter-spacing: -1px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+footer .top >div div p span{
+    display: inline-block;
+    height: 47px;
+    line-height: 31px;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: top;
+    letter-spacing: -1px;
+}
+footer .top >div div p strong{
+    margin-left: 16px;
+    font-weight: 300;
+    font-size: 18px;
+    font-weight: 500;
+}
+footer .top >div div select{
+    position: relative;
+    margin-left: 7px;
+    display: inline-block;
+    padding: 0 20px;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    color: #191919;
+    font-size: 12px;
+    border: none;
+}
+
+footer .bottom{
+    width: 1180px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 40px 0;
+    position: relative;
+    text-align: left;
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+footer .bottom p {
+    line-height: 27px;
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+footer .bottom p:nth-child(1){
+    display: inline-block;
+    background: url('../assets/sp_com.png') no-repeat -150px 0;
+    width: 130px;
+	height: 50px;
+    color: transparent;
+    margin-bottom: 25px;
+}
+footer .bottom p:nth-child(2) span:first-child{
+    position: relative;
+    margin: 0 10px;
+    color: transparent;
+}
+footer .bottom p:nth-child(2) span:first-child::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    width: 1px;
+    height: 10px;
+}
+footer .bottom p:nth-child(2) span:last-child{
+    font-size: 18px;
+    font-weight: 500;
+}
+footer .bottom p:nth-child(3){
+    
+}
 /* footer css end */
 
 /* slide css start */

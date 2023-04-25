@@ -158,6 +158,7 @@ a {
   color: #fff;
   overflow: hidden;
   position: relative;
+  padding: 50px 0;
 }
 .about h2 {
   display: block;
@@ -165,6 +166,88 @@ a {
   font-weight: 400;
   line-height: 62px;
   text-align: center;
+}
+
+.skill {
+  width: 1180px;
+  margin: 30px auto;
+}
+.skill > h3 {
+  margin-bottom: 30px;
+}
+.skill ul {
+  display: flex;
+  justify-content: space-around;
+}
+.skill ul li {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  width: 30%;
+}
+.skill ul li img {
+  display: block;
+  width: 150px;
+  margin: 0 auto 20px;
+}
+.skill ul li p {
+  font-size: 14px;
+  text-align: left;
+  margin: 10px 0 0;
+  line-height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+}
+.skill ul li p span {
+  display: block;
+  position: relative;
+}
+.skill ul li p span::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: -11px;
+  top: 8px;
+  background: #fff;
+}
+.skill .bottom{
+  margin: 30px 0;
+  height: 30vh;
+}
+.skill .bottom .left {
+  width: 50%;
+  float: left;
+}
+.skill .bottom .left div {
+  padding: 50px;
+  width: 500px;
+}
+.skill .bottom .left h3 {
+  text-align: right;
+  font-size: 70px;
+  font-weight: 700;
+}
+.skill .bottom .left h3 span {
+  display: block;
+  margin-top: 25px;
+}
+.skill .bottom .right {
+  width: 50%;
+  float: right;
+}
+.skill .bottom .right ol {
+  width: 500px;
+  padding: 50px 0;
+}
+.skill .bottom .right ol li {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.skill .bottom .right ol li:last-child{
+  margin-bottom: 0;
 }
 .marquee_box {
   display: flex;
@@ -214,7 +297,102 @@ a {
 .list__item img {
   width: 100px;
 }
-/* about css start*/
+
+.education {
+  width: 1180px;
+  margin: 30px auto;
+  clear: both;
+}
+.education h3 {
+  margin-bottom: 30px;
+}
+.education ul > li {
+  position: relative;
+  padding: 0px 20px 0px 60px;
+  margin: 0px 0px 50px;
+}
+.education ul > li::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  bottom: 0px;
+  border-left: 1px solid #08ffc8;
+}
+.education > ul > li .icon {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  background-color: #08ffc8;
+}
+.education > ul > li .icon i {
+  margin-top: 7px;
+  font-size: 25px;
+}
+.education > ul > li .time {
+  display: inline-block;
+  padding: 1px 10px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  background-color: rgb(37, 37, 37);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  opacity: 0.8;
+}
+
+.education > ul > li > h4 {
+  margin: 7px 0px 10px;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+.education > ul > li > h4 span {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.education > ul > li > p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.education > ul > li > h4 span::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  left: 7px;
+  top: 9px;
+  opacity: 0.8;
+}
+.education ul > li a {
+  background: url(../assets/notion.svg) no-repeat center;
+  padding-left: 37px;
+  width: 30px;
+  height: 25px;
+  color: #fff;
+  margin: 12px 0 0;
+  display: inline-block;
+  line-height: 25px;
+  font-size: 14px;
+  left: -7px;
+  position: relative;
+}
+.education ul > li a:hover {
+  background: url("../assets/notion\ 2.svg") no-repeat center;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* about css end*/
 
 /* portfolio css start */
 .portfolio {
@@ -265,7 +443,6 @@ a {
   font-weight: 500;
   line-height: 1.2em;
   color: #000;
-  border: 1px solid #000;
 }
 .portfolio > div .right a img {
   width: 100%;
@@ -378,7 +555,7 @@ a {
   flex-wrap: wrap;
   padding: 25px 0;
 }
-.contact .contact_box .right .info h2{
+.contact .contact_box .right .info h2 {
   width: 100%;
   text-align: start;
   font-size: 30px;
@@ -398,30 +575,30 @@ a {
   color: #fff;
 }
 
-.contact .contact_box .right .link{
+.contact .contact_box .right .link {
   padding: 25px 0;
 }
-.contact .contact_box .right .link h2{
+.contact .contact_box .right .link h2 {
   text-align: start;
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.contact .contact_box .right .link li{
+.contact .contact_box .right .link li {
   display: inline-block;
 }
 .contact .contact_box .right .link li:nth-child(2) {
-  background: url('../assets/kakaotalk\ 1.svg') no-repeat center;
+  background: url("../assets/kakaotalk\ 1.svg") no-repeat center;
 }
-.contact .contact_box .right .link li:nth-child(2) a{
+.contact .contact_box .right .link li:nth-child(2) a {
 }
 .contact .contact_box .right .link li:nth-child(3) {
-  background: url('../assets/naver\ 1.svg') no-repeat center;
+  background: url("../assets/naver\ 1.svg") no-repeat center;
 }
 .contact .contact_box .right .link li:nth-child(4) {
-  background: url('../assets/github\ \(1\)\ 1.svg') no-repeat center;
+  background: url("../assets/github\ \(1\)\ 1.svg") no-repeat center;
 }
-.contact .contact_box .right .link li a{
+.contact .contact_box .right .link li a {
   display: block;
   width: 35px;
   height: 35px;
@@ -430,7 +607,7 @@ a {
   color: transparent;
   margin: 5px 15px;
 }
-.contact .contact_box .right .link li a:hover{
+.contact .contact_box .right .link li a:hover {
   background: rgba(45, 91, 121, 0.3);
 }
 /* contact css end */

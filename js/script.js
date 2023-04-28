@@ -41,31 +41,35 @@ window.onscroll = () => {
   });
 };
 
-function Marquee(selector, speed) {
-  const parentSelector = document.querySelector(selector);
-  const clone = parentSelector.innerHTML;
-  const firstElement = parentSelector.children[0];
-  let i = 0;
-  console.log(firstElement);
-  parentSelector.insertAdjacentHTML("beforeend", clone);
-  parentSelector.insertAdjacentHTML("beforeend", clone);
+window.addEventListener('click', () =>{
+  let goToTop = document.querySelector('.marquee')
+  this.target == gotoTop && window.scrollTo(0,0);
+})
+// function Marquee(selector, speed) {
+//   const parentSelector = document.querySelector(selector);
+//   const clone = parentSelector.innerHTML;
+//   const firstElement = parentSelector.children[0];
+//   let i = 0;
+//   console.log(firstElement);
+//   parentSelector.insertAdjacentHTML("beforeend", clone);
+//   parentSelector.insertAdjacentHTML("beforeend", clone);
 
-  setInterval(function () {
-    firstElement.style.marginLeft = `-${i}px`;
-    if (i > firstElement.clientWidth) {
-      i = 0;
-    }
-    i = i + speed;
-  }, 0);
-}
+//   setInterval(function () {
+//     firstElement.style.marginLeft = `-${i}px`;
+//     if (i > firstElement.clientWidth) {
+//       i = 0;
+//     }
+//     i = i + speed;
+//   }, 0);
+// }
 
-//after window is completed load
-//1 class selector for marquee
-//2 marquee speed 0.2
-window.addEventListener("load", () => {
-  Marquee(".marquee", 0.8);
+// //after window is completed load
+// //1 class selector for marquee
+// //2 marquee speed 0.2
+// window.addEventListener("load", () => {
+//   Marquee(".marquee", 0.8);
   
-});
+// });
 
 
 

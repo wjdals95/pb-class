@@ -214,10 +214,14 @@ a {
 .skill .bottom {
   margin: 30px 0;
   height: 30vh;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,20,20,1) 0%, rgba(7,7,71,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(16, 20, 20, 1) 0%,
+    rgba(7, 7, 71, 1) 100%
+  );
   border-radius: 30px;
-
 }
 .skill .bottom .left {
   width: 50%;
@@ -251,11 +255,12 @@ a {
 .skill .bottom .right ol li:last-child {
   margin-bottom: 0;
 }
-.marquee_box {
+/* .marquee_box {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
 .marquee {
   overflow: hidden;
   border-top: 1px solid #000;
@@ -263,7 +268,6 @@ a {
   display: flex;
   padding: 5px 0;
 }
-
 .marquee h2 {
   font-size: 5em;
   margin: 0 10px;
@@ -298,7 +302,7 @@ a {
 }
 .list__item img {
   width: 100px;
-}
+} */
 
 .education {
   width: 1180px;
@@ -642,3 +646,47 @@ a {
   background: rgba(45, 91, 121, 0.3);
 }
 /* contact css end */
+
+.gototop .marquee {
+  position: relative;
+  overflow: hidden;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+}
+.gototop .marquee a {
+  text-decoration: none;
+  color: rgb(63, 59, 55);
+  background-color: rgb(193, 192, 182);
+}
+.gototop .marquee a:hover {
+  color: rgb(222, 221, 207);
+  background: rgb(63, 59, 55);
+}
+.gototop .marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.gototop .marquee span {
+  font-size: 8vw;
+  padding: 0 3vw;
+}
+
+.gototop .marquee:hover .marquee__inner {
+  animation-play-state: running;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}

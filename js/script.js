@@ -1,3 +1,15 @@
+const swiper = new Swiper(".swiper-container", {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 const menuIcon = document.querySelector("#menu_icon");
 const navBar = document.querySelector(".navbar");
 const navBg = document.querySelector(".nav_bg");

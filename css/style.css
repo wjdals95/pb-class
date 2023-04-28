@@ -9,9 +9,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
-li {
-  list-style: none;
-}
+
 a {
   text-decoration: none;
 }
@@ -213,9 +211,13 @@ a {
   top: 8px;
   background: #fff;
 }
-.skill .bottom{
+.skill .bottom {
   margin: 30px 0;
   height: 30vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,20,20,1) 0%, rgba(7,7,71,1) 100%);
+  border-radius: 30px;
+
 }
 .skill .bottom .left {
   width: 50%;
@@ -246,7 +248,7 @@ a {
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
-.skill .bottom .right ol li:last-child{
+.skill .bottom .right ol li:last-child {
   margin-bottom: 0;
 }
 .marquee_box {
@@ -306,22 +308,30 @@ a {
 .education h3 {
   margin-bottom: 30px;
 }
-.education ul > li {
+.swiper-container {
+  overflow: hidden;
+  position: relative;
+}
+.education .swiper-container .swiper-wrapper .swiper-slide {
   position: relative;
   padding: 0px 20px 0px 60px;
-  margin: 0px 0px 50px;
 }
-.education ul > li::after {
+.education .swiper-container .swiper-wrapper .swiper-slide > div {
+  width: 920px;
+  margin: 0 auto;
+  position: relative;
+}
+.education .swiper-container .swiper-wrapper .swiper-slide > div::after {
   content: "";
   position: absolute;
   top: 0px;
-  left: 20px;
+  left: -41px;
   bottom: 0px;
   border-left: 1px solid #08ffc8;
 }
-.education > ul > li .icon {
+.education .swiper-container .swiper-wrapper .swiper-slide > div .icon {
   position: absolute;
-  left: 0px;
+  left: -60px;
   right: 0px;
   z-index: 1;
   width: 40px;
@@ -332,12 +342,14 @@ a {
   color: black;
   background-color: #08ffc8;
 }
-.education > ul > li .icon i {
+.education .swiper-container .swiper-wrapper .swiper-slide > div .icon i {
   margin-top: 7px;
   font-size: 25px;
 }
-.education > ul > li .time {
-  display: inline-block;
+.education .swiper-container .swiper-wrapper .swiper-slide > div .time {
+  display: block;
+  width: 130px;
+  text-align: center;
   padding: 1px 10px;
   margin-bottom: 12px;
   border-radius: 20px;
@@ -348,24 +360,30 @@ a {
   opacity: 0.8;
 }
 
-.education > ul > li > h4 {
+.education .swiper-container .swiper-wrapper .swiper-slide > div > h4 {
   margin: 7px 0px 10px;
   font-size: 18px;
   font-weight: 500;
   opacity: 0.8;
 }
-.education > ul > li > h4 span {
+.education .swiper-container .swiper-wrapper .swiper-slide > div > h4 span {
   position: relative;
   padding-left: 26px;
   font-size: 15px;
   font-weight: 600;
   opacity: 0.6;
 }
-.education > ul > li > p {
+.education .swiper-container .swiper-wrapper .swiper-slide > div > p {
   font-size: 14px;
   line-height: 20px;
 }
-.education > ul > li > h4 span::before {
+.education
+  .swiper-container
+  .swiper-wrapper
+  .swiper-slide
+  > div
+  > h4
+  span::before {
   position: absolute;
   content: "";
   width: 10px;
@@ -375,7 +393,7 @@ a {
   top: 9px;
   opacity: 0.8;
 }
-.education ul > li a {
+.education .swiper-container .swiper-wrapper .swiper-slide > div a {
   background: url(../assets/notion.svg) no-repeat center;
   padding-left: 37px;
   width: 30px;
@@ -388,9 +406,22 @@ a {
   left: -7px;
   position: relative;
 }
-.education ul > li a:hover {
+.education .swiper-container .swiper-wrapper .swiper-slide > div a:hover {
   background: url("../assets/notion\ 2.svg") no-repeat center;
   color: rgba(255, 255, 255, 0.7);
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  top: 90% !important;
+}
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff !important;
 }
 /* about css end*/
 

@@ -447,7 +447,7 @@ a {
 }
 .portfolio > div .left {
   position: sticky;
-  top: 70px;
+  top: 30%;
   width: 50%;
   height: 100vh;
   float: left;
@@ -467,12 +467,12 @@ a {
 }
 .portfolio > div .right {
   width: 50%;
-  height: 100%;
   float: left;
+  height: 100%;
 }
 .portfolio > div .right a {
   display: block;
-  margin: 4vw 0;
+  padding: 0 0 4vw 0;
   text-decoration: none;
   font-size: 2vw;
   font-weight: 500;
@@ -500,6 +500,7 @@ a {
   overflow: hidden;
   width: 1920px;
   max-width: 100%;
+  padding: 0 0 80px 0 ;
 }
 .contact > h2 {
   font-size: 80px;
@@ -647,46 +648,109 @@ a {
 }
 /* contact css end */
 
-.gototop .marquee {
-  position: relative;
+.gototop{
   overflow: hidden;
-  --offset: 20vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-}
-.gototop .marquee a {
-  text-decoration: none;
-  color: rgb(63, 59, 55);
-  background-color: rgb(193, 192, 182);
-}
-.gototop .marquee a:hover {
-  color: rgb(222, 221, 207);
-  background: rgb(63, 59, 55);
-}
-.gototop .marquee__inner {
-  width: fit-content;
-  display: flex;
-  position: relative;
-  transform: translate3d(var(--move-initial), 0, 0);
-  animation: marquee 1s linear infinite;
-  animation-play-state: paused;
 }
 
-.gototop .marquee span {
-  font-size: 8vw;
-  padding: 0 3vw;
+.menu {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 30px 0 50px;
+	--marquee-width: 100vw;
+	--offset: 20vw;
+	--move-initial: calc(-25% + var(--offset));
+	--move-final: calc(-50% + var(--offset));
+	--item-font-size: 8vw;
+	counter-reset: menu;
+  background: #1f242d;
 }
 
-.gototop .marquee:hover .marquee__inner {
-  animation-play-state: running;
+.menu__item {
+	cursor: default;
+	position: relative;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translate3d(var(--move-initial), 0, 0);
-  }
-
-  100% {
-    transform: translate3d(var(--move-final), 0, 0);
-  }
+.menu__item-link {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	-webkit-text-stroke: 1.5px #000;
+	text-stroke: 1.5px #000;
+	-webkit-text-fill-color: #fff;
+	text-fill-color: #fff;
+	color: #fff;
+	transition: opacity 0.4s;
 }
+
+.menu__item-link:hover {
+	transition-duration: 0.1s;
+	opacity: 0;
+}
+
+/* Make sure 3 items are visible in the viewport by setting suitable font size. */
+
+.marquee1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--marquee-width);
+	overflow: hidden;
+	pointer-events: none;
+	mix-blend-mode: color-burn;
+}
+
+.marquee__inner {
+	width: fit-content;
+	display: flex;
+	position: relative;
+	transform: translate3d(var(--move-initial), 0, 0);
+	animation: marquee1 1s linear infinite;
+	animation-play-state: paused;
+	opacity: 0;
+	transition: opacity 0.1s;
+}
+
+.menu__item-link:hover ~ .marquee1 .marquee__inner {
+	animation-play-state: running;
+	opacity: 1;
+	transition-duration: 0.4s;
+}
+
+.marquee1 span {
+	text-align: center;
+}
+
+.menu__item-link,
+.marquee1 span {
+	white-space: nowrap;
+	font-size: var(--item-font-size);
+	padding: 0 1vw;
+	font-weight: 900;
+}
+
+.marquee1 span {
+	font-style: italic;
+}
+
+@keyframes marquee1 {
+	0% {
+		transform: translate3d(var(--move-initial), 0, 0);
+	}
+
+	100% {
+		transform: translate3d(var(--move-final), 0, 0);
+	}
+}
+
+/* footer css start */
+footer{
+  background: #fff;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  padding: 10px 0;
+}
+/* footer css end */

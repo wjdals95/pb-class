@@ -1,0 +1,28 @@
+.search{
+    display: flex;
+    text-align: center;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid $purple;
+    padding: 0 5px;
+    &__button{
+        // background: url("../image/Search=primary.svg") no-repeat center;
+        @include bg('Search=primary.svg', center);
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+    }
+    input{
+        width: 345px;
+        height: 35px;
+        border-radius: 8px;
+        border: none;
+        position: relative;
+        top: 6px;
+        &::placeholder{
+            font-size: 17px;
+            color: $grey96;
+            line-height: 46px;
+        }
+    }
+}

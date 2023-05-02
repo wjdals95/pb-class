@@ -1,0 +1,10 @@
+@import "./abstracks/variable"; //변수
+@import "./abstracks/mixin"; //믹스인
+
+@import "./base/reset"; //리셋
+@import "./base/typography"; //텍스트
+
+@import "./layout/header"; //해더
+
+@import "./component/search"; //검색
+@import "./component/gnb"; //메뉴

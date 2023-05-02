@@ -9,27 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>타이어픽</title>
     <!-- my css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
     <header class="header">
-        <h1><a href=""><img src="./image/Tirepick.svg" alt="타이어픽로고"></a></h1>
-        <h2 class="hide">검색</h2>
-        <div class="search">
-            <input type="search" placeholder="타이어, 배터리, 엔진오일 검색" title="검색어 입력">
-            <button aria-label="검색"></button>
+        <h1 class="logo"><a href=""><img src="./image/Tirepick.svg" alt="타이어픽로고"></a></h1>
+        <div class="header__nav">
+            <h2 class="hide">검색</h2>
+            <div class="search">
+                <input type="search" placeholder="타이어, 배터리, 엔진오일 검색" title="검색어 입력">
+                <button aria-label="검색" class="search__button"></button>
+            </div>
+            <h2 class="hide">메뉴</h2>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="">타이어</a></li>
+                    <li><a href="">엔진오일</a></li>
+                    <li><a href="">배터리</a></li>
+                    <li><a href="">매장</a></li>
+                    <li><a href="">이벤트</a></li>
+                    <li><a href="">고객센터</a></li>
+                </ul>
+            </nav>
         </div>
-        <h2 class="hide">메뉴</h2>
-        <nav>
-            <ul>
-                <li><a href="">타이어</a></li>
-                <li><a href="">엔진오일</a></li>
-                <li><a href="">배터리</a></li>
-                <li><a href="">매장</a></li>
-                <li><a href="">이벤트</a></li>
-                <li><a href="">고객센터</a></li>
-            </ul>
-        </nav>
         <div class="spot-menu">
             <nav>
                 <ul>

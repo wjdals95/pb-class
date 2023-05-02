@@ -1,3 +1,4 @@
+//스와이퍼
 const swiper = new Swiper(".swiper-container", {
   loop: true,
   pagination: {
@@ -10,6 +11,7 @@ const swiper = new Swiper(".swiper-container", {
   },
 });
 
+//내비게이션
 const menuIcon = document.querySelector("#menu_icon");
 const navBar = document.querySelector(".navbar");
 const navBg = document.querySelector(".nav_bg");
@@ -41,6 +43,29 @@ window.onscroll = () => {
   });
 };
 
+//컨택섹션 텍스트
+// let didScroll = false;
+// let paralaxTitles = document.querySelectorAll('.paralax-title');
+
+// const scrollInProgress = () => {
+//   didScroll = true
+// }
+
+// const raf = () => {
+//   if(didScroll) {
+//     paralaxTitles.forEach((element, index) => {
+//       element.style.transform = "translateX("+ window.scrollY / 10 + "%)"
+//     })
+//     didScroll = false;
+//   }
+//   requestAnimationFrame(raf);
+// }
+
+
+// // requestAnimationFrame(raf);
+// window.addEventListener('scroll', scrollInProgress)
+
+//퀵메뉴
 window.addEventListener('click', (e) =>{
   
   let goToTop = document.querySelector('.menu__item-link')

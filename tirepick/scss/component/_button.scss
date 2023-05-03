@@ -1,0 +1,7 @@
+.btn{
+    &_close{
+        @include bg('Close.svg', center);
+        width: 58px;
+        height: 58px;
+    }
+}

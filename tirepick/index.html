@@ -8,6 +8,8 @@
     <meta name="author" content="jeonmin">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>타이어픽</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="js/global.js"></script>
     <!-- my css -->
     <link rel="stylesheet" href="./scss/style.css">
 </head>
@@ -35,14 +37,39 @@
         <div class="spot-menu">
             <nav>
                 <ul>
-                    <li><a href="">이용안내</a></li>
-                    <li><a href="">장바구니</a></li>
-                    <li><a href="">마이페이지</a></li>
-                    <li aria-hidden="true"><button>전체메뉴</button></li>
-                    <li><a href="">로그인</a></li>
+                    <li class="hidden"><a href="">이용안내</a></li>
+                    <li class="spot-menu__cart"><a href=""><span>장바구니</span></a></li>
+                    <li class="spot-menu__mypage"><a href=""><span>마이페이지</span></a></li>
+                    <li aria-hidden="true"><button class="btn-megamenu"><span>전체메뉴</span></button></li>
+                    <li class="hidden"><a href="">로그인</a></li>
                 </ul>
             </nav>
         </div>  
     </header>
+    <aside class="megamenu">
+        <nav>
+            <ul>
+                <li data-last><a href="">로그인</a></li>
+                <li class="bold"><a href="">타이어</a></li>
+                <li class="bold"><a href="">엔진오일</a></li>
+                <li class="bold"><a href="">배터리</a></li>
+                <li class="bold"><a href="">매장</a></li>
+                <li class="bold"><a href="">이벤트</a></li>
+                <li class="bold" data-last><a href="">고객센터</a></li>
+                <li><a href="">마이페이지</a></li>
+                <li><a href="">장바구니</a></li>
+                <li><a href="">매장 제휴신청</a></li>
+                <li data-last><a href="">이용안내</a></li>
+            </ul>
+        </nav>
+        <div class="app">
+            <div class="app__txt">
+                타이어픽 앱 설치하면 <span class="txt-purple">세차가 100원!</span> 
+            </div>
+            <a href=""><img src="image/Googlestore.svg" alt="앱스토어">App Store</a>
+            <a href=""><img src="image/Apple.svg" alt="구글플레이">Google Play</a>
+        </div>
+        <button class="btn_close" aria-label="닫기"></button>
+    </aside>
 </body>
 </html>

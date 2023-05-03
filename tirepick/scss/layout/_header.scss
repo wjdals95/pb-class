@@ -1,52 +1,98 @@
-.header{
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 40px 0;
+  @include mobile {
+    padding: 0 15px;
+  }
+  &__nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 48px 40px 0;
-    &__nav{
-        display: flex;
-        align-items: center;
-        gap: 40px;
+    gap: 40px;
+    @include mobile {
+      display: none;
     }
+  }
 }
-.logo{
-    font-size: 0px;
+.logo {
+  font-size: 0px;
 }
-.spot-menu{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    //left와 right에 0을 주면 width 100% 효과가 난다.
-    border-bottom: 1px solid $grey7;
-    padding: 0 40px;
-    nav{
-        display: flex;
-        justify-content: flex-end;
+.spot-menu {
+  @include position(left, 0, top, 0);
+  // position: absolute;
+  // top: 0;
+  width: 100%;
+  //left와 right에 0을 주면 width 100% 효과가 난다.
+  border-bottom: 1px solid $grey7;
+  box-sizing: border-box;
+  padding: 0 40px;
+  @include mobile {
+    position: static;
+    border: none;
+    padding: 0;
+    a,
+    button {
+      width: 45px;
+      height: 56px;
     }
-    ul{
-        display: flex;
+    &__cart a {
+      @include bg("Cart.svg", center);
     }
-    li{
-        +li{
-            display: flex;
-            //자식요소들이 block요소가 된다.
-            align-items: center;
-            height: 30px;
-            &::before{
-                content: "";
-                width: 2px;
-                height: 10px;
-                background-color: $greydd;
-                margin: 0 20px;
-            }
-        }
+    &__mypage a {
+      @include bg("Profile.svg", center);
     }
-    a{
-        font-size: 13px;
-        color: $grey6f;
+    span {
+      @include hide;
     }
-    [aria-hidden]{
+  }
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    @include mobile {
+      height: auto;
+      &.hidden {
         display: none;
+      }
     }
+    + li {
+      display: flex;
+      //자식요소들이 block요소가 된다.
+      align-items: center;
+      height: 30px;
+      &::before {
+        content: "";
+        width: 2px;
+        height: 10px;
+        background-color: $greydd;
+        margin: 0 20px;
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+  a {
+    font-size: 13px;
+    color: $grey6f;
+  }
+  [aria-hidden] {
+    display: none;
+    @include mobile {
+      button {
+        @include bg("menu.svg", center);
+        cursor: pointer;
+      }
+      display: flex;
+    }
+  }
 }

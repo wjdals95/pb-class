@@ -10,3 +10,7 @@
 @import "./component/gnb"; //메뉴
 @import "./component/megamenu"; //팝업메뉴
 @import "./component/button"; //버튼
+@import "./component/slide"; //슬라이드
+
+@import "./vendor/swiper-vars.scss"; //스와이퍼 변수
+@import "./vendor/swiper.scss"; //스와이퍼

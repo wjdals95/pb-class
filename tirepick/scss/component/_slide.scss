@@ -1,0 +1,67 @@
+.visual {
+  position: relative;
+  height: 500px;
+  background-color: $skyblue;
+  @include mobile {
+    height: 425px;
+  }
+  &__paging {
+    @include position(left, 50%, bottom, 10px);
+    display: flex;
+    padding: 4px;
+    background-color: rgba($white, 0.5);
+    border-radius: 8px;
+    z-index: 1000;
+    button {
+      cursor: pointer;
+      padding: 0 30px;
+      height: 30px;
+      background-color: transparent;
+      border-radius: 6px;
+      transition: background 0.3s;
+      color: $grey5a;
+      white-space: nowrap;
+      &[aria-current] {
+        background-color: $white;
+        box-shadow: 1px 1px 3px rgba($black, 0.1);
+        color: $black;
+      }
+    }
+  }&__paging__mobile {
+    @include position(left, 50%, bottom, 10px);
+    display: flex;
+    padding: 4px;
+    background-color: rgba($white, 0.5);
+    border-radius: 8px;
+    z-index: 1000;
+    @include mobile {
+      left: inherit;
+      right: 20px;
+      font-size: 12px;
+      padding: 0 12px;
+      line-height: 20px;
+      border-radius: 20px;
+      .swiper-pagination-total {
+        &::after {
+          content: "+";
+          padding-left: 5px;
+        }
+      }
+    }
+    button {
+      cursor: pointer;
+      padding: 0 30px;
+      height: 30px;
+      background-color: transparent;
+      border-radius: 6px;
+      transition: background 0.3s;
+      color: $grey5a;
+      white-space: nowrap;
+      &[aria-current] {
+        background-color: $white;
+        box-shadow: 1px 1px 3px rgba($black, 0.1);
+        color: $black;
+      }
+    }
+  }
+}

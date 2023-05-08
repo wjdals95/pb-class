@@ -1,18 +1,25 @@
 (() => {
   const load = document.querySelector(".load");
   const html = document.querySelector('html');
+  const $loadTop = document.querySelector(".load_top");
 
   html.style.overflow = "hidden";
+
+  function loadingTop() {
+    setTimeout(() => {
+      $loadTop.classList.add("visible");
+    }, 1000);
+  }
 
   window.addEventListener("load", () => {
     scrollTo(0, 0);
     setTimeout(() => {
       load.classList.add("hide");
       html.style.overflow = "auto";
-    }, 2000);
-    setLayout();
+    }, 3000);
+    loadingTop();
   });
-  
+
   //스와이퍼
   var swiper = new Swiper(".swiper-container", {
     loop: true,

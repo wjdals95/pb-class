@@ -76,51 +76,40 @@ a {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  opacity: 1;
   transition: all 0.5s;
 }
 .load.hide {
-  opacity: 0;
   z-index: -9999;
 }
 .load .bg {
   position: relative;
-  background-color: #191919;
+  background-color: #000;
   width: 100%;
   height: 100vh;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   transition: transform 0.5s;
-  animation: loaded 0.4s ease-out 1.5s 1 forwards;
+  animation: loaded 0.4s ease-out 3s 1 forwards;
 }
 @keyframes loaded {
   from {
-    transform: translate3d(0,0,0);
-  }
-  to {
-    transform: translate3d(0,-100%,0);
-  }
-}
-.load img {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  animation: loadTop 1s ease-in;
-}
-@keyframes loadTop {
-  from {
-    transform: translate3d(0, 50%, 0);
-    opacity: 0;
-  }
-  to {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
   }
 }
-.load h2:nth-child(1) {
+
+.load h2 {
   position: absolute;
-  top: 25%;
-  font-size: 12rem;
+  font-size: 11vw;
   font-weight: 600;
-  animation: loadRight 0.5s ease-in;
+}
+
+.load h2:nth-child(1) {
+  top: 25%;
+  left: 5%;
+  animation: loadRight 0.7s ease-in;
 }
 @keyframes loadRight {
   from {
@@ -133,12 +122,9 @@ a {
   }
 }
 .load h2:nth-child(2) {
-  position: absolute;
   top: 50%;
-  right: 0;
-  font-size: 12rem;
-  font-weight: 600;
-  animation: loadLeft 0.5s ease-in;
+  right: 5%;
+  animation: loadLeft 0.7s ease-in;
 }
 @keyframes loadLeft {
   from {
@@ -150,6 +136,27 @@ a {
     opacity: 1;
   }
 }
+.load .bg .load_top {
+  font-size: 4vw;
+  position: absolute;
+  top: 36%;
+  right: 17%;
+  animation: loadTop 1.5s ease-in 0.5s;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.load .bg .load_top.visible {
+  opacity: 1;
+}
+@keyframes loadTop {
+  from {
+    transform: translate3d(0, 20%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /* load  css end*/
 /* home css start */
 .home {
@@ -816,7 +823,22 @@ footer {
   }
   .portfolio .right a p {
     font-size: 4vw;
-    
+  }
+  .load h2:nth-child(1) {
+    top: 40%;
+    left: 5%;
+    font-size: 10vw;
+  }
+  .load h2:nth-child(2) {
+    top: 45%;
+    left: 5%;
+    font-size: 12vw;
+
+  }
+  .load .bg .load_top {
+    font-size: 5vw;
+    top: 52%;
+    left: 5%;
   }
 }
 

@@ -9,12 +9,12 @@
     setTimeout(() => {
       load.classList.add("hide");
       html.style.overflow = "auto";
-    }, 1000);
+    }, 2000);
+    setLayout();
   });
   
-  
   //스와이퍼
-  const swiper = new Swiper(".swiper-container", {
+  var swiper = new Swiper(".swiper-container", {
     loop: true,
     pagination: {
       el: ".swiper-pagination",
@@ -87,7 +87,7 @@
     e.target == goToTop && window.scrollTo(0,0);
   })
   
-
+ 
 })();
 
 

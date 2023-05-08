@@ -21,7 +21,7 @@ a {
   z-index: 10;
   width: 100%;
   padding: 20px 120px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,23 +77,42 @@ a {
   height: 100%;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 1s;
+  transition: all 0.5s;
 }
 .load.hide {
   opacity: 0;
+  z-index: -9999;
 }
 .load .bg {
   position: relative;
   background-color: #191919;
   width: 100%;
-  animation: loaded 0.4s ease-out 1s 1 forwards;
+  height: 100vh;
+  transition: transform 0.5s;
+  animation: loaded 0.4s ease-out 1.5s 1 forwards;
 }
 @keyframes loaded {
   from {
-    height: 100vh;
+    transform: translate3d(0,0,0);
   }
   to {
-    height: 0;
+    transform: translate3d(0,-100%,0);
+  }
+}
+.load img {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  animation: loadTop 1s ease-in;
+}
+@keyframes loadTop {
+  from {
+    transform: translate3d(0, 50%, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 .load h2:nth-child(1) {
@@ -105,7 +124,7 @@ a {
 }
 @keyframes loadRight {
   from {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
     opacity: 0;
   }
   to {
@@ -123,7 +142,7 @@ a {
 }
 @keyframes loadLeft {
   from {
-    transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
     opacity: 0;
   }
   to {
@@ -430,45 +449,37 @@ a {
 /* portfolio css start */
 .portfolio {
   background: rgb(136 96 96 / 10%);
-  overflow: unset !important;
   position: relative;
-  display: block;
+  display: flex;
   min-height: 100vh;
-  padding-top: calc(100vw * 0.1);
-  padding-bottom: calc(100vw * 0.1);
+  padding: calc(100vw * 0.1) 0;
 }
-.portfolio > div {
-  width: 1920px;
-  max-width: 100%;
-  display: block;
-  height: 2750px;
-}
-.portfolio > div .left {
+
+.portfolio .left {
   position: sticky;
   top: 30%;
   width: 50%;
-  height: 100vh;
-  float: left;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: calc(100vw * 0.1);
   color: #000;
-  padding: calc((100vw - 180px) * 0.06);
+  font-size: 5vw;
+  line-height: 0.5;
+  font-weight: 600;
 }
-.portfolio > div .left h2 {
+
+.portfolio .left span {
   font-size: 3vw;
-  line-height: 3.3vw;
-  font-weight: 400;
-}
-.portfolio > div .left h3 {
-  font-size: 2vw;
-  line-height: 2vw;
-  font-weight: 400;
+  line-height: 1;
+  font-weight: 500;
   margin-bottom: 30px;
 }
-.portfolio > div .right {
+.portfolio .right {
   width: 50%;
-  float: left;
-  height: 100%;
+  padding: 0 20px;
 }
-.portfolio > div .right a {
+.portfolio .right a {
   display: block;
   padding: 0 0 4vw 0;
   text-decoration: none;
@@ -477,15 +488,17 @@ a {
   line-height: 1.2em;
   color: #000;
 }
-.portfolio > div .right a img {
+.portfolio .right a:last-child {
+  padding: 0;
+}
+.portfolio .right a img {
   width: 100%;
   height: 60vh;
 }
-.portfolio > div .right a span {
+.portfolio .right a p {
   display: block;
   padding: 25px;
 }
-
 /* portfolio css end */
 
 /* contact css start */
@@ -781,7 +794,30 @@ footer {
     justify-content: center;
     align-items: unset;
   }
-  
+  .portfolio {
+    display: block;
+  }
+
+  .portfolio .left {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 0;
+    margin: 0 0 20px;
+    align-items: center;
+  }
+  .portfolio .right {
+    width: 100%;
+  }
+  .portfolio .right a img {
+    
+    height: auto;
+  }
+  .portfolio .right a p {
+    font-size: 4vw;
+    
+  }
 }
 
 @media (max-width: 768px) {

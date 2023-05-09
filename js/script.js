@@ -16,7 +16,7 @@
     setTimeout(() => {
       load.classList.add("hide");
       html.style.overflow = "auto";
-    }, 1000);
+    }, 3000);
     loadingTop();
   });
 

@@ -14,8 +14,9 @@ a {
   text-decoration: none;
 }
 
-body{
+body {
   background-color: #c1c0b6;
+  color: #3f3b37;
 }
 /* header css start */
 .header {
@@ -60,7 +61,7 @@ body{
 }
 .navbar a:hover,
 .navbar a.active {
-  color: #f00;
+  color: #d6ae5d;
 }
 #menu_icon {
   color: #fff;
@@ -93,7 +94,7 @@ body{
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   transition: transform 0.5s;
-  animation: loaded 0.4s ease-out 1s 1 forwards;
+  animation: loaded 0.4s ease-out 3s 1 forwards;
 }
 @keyframes loaded {
   from {
@@ -169,14 +170,13 @@ body{
   display: flex;
   align-items: center;
   background: rgb(136 96 96 / 10%);
-  
 }
-.home-wrapper{
+.home-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.home-wrapper h2{
+.home-wrapper h2 {
   font-size: 10rem;
   cursor: default;
 }
@@ -185,7 +185,7 @@ body{
 .about {
   min-height: 100vh;
   /* background: #323946; */
-  color: #000;
+  color: #3f3b37;
   overflow: hidden;
   position: relative;
   padding: 50px 0;
@@ -281,54 +281,6 @@ body{
 .skill .bottom .right ol li:last-child {
   margin-bottom: 0;
 }
-/* .marquee_box {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.marquee {
-  overflow: hidden;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  display: flex;
-  padding: 5px 0;
-}
-.marquee h2 {
-  font-size: 5em;
-  margin: 0 10px;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-.wrap {
-  margin: 0 auto;
-  width: 1920px;
-  max-width: 100%;
-}
-.wrap--logobar {
-  height: 150px;
-  overflow: hidden;
-  position: relative;
-}
-.list {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  width: 100%;
-  margin-left: 0;
-}
-.list__item {
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding: 20px 0;
-  text-align: center;
-  width: 20%;
-}
-.list__item img {
-  width: 100px;
-} */
 
 .education {
   width: 1180px;
@@ -369,7 +321,7 @@ body{
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
-  color: black;
+  color: #3f3b37;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div .icon i {
@@ -428,7 +380,7 @@ body{
   padding-left: 37px;
   width: 30px;
   height: 25px;
-  color: #fff;
+  color: #3f3b37;
   margin: 12px 0 0;
   display: inline-block;
   line-height: 25px;
@@ -438,7 +390,7 @@ body{
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div a:hover {
   background: url("../assets/notion\ 2.svg") no-repeat center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #d6ae5d;
 }
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -451,7 +403,7 @@ body{
 }
 .swiper-button-prev,
 .swiper-button-next {
-  color: #fff !important;
+  color: #3f3b37 !important;
 }
 /* about css end*/
 
@@ -472,7 +424,7 @@ body{
   display: flex;
   flex-direction: column;
   padding-left: calc(100vw * 0.1);
-  color: #000;
+  color: #3f3b37;
   font-size: 5vw;
   line-height: 0.5;
   font-weight: 600;
@@ -495,7 +447,7 @@ body{
   font-size: 2vw;
   font-weight: 500;
   line-height: 1.2em;
-  color: #000;
+  color: #3f3b37;
 }
 .portfolio .right a:last-child {
   padding: 0;
@@ -781,13 +733,12 @@ body{
 }
 
 /* footer css start */
-footer {
+.footer {
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #c1c0b6;
 }
 .footer-wrapper {
   display: flex;
@@ -909,6 +860,9 @@ footer {
     justify-content: center;
     align-items: unset;
   }
+  .home-wrapper h2 {
+    font-size: 4rem;
+  }
   .portfolio {
     display: block;
   }
@@ -926,7 +880,6 @@ footer {
     width: 100%;
   }
   .portfolio .right a img {
-    
     height: auto;
   }
   .portfolio .right a p {
@@ -941,7 +894,6 @@ footer {
     top: 45%;
     left: 5%;
     font-size: 12vw;
-
   }
   .load .bg .load_top {
     font-size: 5vw;

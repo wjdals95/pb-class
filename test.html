@@ -5,132 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .load {
-        color: #fff;
-        position: fixed;
-        display: flex;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        opacity: 1;
-        transition: all 0.5s;
-      }
-      .load.hide {
-        opacity: 0;
-        z-index: -9999;
-      }
-      .load .bg {
-        position: relative;
-        background-color: #191919;
-        width: 100%;
+   <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .home{
         height: 100vh;
-        transition: transform 0.5s;
-        animation: loaded 0.4s ease-out 3s 1 forwards;
-      }
-      @keyframes loaded {
-        from {
-          transform: translate3d(0, 0, 0);
-        }
-        to {
-          transform: translate3d(0, -100%, 0);
-        }
-      }
-      .load h2 {
-        position: absolute;
-        font-size: 12vw;
-        font-weight: 600;
-      }
-
-      .load h2:nth-child(1) {
-        top: 10%;
-        left: 5%;
-        animation: loadRight 0.7s ease-in;
-      }
-      @keyframes loadRight {
-        from {
-          transform: translate3d(-100%, 0, 0);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      .load h2:nth-child(2) {
-        top: 35%;
-        right: 5%;
-        animation: loadLeft 0.7s ease-in;
-      }
-      @keyframes loadLeft {
-        from {
-          transform: translate3d(100%, 0, 0);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      .load .bg .load_top {
-        font-size: 5vw;
-        position: absolute;
-        top: 28%;
-        right: 10%;
-        animation: loadTop 1.5s ease-in 0.5s;
-        opacity: 0;
-        transition: opacity 1s ease-in;
-      }
-      .load .bg .load_top.visible {
-        opacity: 1;
-      }
-      @keyframes loadTop {
-        from {
-          transform: translate3d(0, 20%, 0);
-        }
-        to {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-
-      @media (max-width: 968px) {
-        .load h2:nth-child(1) {
-          top: 35%;
-          left: 5%;
-          font-size: 10vw;
-        }
-        .load h2:nth-child(2) {
-          top: 40%;
-          left: 5%;
-        }
-        .load .bg .load_top {
-          font-size: 5vw;
-          top: 50%;
-          left: 10%;
-        }
-      }
-    </style>
+    }
+    .home-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .home-wrapper h2{
+        font-size: 10rem;
+        cursor: default;
+    }
+   </style>
   </head>
   <body>
-    <section id="load" class="load">
-      <div class="bg">
-        <h2>"JEONGMIN"</h2>
-        <h2>"PORTFOLIO"</h2>
-        <p class="load_top">Publisher</p>
-      </div>
-    </section>
+    <section class="home">
+        <div class="home-wrapper">
+          <h2>
+            <span class="home-span">W</span>
+            <span class="home-span">E</span>
+            <span class="home-span">B</span>
+            <span class="home-span"></span>
+            <span class="home-span">P</span>
+            <span class="home-span">U</span>
+            <span class="home-span">B</span>
+            <span class="home-span">L</span>
+            <span class="home-span">I</span>
+            <span class="home-span">S</span>
+            <span class="home-span">H</span>
+            <span class="home-span">E</span>
+            <span class="home-span">R</span>
+          </h2>
+        </div>
+      </section>
 
     <script>
-      const $loadTop = document.querySelector(".load_top");
-      function loadingTop() {
-        setTimeout(() => {
-          $loadTop.classList.add("visible");
-        }, 1000);
+      const homeSpan = document.querySelectorAll(".home-span");
+      const colorRandom = ["#DEDDCF", "#D6AE5D", "#3F3B37"];
+
+      function randomItem(a) {
+        return a[Math.floor(Math.random() * a.length)];
       }
-      window.addEventListener("load", () => {
-        loadingTop();
+
+      function randomColor() {
+        homeSpan.forEach((elem, index) => {
+          elem.addEventListener("mouseover", () => {
+            homeSpan[index].style.color = `${randomItem(colorRandom)}`;
+          });
+          elem.addEventListener("mouseout", () => {
+            setTimeout(() => {
+                homeSpan[index].style.color = "inherit";
+            }, 3000);
+          });
+        });
+      }
+
+      window.addEventListener("mouseover", (e) => {
+        randomColor();
       });
     </script>
   </body>

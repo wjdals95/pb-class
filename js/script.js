@@ -2,9 +2,9 @@
   const load = document.querySelector(".load");
   const html = document.querySelector('html');
   const $loadTop = document.querySelector(".load_top");
-
   html.style.overflow = "hidden";
 
+  //로딩화면
   function loadingTop() {
     setTimeout(() => {
       $loadTop.classList.add("visible");
@@ -16,7 +16,7 @@
     setTimeout(() => {
       load.classList.add("hide");
       html.style.overflow = "auto";
-    }, 3000);
+    }, 1000);
     loadingTop();
   });
 
@@ -53,7 +53,7 @@
       let height = sec.offsetHeight;
       let id = sec.getAttribute("id");
   
-      console.log(offset);
+  
       if (top >= offset && top < offset + height) {
         navLinks.forEach((links) => {
           links.classList.remove("active");
@@ -64,8 +64,66 @@
       }
     });
   };
-  
-  //컨택섹션 텍스트
+  //Color
+  const footerBtn = document.querySelector(".footer-btn");
+  const footerBtn1 = document.querySelector(".footer-btn-1");
+  const footerBtn2 = document.querySelector(".footer-btn-2");
+  const footerBtn3 = document.querySelector(".footer-btn-3");
+  const footerSpan = document.querySelectorAll(".footer-span");
+  const homeSpan = document.querySelectorAll(".home-span");
+  const colorRandom = ["#DEDDCF", "#D6AE5D", "#3F3B37"];
+
+  function randomItem(a) {
+    return a[Math.floor(Math.random() * a.length)];
+  };
+
+  function randomColor() {
+        footerSpan.forEach((content,index) =>{
+            content.addEventListener("mouseover", () =>{
+                footerSpan[index].style.color = `${randomItem(colorRandom)}`
+            })
+            content.addEventListener("mouseout",() =>{
+                setTimeout(()=>{
+                    footerSpan[index].style.color = 'inherit';
+                },3000)
+            })
+        })
+        homeSpan.forEach((elem, index) => {
+          elem.addEventListener("mouseover", () => {
+            homeSpan[index].style.color = `${randomItem(colorRandom)}`;
+          });
+          elem.addEventListener("mouseout", () => {
+            setTimeout(() => {
+                homeSpan[index].style.color = "inherit";
+            }, 3000);
+          });
+        });
+  }
+
+  window.addEventListener("mouseover", (e) => {
+    if (
+      e.target == footerBtn ||
+      e.target == footerBtn1 ||
+      e.target == footerBtn2 ||
+      e.target == footerBtn3
+    ) {
+      footerBtn1.style.transform = "translate3d(0px, 0, 0px)";
+      footerBtn1.style.color = "rgb(63, 59, 55)";
+      footerBtn2.style.transform = "translate3d(0px, -3em, 0px)";
+      footerBtn3.style.height = "100%";
+    } else {
+      footerBtn1.style.transform = "translate3d(0px, -3em, 0px)";
+      footerBtn1.style.color = "rgb(193, 192, 182)";
+      footerBtn2.style.transform = "translate3d(0px, -0, 0px)";
+      footerBtn3.style.height = "0%";
+    }
+    randomColor();
+  });
+
+
+
+
+  //컨택 섹션 텍스트
   // let didScroll = false;
   // let paralaxTitles = document.querySelectorAll('.paralax-title');
   

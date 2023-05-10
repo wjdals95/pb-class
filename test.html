@@ -11,508 +11,66 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
       body {
         background-color: #c1c0b6;
         color: #3f3b37;
       }
-      .about {
+      .home {
         min-height: 100vh;
-        /* background: #323946; */
-        color: #3f3b37;
-        overflow: hidden;
-        position: relative;
         padding: 50px 0;
-      }
-      .about h2 {
-        display: block;
-        font-size: 50px;
-        font-weight: 400;
-        line-height: 62px;
-        text-align: center;
-      }
-
-      .skill {
-        width: 1180px;
-        max-width: 100%;
-        margin: 30px auto;
-      }
-      .skill > h3 {
-        margin-bottom: 30px;
-      }
-      .skill ul {
         display: flex;
-        justify-content: space-around;
+        align-items: center;
+        background: rgb(136 96 96 / 10%);
       }
-      .skill ul li {
-        display: inline-block;
-        text-align: center;
-        font-size: 20px;
+      .home-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
       }
-      .skill ul li .skill-top img {
+      .home-wrapper h2 {
+        font-size: 10rem;
+        cursor: default;
+      }
+      .home-span-section {
         display: block;
-        width: 150px;
-        margin: 0 auto 20px;
       }
-      .skill ul li .skill-top p {
-        font-size: 1.5rem;
-      }
-      .skill ul li .skill-bottom {
-        font-size: 14px;
-        text-align: left;
-        margin: 10px 0 0;
-        line-height: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 20px;
-      }
-      .skill ul li .skill-bottom p {
-        display: block;
-        position: relative;
-      }
-      .skill ul li .skill-bottom p::before {
-        content: "";
-        width: 5px;
-        height: 5px;
-        border-radius: 5px;
-        position: absolute;
-        left: -11px;
-        top: 8px;
-        background: #fff;
-      }
-      .skill .bottom {
-        margin: 30px 0;
-        height: 30vh;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 30px;
-      }
-      .skill .bottom .left {
-        width: 50%;
-        float: left;
-      }
-      .skill .bottom .left div {
-        padding: 50px;
-        width: 500px;
-      }
-      .skill .bottom .left h3 {
-        text-align: right;
-        font-size: 70px;
-        font-weight: 700;
-      }
-      .skill .bottom .left h3 span {
-        display: block;
-        margin-top: 25px;
-      }
-      .skill .bottom .right {
-        width: 50%;
-        float: right;
-      }
-      .skill .bottom .right ol {
-        width: 500px;
-        padding: 50px 0;
-      }
-      .skill .bottom .right ol li {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-      .skill .bottom .right ol li:last-child {
-        margin-bottom: 0;
-      }
-
-      .education {
-        width: 1180px;
-        max-width: 100%;
-        margin: 30px auto;
-        clear: both;
-      }
-      .education h3 {
-        margin-bottom: 30px;
-      }
-      .swiper-container {
-        overflow: hidden;
-        position: relative;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide {
-        position: relative;
-        padding: 0px 20px 0px 60px;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div {
-        width: 920px;
-        margin: 0 auto;
-        position: relative;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: -41px;
-        bottom: 0px;
-        border-left: 1px solid rgba(255, 255, 255, 0.5);
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .icon {
-        position: absolute;
-        left: -60px;
-        right: 0px;
-        z-index: 1;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 40px;
-        color: #3f3b37;
-        background-color: rgba(255, 255, 255, 0.5);
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .icon i {
-        margin-top: 7px;
-        font-size: 25px;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .time {
-        display: block;
-        width: 130px;
-        text-align: center;
-        padding: 1px 10px;
-        margin-bottom: 12px;
-        border-radius: 20px;
-        background-color: rgba(255, 255, 255, 0.5);
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.6px;
-        opacity: 0.8;
-      }
-
-      .education .swiper-container .swiper-wrapper .swiper-slide > div > h4 {
-        margin: 7px 0px 10px;
-        font-size: 18px;
-        font-weight: 500;
-        opacity: 0.8;
-      }
-      .education
-        .swiper-container
-        .swiper-wrapper
-        .swiper-slide
-        > div
-        > h4
-        span {
-        position: relative;
-        padding-left: 26px;
-        font-size: 15px;
-        font-weight: 600;
-        opacity: 0.6;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
-        font-size: 14px;
-        line-height: 20px;
-      }
-      .education
-        .swiper-container
-        .swiper-wrapper
-        .swiper-slide
-        > div
-        > h4
-        span::before {
-        position: absolute;
-        content: "";
-        width: 10px;
-        height: 2px;
-        background-color: rgb(255, 255, 255);
-        left: 7px;
-        top: 9px;
-        opacity: 0.8;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div a {
-        background: url(../assets/notion.svg) no-repeat center;
-        padding-left: 37px;
-        width: 30px;
-        height: 25px;
-        color: #3f3b37;
-        margin: 12px 0 0;
-        display: inline-block;
-        line-height: 25px;
-        font-size: 14px;
-        left: -7px;
-        position: relative;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div a:hover {
-        background: url("../assets/notion\ 2.svg") no-repeat center;
-        color: #d6ae5d;
-      }
-      .swiper-horizontal > .swiper-pagination-bullets,
-      .swiper-pagination-bullets.swiper-pagination-horizontal,
-      .swiper-pagination-custom,
-      .swiper-pagination-fraction {
-        top: 90% !important;
-      }
-      .swiper-pagination-bullet-active {
-        background: #fff !important;
-      }
-      .swiper-button-prev,
-      .swiper-button-next {
-        color: #3f3b37 !important;
-      }
-
       @media (max-width: 992px) {
-        .skill > h3 {
-          margin: 0 0 0.5em 1em;
+        .home-wrapper {
+          padding: 0 2em;
         }
-        .skill ul {
-          flex-direction: column;
+        .home-wrapper h2 {
+          font-size: 4rem;
         }
-        .skill ul li {
-          margin: 1em 0;
-        }
-        .skill ul li .skill-top {
-          display: flex;
-          align-items: center;
-        }
-        .skill ul li .skill-top img {
-          display: inline-block;
-          width: 25vw;
-          margin: 0 0 0 1em;
-        }
-        .skill ul li .skill-top p {
-          font-size: 1rem;
-          display: inline-block;
-          margin-left: 2em;
-        }
-        .skill ul li .skill-bottom {
-          font-size: 0.9rem;
-          margin: 1em 1em 0;
-          line-height: 1, 4;
-          background: rgba(255, 255, 255, 0.3);
-        }
-        .skill .bottom {
-          height: auto;
-          background: rgba(255, 255, 255, 0.3);
-          margin: 0 1em;
-        }
-        .skill .bottom .left {
-          width: 100%;
-          float: none;
-          padding: 1em 0;
-        }
-        .skill .bottom .left div {
-          padding: 0;
-          width: auto;
-        }
-        .skill .bottom .left h3 {
-          text-align: center;
-          font-size: 2rem;
-        }
-        .skill .bottom .left h3 span {
-          display: inline;
-          margin-top: 0;
-        }
-        .skill .bottom .right {
-          width: 100%;
-          float: none;
-          margin: 1em 0;
-        }
-        .skill .bottom .right ol {
-          width: auto;
-          padding: 1em 1em 1em 2em;
-        }
-        .skill .bottom .right ol li {
-          font-size: 1.1rem;
-          margin-bottom: 0.5em;
-        }
-        .education h3{
-            margin: 0 0 0.5em 1em;
+        .home-span-section {
+          display: block;
+          font-size: 3.5rem;
+          letter-spacing: -5px;
         }
       }
     </style>
   </head>
   <body>
-    <section id="about" class="about">
-      <h2>ABOUT</h2>
-      <div class="skill">
-        <h3>SKILLS</h3>
-        <ul>
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/html5 1.svg" alt="" />
-              <p>HTML5 & CSS3</p>
-            </div>
-            <div class="skill-bottom">
-              <p>HTML5 문법을 알고 있으며 UI를 제작할 수 있습니다.</p>
-              <p>CSS3 문법을 알고 있으며 scss를 사용할 수 있습니다.</p>
-              <p>부트스트랩을 사용하여 반응형 페이지 제작을 할 수 있습니다.</p>
-            </div>
-          </li>
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/javascript 1.svg" alt="" />
-              <p>JAVASCRIPT & ECMAScript6</p>
-            </div>
-            <div class="skill-bottom">
-              <p>
-                Javascript의 기초 문법 ( 변수, 연산자, 조건문 등)들을
-                이해하였습니다.
-              </p>
-              <p>ES6와 이후의 자바스크립트 문법을 사용할 수 있습니다.</p>
-              <p>
-                다양한 이벤트를 적용하고 선택한 요소의 스타일을 변경 할 수
-                있습니다.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/github (1) 1.svg" alt="" />
-              <p>GITHUB</p>
-            </div>
-            <div class="skill-bottom">
-              <p>
-                git flow가 무엇인지 알고 있으며 왜 사용해야 하는지 이해하고
-                있습니다.
-              </p>
-              <p>깃과 깃헙을 사용하여 다른 개발자들과 협업을 할 수 있습니다.</p>
-            </div>
-          </li>
-        </ul>
-        <div class="bottom">
-          <div class="left">
-            <div>
-              <h3>제가 <span>일을 할 땐</span></h3>
-            </div>
-          </div>
-          <div class="right">
-            <ol>
-              <li>일처리는 항상 신중하고 꼼꼼하게 합니다.</li>
-              <li>웹 접근성을 중시합니다.</li>
-              <li>
-                일이 주어지면 빠르게 실행하며, 목표를 달성하기 위해 집요하게
-                파고듭니다.
-              </li>
-              <li>개인 보다는 팀 혹은 단체의 목표를 우선시합니다.</li>
-              <li>어떠한 일이든 계획을 세우고, 효율적으로 합니다.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="education">
-        <h3>EDUCATIONS</h3>
-
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-               
-                    <span class="time">2023.04~2023.04</span>
-                    <h4>
-                      BBC 인터랙티브 페이지 "코로나19가 바꿀 사무실의 미래" 클론
-                      <span class="place"> 1분 코딩 </span>
-                    </h4>
-                    <p>
-                      1분코딩님의 클론코딩 영상을 보며 따라해보며 css, javascript를
-                      연습했습니다. css부분에서 마진병합현상과, will-change에 대해
-                      공부했으며,<br />
-                      javascript부분에서는 즉시실행 익명함수, dataset속성과
-                      스크롤이벤트를 getBoundingClientRect와 intersectionObserver를
-                      활용하는 방법에 대해 공부하였습니다.
-                    </p>
-                    <a
-                      href="https://lyrical-emoji-3f3.notion.site/BBC-19-1-1b28668b3a504805911613e291c137ba"
-                      target="_blank"
-                      >notion</a
-                    >
-               
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2023.01~2023.03</span>
-                <h4>
-                  React 완벽 가이드
-                  <span class="place">
-                    udemy(Academind by Maximilian Schwarzmüller)
-                  </span>
-                </h4>
-                <p>
-                  리액티브 웹 앱의 성능을 향상시키는 법과, React hooks, 상태
-                  관리(Redux, Context API), React 심화 개념(useCallback,
-                  useMemo, useReducer..),<br />프론트엔드 웹 개발 실무를
-                  경험하기 위한 프로젝트 학습을 했습니다.
-                </p>
-                <a href="#">notion</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2022.10~2022.10</span>
-                <h4>
-                  디지털역량 제고를 위한 다이나믹 클라이언트 사이드 스크립트
-                  기초
-                  <span class="place"> 그린 컴퓨터 아카데미 </span>
-                </h4>
-                <p>
-                  Javascript의 변수, 함수, 연산자, 조건문 등 기초 문법들을
-                  이해하였고, 다양한 이벤트를 적용하고 선택한 요소의 스타일을
-                  변경할 수 있습니다.<br />ECMAscript6의 template literals,
-                  arrow function 기능을 사용할 수있습니다.실전 예제를 연습해보고
-                  웹 애니메이션 효과를 적용한 웹 페이지를 만들 수 있습니다.
-                </p>
-                <a
-                  href="https://lyrical-emoji-3f3.notion.site/14c22daa53464bd49788700b1c705f65"
-                  target="_blank"
-                  >notion</a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2022.09~2023.03</span>
-                <h4>
-                  NCS (스마트웹&콘텐츠개발) UI/UX 반응형 웹
-                  <span class="place"> 그린 컴퓨터 아카데미 </span>
-                </h4>
-                <p>
-                  다양한 스마트기기 플렛폼에 적용 가능한 웹기반의 콘텐츠서비스를
-                  기획, 분석, 설계, 구현 테스트, 배포 및 유지 보수하는 능력을
-                  길렀습니다.<br />
-                  반응형 웹 제작을 위한 마크업 및 스타일링(HTML5 & CSS3),
-                  프론트엔드 스크립트 언어(ECMAScript & jQuery)의 동작 패턴 및
-                  원리를 이해하고 콘텐츠 제작 및 서비스에 적용하는 능력을
-                  길렀습니다.
-                </p>
-                <a href="#">notion</a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
+    <section id="home" class="home">
+      <div class="home-wrapper">
+        <h2>
+          <span class="home-span">W</span>
+          <span class="home-span">E</span>
+          <span class="home-span">B</span>
+          <span class="home-span-section">
+            <span class="home-span">P</span>
+            <span class="home-span">U</span>
+            <span class="home-span">B</span>
+            <span class="home-span">L</span>
+            <span class="home-span">I</span>
+            <span class="home-span">S</span>
+            <span class="home-span">H</span>
+            <span class="home-span">E</span>
+            <span class="home-span">R</span>
+          </span>
+        </h2>
       </div>
     </section>
 
-    <script>
-      var swiper = new Swiper(".swiper-container", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
+    <script></script>
   </body>
 </html>

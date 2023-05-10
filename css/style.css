@@ -180,6 +180,10 @@ body {
   font-size: 10rem;
   cursor: default;
 }
+.home-span-section{
+  display: block;
+}
+
 /* home css end */
 /* about css start*/
 .about {
@@ -855,20 +859,15 @@ body {
   .header {
     padding: 1.25rem 4%;
   }
-  .list_box_mg {
-    margin: 50px 0;
-  }
-  .text_wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: unset;
-  }
-  .home-wrapper{
+  .home-wrapper {
     padding: 0 2em;
   }
   .home-wrapper h2 {
     font-size: 4rem;
+  }
+  .home-span-section {
+    font-size: 3.5rem;
+    letter-spacing: -5px;
   }
   .portfolio {
     display: block;
@@ -929,7 +928,7 @@ body {
   .skill ul li .skill-top p {
     font-size: 1rem;
     display: inline-block;
-    margin-left: 2em;
+    margin-left: 1em;
   }
   .skill ul li .skill-bottom {
     font-size: 0.9rem;
@@ -980,9 +979,9 @@ body {
     margin-top: 2em;
 }
   .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     line-height: 1.5;
-    padding: 0 2em 0 1em;
+    padding-right: 1em;
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -1037,6 +1036,7 @@ body {
   .navbar a {
     display: block;
     margin: 1.5rem 0;
+  color: #3f3b37;
   }
   .nav_bg {
     position: fixed;

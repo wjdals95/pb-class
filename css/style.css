@@ -183,9 +183,6 @@ body {
 /* home css end */
 /* about css start*/
 .about {
-  min-height: 100vh;
-  /* background: #323946; */
-  color: #3f3b37;
   overflow: hidden;
   position: relative;
   padding: 50px 0;
@@ -200,10 +197,11 @@ body {
 
 .skill {
   width: 1180px;
+  max-width: 100%;
   margin: 30px auto;
 }
 .skill > h3 {
-  margin-bottom: 30px;
+  margin: 0 0 2em 1em;
 }
 .skill ul {
   display: flex;
@@ -215,12 +213,15 @@ body {
   font-size: 20px;
   width: 30%;
 }
-.skill ul li img {
+.skill ul li .skill-top img {
   display: block;
   width: 150px;
   margin: 0 auto 20px;
 }
-.skill ul li p {
+.skill ul li .skill-top p {
+  font-size: 1.5rem;
+}
+.skill ul li .skill-bottom {
   font-size: 14px;
   text-align: left;
   margin: 10px 0 0;
@@ -229,11 +230,11 @@ body {
   border-radius: 20px;
   padding: 20px;
 }
-.skill ul li p span {
+.skill ul li .skill-bottom p {
   display: block;
   position: relative;
 }
-.skill ul li p span::before {
+.skill ul li .skill-bottom p::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -244,8 +245,9 @@ body {
   background: #fff;
 }
 .skill .bottom {
+  display: flex;
   margin: 30px 0;
-  height: 30vh;
+  height: 100%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 30px;
 }
@@ -284,11 +286,12 @@ body {
 
 .education {
   width: 1180px;
+  max-width: 100%;
   margin: 30px auto;
   clear: both;
 }
 .education h3 {
-  margin-bottom: 30px;
+  margin: 0 0 2em 1em;
 }
 .swiper-container {
   overflow: hidden;
@@ -300,6 +303,7 @@ body {
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div {
   width: 920px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -344,7 +348,7 @@ body {
 
 .education .swiper-container .swiper-wrapper .swiper-slide > div > h4 {
   margin: 7px 0px 10px;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
   opacity: 0.8;
 }
@@ -860,6 +864,9 @@ body {
     justify-content: center;
     align-items: unset;
   }
+  .home-wrapper{
+    padding: 0 2em;
+  }
   .home-wrapper h2 {
     font-size: 4rem;
   }
@@ -900,11 +907,92 @@ body {
     top: 52%;
     left: 5%;
   }
+  .skill > h3 {
+    margin: 0 0 0.5em 1em;
+  }
+  .skill ul {
+    flex-direction: column;
+  }
+  .skill ul li {
+    margin: 1em 0;
+    width: 100%;
+  }
+  .skill ul li .skill-top {
+    display: flex;
+    align-items: center;
+  }
+  .skill ul li .skill-top img {
+    display: inline-block;
+    width: 25vw;
+    margin: 0 0 0 1em;
+  }
+  .skill ul li .skill-top p {
+    font-size: 1rem;
+    display: inline-block;
+    margin-left: 2em;
+  }
+  .skill ul li .skill-bottom {
+    font-size: 0.9rem;
+    margin: 1em 1em 0;
+    line-height: 1, 4;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .skill .bottom {
+    height: auto;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 1em;
+    flex-direction: column;
+  }
+  .skill .bottom .left {
+    width: 100%;
+    float: none;
+    padding: 1em 0;
+  }
+  .skill .bottom .left div {
+    padding: 0;
+    width: auto;
+  }
+  .skill .bottom .left h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .skill .bottom .left h3 span {
+    display: inline;
+    margin-top: 0;
+  }
+  .skill .bottom .right {
+    width: 100%;
+    float: none;
+    margin: 1em 0;
+  }
+  .skill .bottom .right ol {
+    width: auto;
+    padding: 1em 1em 1em 2em;
+  }
+  .skill .bottom .right ol li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+  }
+  .education h3 {
+    margin: 0 0 0.5em 1em;
+  }
+  .swiper-container {
+    margin-top: 2em;
+}
+  .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0 2em 0 1em;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+
   .footer-wrapper h2 {
     font-size: 4em;
     letter-spacing: -8px;
   }
-
   .footer-wrapper .footer-btn {
     font-size: 0.7em;
   }
@@ -964,19 +1052,5 @@ body {
   }
   .nav_bg.active {
     display: block;
-  }
-  #about {
-    min-height: 100vh;
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-  }
-  .home .wrapper {
-    padding: 0 5vw;
-    font-size: 3rem;
-    line-height: 1.1;
-    letter-spacing: 3px;
   }
 }

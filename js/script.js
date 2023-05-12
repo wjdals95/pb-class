@@ -1,7 +1,10 @@
 (() => {
   const load = document.querySelector(".load");
-  const html = document.querySelector('html');
+  const html = document.querySelector("html");
   const $loadTop = document.querySelector(".load_top");
+  const homeSpan1 = document.querySelectorAll(".home-span-section1 .home-span");
+  const homeSpan2 = document.querySelectorAll(".home-span-section2 .home-span");
+
   html.style.overflow = "hidden";
 
   //로딩화면
@@ -10,14 +13,36 @@
       $loadTop.classList.add("visible");
     }, 1000);
   }
+  //메인화면
+  const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+  async function mainLoad() {
+    for (let i = 0; i < homeSpan1.length; i++) {
+      homeSpan1[i].classList.add("home-animation");
+      await timer(100);
+    }
+  }
+
+  async function mainLoad2() {
+    for (let i = 0; i < homeSpan2.length; i++) {
+      homeSpan2[i].classList.add("home-animation");
+      await timer(100);
+    }
+  }
 
   window.addEventListener("load", () => {
     scrollTo(0, 0);
+    loadingTop();
     setTimeout(() => {
       load.classList.add("hide");
       html.style.overflow = "auto";
     }, 3000);
-    loadingTop();
+    setTimeout(() =>{
+      mainLoad()
+    },3300);
+    setTimeout(() =>{
+      mainLoad2()
+    },3800)
   });
 
   //스와이퍼
@@ -28,32 +53,50 @@
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
-  
+
   //내비게이션
   const menuIcon = document.querySelector("#menu_icon");
   const navBar = document.querySelector(".navbar");
   const navBg = document.querySelector(".nav_bg");
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("header nav a");
-  
-  menuIcon.addEventListener("click", () => {
+  const quickMenu = document.querySelector(".quickmenu");
+
+  menuIcon.addEventListener("click", (e) => {
     menuIcon.classList.toggle("bx-x");
     navBar.classList.toggle("active");
     navBg.classList.toggle("active");
   });
-  
+
+  window.addEventListener("mousewheel", (e) => {
+    //퀵메뉴
+    let currentTop = window.scrollY;
+    const windowHeight = document.body.clientHeight;
+
+    e.deltaY > 0 && windowHeight * 0.2 <= currentTop
+      ? (quickMenu.style.opacity = "1")
+      : (quickMenu.style.opacity = "0");
+  });
+
+  //퀵메뉴
+  quickMenu.addEventListener("click", () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 200);
+  });
+
   window.onscroll = () => {
     sections.forEach((sec) => {
       let top = window.scrollY;
       let offset = sec.offsetTop - 150;
       let height = sec.offsetHeight;
       let id = sec.getAttribute("id");
-  
-  
+
+      //내비게이션
       if (top >= offset && top < offset + height) {
         navLinks.forEach((links) => {
           links.classList.remove("active");
@@ -75,29 +118,29 @@
 
   function randomItem(a) {
     return a[Math.floor(Math.random() * a.length)];
-  };
+  }
 
   function randomColor() {
-        footerSpan.forEach((content,index) =>{
-            content.addEventListener("mouseover", () =>{
-                footerSpan[index].style.color = `${randomItem(colorRandom)}`
-            })
-            content.addEventListener("mouseout",() =>{
-                setTimeout(()=>{
-                    footerSpan[index].style.color = 'inherit';
-                },3000)
-            })
-        })
-        homeSpan.forEach((elem, index) => {
-          elem.addEventListener("mouseover", () => {
-            homeSpan[index].style.color = `${randomItem(colorRandom)}`;
-          });
-          elem.addEventListener("mouseout", () => {
-            setTimeout(() => {
-                homeSpan[index].style.color = "inherit";
-            }, 3000);
-          });
-        });
+    footerSpan.forEach((content, index) => {
+      content.addEventListener("mouseover", () => {
+        footerSpan[index].style.color = `${randomItem(colorRandom)}`;
+      });
+      content.addEventListener("mouseout", () => {
+        setTimeout(() => {
+          footerSpan[index].style.color = "inherit";
+        }, 3000);
+      });
+    });
+    homeSpan.forEach((elem, index) => {
+      elem.addEventListener("mouseover", () => {
+        homeSpan[index].style.color = `${randomItem(colorRandom)}`;
+      });
+      elem.addEventListener("mouseout", () => {
+        setTimeout(() => {
+          homeSpan[index].style.color = "inherit";
+        }, 3000);
+      });
+    });
   }
 
   window.addEventListener("mouseover", (e) => {
@@ -120,17 +163,14 @@
     randomColor();
   });
 
-
-
-
   //컨택 섹션 텍스트
   // let didScroll = false;
   // let paralaxTitles = document.querySelectorAll('.paralax-title');
-  
+
   // const scrollInProgress = () => {
   //   didScroll = true
   // }
-  
+
   // const raf = () => {
   //   if(didScroll) {
   //     paralaxTitles.forEach((element, index) => {
@@ -140,19 +180,7 @@
   //   }
   //   requestAnimationFrame(raf);
   // }
-  
-  
+
   // // requestAnimationFrame(raf);
   // window.addEventListener('scroll', scrollInProgress)
-  
-  //퀵메뉴
-  window.addEventListener('click', (e) =>{
-    
-    let goToTop = document.querySelector('.menu__item-link')
-    e.target == goToTop && window.scrollTo(0,0);
-  })
-  
- 
 })();
-
-

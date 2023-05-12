@@ -17,7 +17,39 @@ a {
 body {
   background-color: #c1c0b6;
   color: #3f3b37;
+  position: relative;
+  /* 스크롤바 제거 */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
 }
+/* ( 크롬, 사파리, 오페라, 엣지 )  */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* quickmenu css start */
+.quickmenu {
+  width: 70px;
+  height: 70px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 99;
+}
+.quickmenu i {
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* quickmenu css end */
+
 /* header css start */
 .header {
   position: fixed;
@@ -178,12 +210,46 @@ body {
 }
 .home-wrapper h2 {
   font-size: 10rem;
+  font-weight: 500;
   cursor: default;
 }
-.home-span-section{
+.home-span{
+  display: inline-block;
+} 
+
+.home-span-section2 {
   display: block;
 }
+.home-span-section1 .home-span,
+.home-span-section2 .home-span {
+  transition: 0.5s;
+  opacity: 0;
+}
 
+.home-span-section1 .home-span.home-animation,
+.home-span-section2 .home-span.home-animation{
+  opacity: 1; 
+}
+.home-animation {
+  animation: homeanimation 1s ease-in;
+}
+@keyframes homeanimation {
+  0% {
+    transform: translate3d(0, -40%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loading {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0;
+  }
+}
 /* home css end */
 /* about css start*/
 .about {
@@ -765,7 +831,7 @@ body {
 }
 .footer-wrapper .footer-btn {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   display: flex;
   overflow: hidden;
   width: 70%;
@@ -808,7 +874,7 @@ body {
 }
 .footer-bottom-wrapper {
   position: relative;
-  z-index: 5;
+
   display: flex;
   width: 100%;
   background-color: #c1c0b6;
@@ -865,7 +931,7 @@ body {
   .home-wrapper h2 {
     font-size: 4rem;
   }
-  .home-span-section {
+  .home-span-section2 {
     font-size: 3.5rem;
     letter-spacing: -5px;
   }
@@ -977,7 +1043,7 @@ body {
   }
   .swiper-container {
     margin-top: 2em;
-}
+  }
   .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
     font-size: 0.7rem;
     line-height: 1.5;
@@ -1036,7 +1102,7 @@ body {
   .navbar a {
     display: block;
     margin: 1.5rem 0;
-  color: #3f3b37;
+    color: #3f3b37;
   }
   .nav_bg {
     position: fixed;

@@ -2,8 +2,48 @@
   const load = document.querySelector(".load");
   const html = document.querySelector("html");
   const $loadTop = document.querySelector(".load_top");
+  let scrollY = 0; // window.scrollY 대신 쓸 변수
+  let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
+  let currentScene = 0; //현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
   const homeSpan1 = document.querySelectorAll(".home-span-section1 .home-span");
   const homeSpan2 = document.querySelectorAll(".home-span-section2 .home-span");
+  const sceneInfo = [
+    // 0 - home
+    {
+      scrollHeight: document.querySelector("#home").offsetHeight, //862,
+      objs: {
+        homeSection: document.querySelector("#home"),
+      },
+      values: {},
+    },
+    // 1 - aobut
+    {
+      scrollHeight: (aboutSectionHeight =
+        document.querySelector("#about").offsetHeight), //1136,
+      objs: {
+        homeSection: document.querySelector("#about"),
+      },
+      values: {},
+    },
+    // 2 - project
+    {
+      scrollHeight: (portfolioSectionHeight =
+        document.querySelector("#portfolio").offsetHeight), //2335,
+      objs: {
+        homeSection: document.querySelector("#portfolio"),
+      },
+      values: {},
+    },
+    // 3 - contact
+    {
+      scrollHeight: (contactSectionHeight =
+        document.querySelector("#contact").offsetHeight), //862,
+      objs: {
+        homeSection: document.querySelector("#contact"),
+      },
+      values: {},
+    },
+  ];
 
   html.style.overflow = "hidden";
 
@@ -37,12 +77,13 @@
       load.classList.add("hide");
       html.style.overflow = "auto";
     }, 3000);
-    setTimeout(() =>{
-      mainLoad()
-    },3300);
-    setTimeout(() =>{
-      mainLoad2()
-    },3800)
+    setTimeout(() => {
+      mainLoad();
+    }, 3300);
+    setTimeout(() => {
+      mainLoad2();
+      homeBtn.style.opacity = "1";
+    }, 3800);
   });
 
   //스와이퍼
@@ -72,7 +113,7 @@
     navBg.classList.toggle("active");
   });
 
-  window.addEventListener("mousewheel", (e) => {
+  window.addEventListener("wheel", (e) => {
     //퀵메뉴
     let currentTop = window.scrollY;
     const windowHeight = document.body.clientHeight;
@@ -106,12 +147,18 @@
         });
       }
     });
+    totalScroll();
   };
   //Color
   const footerBtn = document.querySelector(".footer-btn");
   const footerBtn1 = document.querySelector(".footer-btn-1");
   const footerBtn2 = document.querySelector(".footer-btn-2");
   const footerBtn3 = document.querySelector(".footer-btn-3");
+  const homeBtn = document.querySelector(".home-btn");
+  const homeBtn1 = document.querySelector(".home-btn-1");
+  const homeBtn2 = document.querySelector(".home-btn-2");
+  const homeBtn3 = document.querySelector(".home-btn-3");
+
   const footerSpan = document.querySelectorAll(".footer-span");
   const homeSpan = document.querySelectorAll(".home-span");
   const colorRandom = ["#DEDDCF", "#D6AE5D", "#3F3B37"];
@@ -160,27 +207,50 @@
       footerBtn2.style.transform = "translate3d(0px, -0, 0px)";
       footerBtn3.style.height = "0%";
     }
+    if (
+      e.target == homeBtn ||
+      e.target == homeBtn1 ||
+      e.target == homeBtn2 ||
+      e.target == homeBtn3
+    ) {
+      homeBtn1.style.transform = "translate3d(0px, 0, 0px)";
+      homeBtn1.style.color = "rgb(63, 59, 55)";
+      homeBtn2.style.transform = "translate3d(0px, -3em, 0px)";
+      homeBtn3.style.height = "100%";
+    } else {
+      homeBtn1.style.transform = "translate3d(0px, -3em, 0px)";
+      homeBtn1.style.color = "rgb(193, 192, 182)";
+      homeBtn2.style.transform = "translate3d(0px, -0, 0px)";
+      homeBtn3.style.height = "0%";
+    }
     randomColor();
   });
 
-  //컨택 섹션 텍스트
-  // let didScroll = false;
-  // let paralaxTitles = document.querySelectorAll('.paralax-title');
+  //스크롤
+  function totalScroll() {
+    scrollY = window.scrollY;
+    let totalScrollHeight = 0;
+    for (let i = 0; i < sceneInfo.length; i++) {
+      totalScrollHeight += sceneInfo[i].scrollHeight;
+      if (totalScrollHeight >= scrollY) {
+        currentScene = i;
+        break;
+      }
+    }
+    
+    prevScrollHeight = 0;
+    
+    for (let i = 0; i < currentScene; i++) {
+      prevScrollHeight += sceneInfo[i].scrollHeight;
+    }
+    if (scrollY > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+      currentScene++;
+    }
+    if (scrollY < prevScrollHeight) {
+      currentScene--;
+    }
 
-  // const scrollInProgress = () => {
-  //   didScroll = true
-  // }
-
-  // const raf = () => {
-  //   if(didScroll) {
-  //     paralaxTitles.forEach((element, index) => {
-  //       element.style.transform = "translateX("+ window.scrollY / 10 + "%)"
-  //     })
-  //     didScroll = false;
-  //   }
-  //   requestAnimationFrame(raf);
-  // }
-
-  // // requestAnimationFrame(raf);
-  // window.addEventListener('scroll', scrollInProgress)
+    console.log(scrollY, currentScene);
+  }
+  
 })();

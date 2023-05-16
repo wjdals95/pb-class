@@ -27,28 +27,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* quickmenu css start */
-.quickmenu {
-  width: 70px;
-  height: 70px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.5);
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  opacity: 0;
-  transition: all 0.5s;
-  cursor: pointer;
-  z-index: 99;
-}
-.quickmenu i {
-  font-size: 3em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-/* quickmenu css end */
+
 
 /* header css start */
 .header {
@@ -90,6 +69,7 @@ body::-webkit-scrollbar {
   text-decoration: none;
   margin-left: 2em;
   transition: 0.3s;
+  cursor: pointer;
 }
 .navbar a:hover,
 .navbar a.active {
@@ -571,276 +551,6 @@ body::-webkit-scrollbar {
 }
 /* portfolio css end */
 
-/* contact css start */
-.contact {
-  position: relative;
-  display: block;
-  min-height: 100vh;
-  background: #323946;
-  color: #fff;
-  overflow: hidden;
-  width: 1920px;
-  max-width: 100%;
-  padding: 0 0 80px 0;
-}
-.contact > h2 {
-  font-size: 80px;
-  font-weight: 600;
-  text-align: center;
-  margin: 80px 0;
-  position: relative;
-}
-/* .contact .section-title {
-  margin: 30px 0;
-  font-size: 64px;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: -30%;
-  z-index: 1;
-  white-space: nowrap;
-}
-.contact .section-title  span {
-  position: relative;
-  display: block;
-} */
-.contact .contact_box {
-  position: relative;
-  width: 1180px;
-  margin: 100px auto;
-}
-.contact .contact_box .left {
-  float: left;
-}
-.contact .contact_box .left img {
-  width: 400px;
-  height: 600px;
-  border-radius: 20px;
-}
-.contact .contact_box .right {
-  float: right;
-  width: 50%;
-}
-.contact .contact_box .right .txt_box {
-  display: flex;
-  align-items: center;
-  padding: 0 0 25px 0;
-}
-.contact .contact_box .right .txt_box .static_txt {
-  font-size: 50px;
-  color: #fff;
-}
-.contact .contact_box .right .txt_box .dynamic_txt {
-  margin-left: 1.2em;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
-}
-.contact .contact_box .right .txt_box .dynamic_txt li {
-  position: relative;
-  top: 0;
-  font-size: 60px;
-  color: #0ef;
-  list-style: none;
-  padding: 0 20px;
-  text-shadow: 0 0 10px #0ef;
-  animation: slide 12s steps(4) infinite, colorful 6s infinite;
-}
-@keyframes slide {
-  100% {
-    top: -360px;
-  }
-}
-@keyframes colorful {
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-.contact .contact_box .right .txt_box .dynamic_txt span {
-  position: relative;
-  margin: 5px 0;
-  line-height: 80px;
-}
-.contact .contact_box .right .txt_box .dynamic_txt span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 105%;
-  width: 100%;
-  background: #323946;
-  border-left: 5px solid #0ef;
-  animation: typings 3s steps(10) infinite;
-}
-@keyframes typings {
-  40%,
-  60% {
-    left: calc(100% + 30px);
-  }
-  100% {
-    left: 0;
-  }
-}
-
-.contact .contact_box .right .info {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 25px 0;
-}
-.contact .contact_box .right .info h2 {
-  width: 100%;
-  text-align: start;
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.contact .contact_box .right .info li {
-  width: 50%;
-  color: #08ffc8;
-  font-size: 17px;
-  font-weight: 500;
-  padding: 12px 0;
-}
-.contact .contact_box .right .info li span {
-  font-weight: 400;
-  opacity: 0.8;
-  color: #fff;
-}
-
-.contact .contact_box .right .link {
-  padding: 25px 0;
-}
-.contact .contact_box .right .link h2 {
-  text-align: start;
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.contact .contact_box .right .link li {
-  display: inline-block;
-}
-.contact .contact_box .right .link li:nth-child(2) {
-  background: url("../assets/kakaotalk\ 1.svg") no-repeat center;
-}
-.contact .contact_box .right .link li:nth-child(2) a {
-}
-.contact .contact_box .right .link li:nth-child(3) {
-  background: url("../assets/naver\ 1.svg") no-repeat center;
-}
-.contact .contact_box .right .link li:nth-child(4) {
-  background: url("../assets/github\ \(1\)\ 1.svg") no-repeat center;
-}
-.contact .contact_box .right .link li a {
-  display: block;
-  width: 35px;
-  height: 35px;
-  border-radius: 35px;
-  text-decoration: none;
-  color: transparent;
-  margin: 5px 15px;
-}
-.contact .contact_box .right .link li a:hover {
-  background: rgba(45, 91, 121, 0.3);
-}
-/* contact css end */
-
-.gototop {
-  overflow: hidden;
-}
-
-.menu {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 30px 0 50px;
-  --marquee-width: 100vw;
-  --offset: 20vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-  --item-font-size: 8vw;
-  counter-reset: menu;
-  background: #1f242d;
-}
-
-.menu__item {
-  cursor: default;
-  position: relative;
-}
-
-.menu__item-link {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  -webkit-text-stroke: 1.5px #000;
-  text-stroke: 1.5px #000;
-  -webkit-text-fill-color: #fff;
-  text-fill-color: #fff;
-  color: #fff;
-  transition: opacity 0.4s;
-}
-
-.menu__item-link:hover {
-  transition-duration: 0.1s;
-  opacity: 0;
-}
-
-/* Make sure 3 items are visible in the viewport by setting suitable font size. */
-
-.marquee1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: var(--marquee-width);
-  overflow: hidden;
-  pointer-events: none;
-  mix-blend-mode: color-burn;
-}
-
-.marquee__inner {
-  width: fit-content;
-  display: flex;
-  position: relative;
-  transform: translate3d(var(--move-initial), 0, 0);
-  animation: marquee1 1s linear infinite;
-  animation-play-state: paused;
-  opacity: 0;
-  transition: opacity 0.1s;
-}
-
-.menu__item-link:hover ~ .marquee1 .marquee__inner {
-  animation-play-state: running;
-  opacity: 1;
-  transition-duration: 0.4s;
-}
-
-.marquee1 span {
-  text-align: center;
-}
-
-.menu__item-link,
-.marquee1 span {
-  white-space: nowrap;
-  font-size: var(--item-font-size);
-  padding: 0 1vw;
-  font-weight: 900;
-}
-
-.marquee1 span {
-  font-style: italic;
-}
-
-@keyframes marquee1 {
-  0% {
-    transform: translate3d(var(--move-initial), 0, 0);
-  }
-
-  100% {
-    transform: translate3d(var(--move-final), 0, 0);
-  }
-}
-
 /* footer css start */
 .footer {
   display: flex;
@@ -955,6 +665,28 @@ body::-webkit-scrollbar {
 }
 
 /* footer css end */
+/* quickmenu css start */
+.quickmenu {
+  width: 70px;
+  height: 70px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 99;
+}
+.quickmenu i {
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* quickmenu css end */
 /* BREAKPOINTS */
 @media (max-width: 992px) {
   .header {

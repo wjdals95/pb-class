@@ -3,47 +3,10 @@
   const html = document.querySelector("html");
   const $loadTop = document.querySelector(".load_top");
   let scrollY = 0; // window.scrollY 대신 쓸 변수
-  let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
-  let currentScene = 0; //현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
+  let headerHeight = document.querySelector("header").offsetHeight;
   const homeSpan1 = document.querySelectorAll(".home-span-section1 .home-span");
   const homeSpan2 = document.querySelectorAll(".home-span-section2 .home-span");
-  const sceneInfo = [
-    // 0 - home
-    {
-      scrollHeight: document.querySelector("#home").offsetHeight, //862,
-      objs: {
-        homeSection: document.querySelector("#home"),
-      },
-      values: {},
-    },
-    // 1 - aobut
-    {
-      scrollHeight: (aboutSectionHeight =
-        document.querySelector("#about").offsetHeight), //1136,
-      objs: {
-        homeSection: document.querySelector("#about"),
-      },
-      values: {},
-    },
-    // 2 - project
-    {
-      scrollHeight: (portfolioSectionHeight =
-        document.querySelector("#portfolio").offsetHeight), //2335,
-      objs: {
-        homeSection: document.querySelector("#portfolio"),
-      },
-      values: {},
-    },
-    // 3 - contact
-    {
-      scrollHeight: (contactSectionHeight =
-        document.querySelector("#contact").offsetHeight), //862,
-      objs: {
-        homeSection: document.querySelector("#contact"),
-      },
-      values: {},
-    },
-  ];
+ 
 
   html.style.overflow = "hidden";
 
@@ -106,6 +69,7 @@
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("header nav a");
   const quickMenu = document.querySelector(".quickmenu");
+  const homeButton = document.querySelector(".home-btn");
 
   menuIcon.addEventListener("click", (e) => {
     menuIcon.classList.toggle("bx-x");
@@ -130,25 +94,33 @@
     }, 200);
   });
 
-  window.onscroll = () => {
-    sections.forEach((sec) => {
-      let top = window.scrollY;
-      let offset = sec.offsetTop - 150;
-      let height = sec.offsetHeight;
-      let id = sec.getAttribute("id");
+  //내비게이션
+  for (let i = 0; i < navLinks.length; i++) {
+    let sectionOffsetTop = sections[i].offsetTop;
+    let sectionOffsetHeight = sections[i].offsetHeight;
+    homeButton.addEventListener("click", () => {
+      window.scrollTo(0, sections[1].offsetTop - headerHeight);
+    });
+    navLinks[i].addEventListener("click", () => {
+      window.scrollTo(0, sections[i].offsetTop - headerHeight);
+    });
 
-      //내비게이션
-      if (top >= offset && top < offset + height) {
-        navLinks.forEach((links) => {
-          links.classList.remove("active");
-          document
-            .querySelector("header nav a[href*=" + id + "]")
-            .classList.add("active");
-        });
+    //첫 로딩시
+    navLinks[0].classList.add("active");
+
+    window.addEventListener("scroll", () => {
+      scrollY = window.scrollY;
+      if (
+        scrollY >= sectionOffsetTop - headerHeight &&
+        scrollY < sectionOffsetTop + sectionOffsetHeight - headerHeight
+      ) {
+        navLinks[i].classList.add("active");
+      } else {
+        navLinks[i].classList.remove("active");
       }
     });
-    totalScroll();
-  };
+  }
+
   //Color
   const footerBtn = document.querySelector(".footer-btn");
   const footerBtn1 = document.querySelector(".footer-btn-1");
@@ -226,31 +198,4 @@
     randomColor();
   });
 
-  //스크롤
-  function totalScroll() {
-    scrollY = window.scrollY;
-    let totalScrollHeight = 0;
-    for (let i = 0; i < sceneInfo.length; i++) {
-      totalScrollHeight += sceneInfo[i].scrollHeight;
-      if (totalScrollHeight >= scrollY) {
-        currentScene = i;
-        break;
-      }
-    }
-    
-    prevScrollHeight = 0;
-    
-    for (let i = 0; i < currentScene; i++) {
-      prevScrollHeight += sceneInfo[i].scrollHeight;
-    }
-    if (scrollY > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
-      currentScene++;
-    }
-    if (scrollY < prevScrollHeight) {
-      currentScene--;
-    }
-
-    console.log(scrollY, currentScene);
-  }
-  
 })();

@@ -202,7 +202,7 @@
       footerBtn2.style.transform = "translate3d(0px, -3em, 0px)";
       footerBtn3.style.height = "100%";
     } else {
-      footerBtn1.style.transform = "translate3d(0px, -3em, 0px)";
+      footerBtn1.style.transform = "translate3d(0px, 3em, 0px)";
       footerBtn1.style.color = "rgb(193, 192, 182)";
       footerBtn2.style.transform = "translate3d(0px, -0, 0px)";
       footerBtn3.style.height = "0%";
@@ -218,9 +218,9 @@
       homeBtn2.style.transform = "translate3d(0px, -3em, 0px)";
       homeBtn3.style.height = "100%";
     } else {
-      homeBtn1.style.transform = "translate3d(0px, -3em, 0px)";
+      homeBtn1.style.transform = "translate3d(0px, 3em, 0px)";
       homeBtn1.style.color = "rgb(193, 192, 182)";
-      homeBtn2.style.transform = "translate3d(0px, -0, 0px)";
+      homeBtn2.style.transform = "translate3d(0px, 0, 0px)";
       homeBtn3.style.height = "0%";
     }
     randomColor();

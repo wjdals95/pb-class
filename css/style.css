@@ -126,7 +126,7 @@ body::-webkit-scrollbar {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   transition: transform 0.5s;
-  animation: loaded 0.4s ease-out 3s 1 forwards;
+  animation: loaded 0.4s cubic-bezier(0.3, 0.06, 0.96, 0.57) 3s 1 forwards;
 }
 @keyframes loaded {
   from {
@@ -215,22 +215,22 @@ body::-webkit-scrollbar {
   font-weight: 500;
   cursor: default;
 }
-.home-span{
+.home-span {
   display: inline-block;
-} 
+}
 
 .home-span-section2 {
   display: block;
 }
 .home-span-section1 .home-span,
 .home-span-section2 .home-span {
-  transition: 0.5s;
+  transition: 0.2s;
   opacity: 0;
 }
 
 .home-span-section1 .home-span.home-animation,
-.home-span-section2 .home-span.home-animation{
-  opacity: 1; 
+.home-span-section2 .home-span.home-animation {
+  opacity: 1;
 }
 .home-animation {
   animation: homeanimation 1s ease-in;
@@ -277,7 +277,7 @@ body::-webkit-scrollbar {
   position: absolute;
   z-index: 3;
   color: rgb(193, 192, 182);
-  transform: translate3d(0, -3em, 0);
+  transform: translate3d(0, 3em, 0);
   transition: 0.6s;
 }
 .home .home-btn .home-btn-2 {
@@ -308,9 +308,8 @@ body::-webkit-scrollbar {
 }
 .about h2 {
   display: block;
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 62px;
+  font-size: 5vw;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -318,42 +317,48 @@ body::-webkit-scrollbar {
   width: 1180px;
   max-width: 100%;
   margin: 30px auto;
+  display: flex;
+  flex-direction: column;
 }
-.skill > h3 {
+.skill  h3 {
   margin: 0 0 2em 1em;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
-.skill ul {
+.skill .language {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 4em;
 }
-.skill ul li {
+.skill .language li {
   display: inline-block;
   text-align: center;
   font-size: 20px;
   width: 30%;
 }
-.skill ul li .skill-top img {
+.skill .language li .skill-top img {
   display: block;
   width: 150px;
   margin: 0 auto 20px;
 }
-.skill ul li .skill-top p {
+.skill .language li .skill-top p {
   font-size: 1.5rem;
 }
-.skill ul li .skill-bottom {
-  font-size: 14px;
+.skill .language li .skill-bottom {
+  font-size: 1.2rem;
   text-align: left;
   margin: 10px 0 0;
-  line-height: 20px;
+  line-height: 30px;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px 20px 10px 30px;
 }
-.skill ul li .skill-bottom p {
+.skill .language li .skill-bottom p {
   display: block;
   position: relative;
+  margin: 5px 0;
 }
-.skill ul li .skill-bottom p::before {
+.skill .language li .skill-bottom p::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -363,46 +368,27 @@ body::-webkit-scrollbar {
   top: 8px;
   background: #fff;
 }
-.skill .bottom {
+.skill .strength {
   display: flex;
-  margin: 30px 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-}
-.skill .bottom .left {
-  width: 50%;
-  float: left;
-}
-.skill .bottom .left div {
-  padding: 50px;
-  width: 500px;
-}
-.skill .bottom .left h3 {
-  text-align: right;
-  font-size: 70px;
-  font-weight: 700;
-}
-.skill .bottom .left h3 span {
-  display: block;
-  margin-top: 25px;
-}
-.skill .bottom .right {
-  width: 50%;
-  float: right;
-}
-.skill .bottom .right ol {
-  width: 500px;
-  padding: 50px 0;
-}
-.skill .bottom .right ol li {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-.skill .bottom .right ol li:last-child {
-  margin-bottom: 0;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  width: 996px;
+  max-width: 100%;
+  margin: 0 auto 2em;
+  padding: 0 20px;
 }
 
+.skill .strength li {
+  font-size: 1.5rem;
+  padding: 15px 20px;
+  margin: 20px 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+.skill .strength li:hover {
+  background: rgba(255, 255, 255, 1);
+}
 .education {
   width: 1180px;
   max-width: 100%;
@@ -411,6 +397,8 @@ body::-webkit-scrollbar {
 }
 .education h3 {
   margin: 0 0 2em 1em;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .swiper-container {
   overflow: hidden;
@@ -453,13 +441,13 @@ body::-webkit-scrollbar {
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div .time {
   display: block;
-  width: 130px;
+  width: 165px;
   text-align: center;
   padding: 1px 10px;
   margin-bottom: 12px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.6px;
   opacity: 0.8;
@@ -467,11 +455,11 @@ body::-webkit-scrollbar {
 
 .education .swiper-container .swiper-wrapper .swiper-slide > div > h4 {
   margin: 7px 0px 10px;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 500;
   opacity: 0.8;
 }
-.education .swiper-container .swiper-wrapper .swiper-slide > div > h4 span {
+.education .swiper-container .swiper-wrapper .swiper-slide > div > p span {
   position: relative;
   padding-left: 26px;
   font-size: 15px;
@@ -479,15 +467,15 @@ body::-webkit-scrollbar {
   opacity: 0.6;
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.2rem;
+  line-height: 30px;
 }
 .education
   .swiper-container
   .swiper-wrapper
   .swiper-slide
   > div
-  > h4
+  > p
   span::before {
   position: absolute;
   content: "";
@@ -512,7 +500,6 @@ body::-webkit-scrollbar {
   position: relative;
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div a:hover {
-  background: url("../assets/notion\ 2.svg") no-repeat center;
   color: #d6ae5d;
 }
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -577,7 +564,6 @@ body::-webkit-scrollbar {
 }
 .portfolio .right a img {
   width: 100%;
-  height: 60vh;
 }
 .portfolio .right a p {
   display: block;
@@ -876,7 +862,7 @@ body::-webkit-scrollbar {
 }
 .footer-wrapper h2 .footer-colored {
   cursor: default;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .footer-wrapper .footer-btn {
   position: relative;
@@ -900,7 +886,7 @@ body::-webkit-scrollbar {
   position: absolute;
   z-index: 3;
   color: rgb(193, 192, 182);
-  transform: translate3d(0, -3em, 0);
+  transform: translate3d(0, 3em, 0);
   transition: 0.6s;
 }
 .footer-wrapper .footer-btn .footer-btn-2 {
@@ -1021,71 +1007,46 @@ body::-webkit-scrollbar {
     top: 52%;
     left: 5%;
   }
-  .skill > h3 {
+  .skill  h3 {
     margin: 0 0 0.5em 1em;
   }
-  .skill ul {
+  .skill .language {
     flex-direction: column;
   }
-  .skill ul li {
+  .skill .language li {
     margin: 1em 0;
     width: 100%;
   }
-  .skill ul li .skill-top {
+  .skill .language li .skill-top {
     display: flex;
     align-items: center;
   }
-  .skill ul li .skill-top img {
+  .skill .language li .skill-top img {
     display: inline-block;
     width: 25vw;
     margin: 0 0 0 1em;
   }
-  .skill ul li .skill-top p {
+  .skill .language li .skill-top p {
     font-size: 1rem;
     display: inline-block;
     margin-left: 1em;
   }
-  .skill ul li .skill-bottom {
+  .skill .language li .skill-bottom {
     font-size: 0.9rem;
     margin: 1em 1em 0;
     line-height: 1, 4;
     background: rgba(255, 255, 255, 0.3);
   }
-  .skill .bottom {
-    height: auto;
-    background: rgba(255, 255, 255, 0.3);
-    margin: 0 1em;
-    flex-direction: column;
+  .skill .strength {
+    flex-grow: 0;
+    
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .skill .bottom .left {
-    width: 100%;
-    float: none;
-    padding: 1em 0;
-  }
-  .skill .bottom .left div {
-    padding: 0;
-    width: auto;
-  }
-  .skill .bottom .left h3 {
-    text-align: center;
-    font-size: 2rem;
-  }
-  .skill .bottom .left h3 span {
-    display: inline;
-    margin-top: 0;
-  }
-  .skill .bottom .right {
-    width: 100%;
-    float: none;
-    margin: 1em 0;
-  }
-  .skill .bottom .right ol {
-    width: auto;
-    padding: 1em 1em 1em 2em;
-  }
-  .skill .bottom .right ol li {
-    font-size: 1.1rem;
-    margin-bottom: 0.5em;
+  .skill .strength li {
+    font-size: 1.2rem;
+
+    margin: 10px 30px;
   }
   .education h3 {
     margin: 0 0 0.5em 1em;

@@ -559,7 +559,7 @@ body::-webkit-scrollbar {
   align-items: center;
   padding: 25px;
 }
-.portfolio .right a p .project-description{
+.portfolio .right a p .project-description {
   font-size: 1rem;
   line-height: 24px;
   margin: 0 0 0 2em;
@@ -574,7 +574,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 150px 0 0 0;
+  padding: 200px 0 0 0;
 }
 .footer .contact-title {
   overflow: hidden;
@@ -655,8 +655,8 @@ body::-webkit-scrollbar {
 }
 .footer-bottom-wrapper .footer-block {
   display: flex;
-  width: 25%;
-  min-height: 10em;
+  width: 33.3333333%;
+  min-height: 9em;
   padding: 1.3em 1.3em 0.3em;
   flex-direction: column;
   border-top: 1px solid #000;
@@ -746,6 +746,12 @@ body::-webkit-scrollbar {
     font-size: 3.5rem;
     letter-spacing: -5px;
   }
+  .about{
+    padding: 50px 0 ;
+  }
+  .about .about-title{
+    margin-bottom: 50px;
+  }
   .about .about-title h2 {
     font-size: 5rem;
   }
@@ -808,6 +814,7 @@ body::-webkit-scrollbar {
 
   .portfolio {
     display: block;
+    padding: 0;
   }
 
   .portfolio .left {
@@ -816,8 +823,12 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 10vh;
     padding: 0;
-    margin: 0 0 20px;
+    margin: 0 0 2em;
     align-items: center;
+    font-size: 3rem;
+  }
+  .portfolio .left span {
+    font-size: 2rem;
   }
   .portfolio .right {
     width: 100%;
@@ -829,15 +840,21 @@ body::-webkit-scrollbar {
     font-size: 2rem;
     flex-direction: column;
   }
-  .portfolio .right a p .project-description{
+  .portfolio .right a p .project-description {
     margin: 1em 0 0 0;
   }
-
-  
-  
+  .footer{
+    padding: 50px 0 0 0 ;
+  }
+  .footer .contact-title {
+    margin-bottom: 0;
+}
   .footer .contact-title h2 {
     font-size: 5rem;
   }
+  .footer-wrapper {
+    margin: 0;
+}
   .footer-wrapper h2 {
     font-size: 4em;
     letter-spacing: -8px;
@@ -854,8 +871,11 @@ body::-webkit-scrollbar {
     justify-content: center;
     font-size: 0.7em;
   }
+  
   .footer-bottom-wrapper .footer-block {
     width: 100%;
+    display: flex;
+    justify-content: center;
     min-height: 3em;
     box-sizing: border-box;
     padding: 0.4em 0.4em;
@@ -865,6 +885,15 @@ body::-webkit-scrollbar {
   }
   .footer-block .footer-social-wrapper {
     justify-content: center;
+  }
+  .quickmenu {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  .quickmenu i {
+    font-size: 2em;
   }
 }
 

@@ -27,8 +27,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
-
 /* header css start */
 .header {
   position: fixed;
@@ -62,6 +60,7 @@ body::-webkit-scrollbar {
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
 }
 .navbar a {
   color: #fff;
@@ -183,7 +182,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background: rgb(136 96 96 / 10%);
+  /* background: rgb(136 96 96 / 10%); */
 }
 .home-wrapper {
   display: flex;
@@ -282,15 +281,24 @@ body::-webkit-scrollbar {
 /* home css end */
 /* about css start*/
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 50px 0;
+  padding: 150px 0;
 }
-.about h2 {
-  display: block;
-  font-size: 5vw;
-  font-weight: 600;
-  text-align: center;
+.about .about-title {
+  overflow: hidden;
+  display: flex;
+  transform: translate3d(20%, 0, 0);
+  margin-bottom: 100px;
+}
+.about .about-title h2 {
+  font-size: 10rem;
+  font-weight: 500;
+  font-style: italic;
+  white-space: nowrap;
 }
 
 .skill {
@@ -300,7 +308,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 }
-.skill  h3 {
+.skill h3 {
   margin: 0 0 2em 1em;
   font-size: 1.5rem;
   font-weight: 500;
@@ -448,7 +456,7 @@ body::-webkit-scrollbar {
 }
 .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
   font-size: 1.2rem;
-  line-height: 30px;
+  line-height: 40px;
 }
 .education
   .swiper-container
@@ -499,7 +507,7 @@ body::-webkit-scrollbar {
 
 /* portfolio css start */
 .portfolio {
-  background: rgb(136 96 96 / 10%);
+  /* background: rgb(136 96 96 / 10%); */
   position: relative;
   display: flex;
   min-height: 100vh;
@@ -533,37 +541,58 @@ body::-webkit-scrollbar {
 .portfolio .right a {
   display: block;
   padding: 0 0 4vw 0;
+  margin-bottom: 50px;
   text-decoration: none;
-  font-size: 2vw;
-  font-weight: 500;
-  line-height: 1.2em;
+  font-size: 3rem;
+  font-weight: 400;
   color: #3f3b37;
 }
 .portfolio .right a:last-child {
   padding: 0;
+  margin-bottom: 0;
 }
 .portfolio .right a img {
   width: 100%;
 }
 .portfolio .right a p {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 25px;
+}
+.portfolio .right a p .project-description{
+  font-size: 1rem;
+  line-height: 24px;
+  margin: 0 0 0 2em;
 }
 /* portfolio css end */
 
 /* footer css start */
 .footer {
   display: flex;
-  height: 100vh;
+  min-height: 101vh;
+  overflow: hidden;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 150px 0 0 0;
+}
+.footer .contact-title {
+  overflow: hidden;
+  display: flex;
+  transform: translate3d(20%, 0, 0);
+  margin-bottom: 100px;
+}
+.footer .contact-title h2 {
+  font-size: 10rem;
+  font-weight: 500;
+  font-style: italic;
+  white-space: nowrap;
 }
 .footer-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 9.06em;
+  margin: 200px 0;
 }
 .footer-wrapper h2 {
   font-size: 5em;
@@ -692,38 +721,6 @@ body::-webkit-scrollbar {
   .header {
     padding: 1.25rem 4%;
   }
-  .home-wrapper {
-    padding: 0 2em;
-  }
-  .home-wrapper h2 {
-    font-size: 4rem;
-  }
-  .home-span-section2 {
-    font-size: 3.5rem;
-    letter-spacing: -5px;
-  }
-  .portfolio {
-    display: block;
-  }
-
-  .portfolio .left {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 10vh;
-    padding: 0;
-    margin: 0 0 20px;
-    align-items: center;
-  }
-  .portfolio .right {
-    width: 100%;
-  }
-  .portfolio .right a img {
-    height: auto;
-  }
-  .portfolio .right a p {
-    font-size: 4vw;
-  }
   .load h2:nth-child(1) {
     top: 40%;
     left: 5%;
@@ -739,7 +736,20 @@ body::-webkit-scrollbar {
     top: 52%;
     left: 5%;
   }
-  .skill  h3 {
+  .home-wrapper {
+    padding: 0 2em;
+  }
+  .home-wrapper h2 {
+    font-size: 4rem;
+  }
+  .home-span-section2 {
+    font-size: 3.5rem;
+    letter-spacing: -5px;
+  }
+  .about .about-title h2 {
+    font-size: 5rem;
+  }
+  .skill h3 {
     margin: 0 0 0.5em 1em;
   }
   .skill .language {
@@ -771,7 +781,7 @@ body::-webkit-scrollbar {
   }
   .skill .strength {
     flex-grow: 0;
-    
+
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -796,6 +806,38 @@ body::-webkit-scrollbar {
     display: none !important;
   }
 
+  .portfolio {
+    display: block;
+  }
+
+  .portfolio .left {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 0;
+    margin: 0 0 20px;
+    align-items: center;
+  }
+  .portfolio .right {
+    width: 100%;
+  }
+  .portfolio .right a img {
+    height: auto;
+  }
+  .portfolio .right a p {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+  .portfolio .right a p .project-description{
+    margin: 1em 0 0 0;
+  }
+
+  
+  
+  .footer .contact-title h2 {
+    font-size: 5rem;
+  }
   .footer-wrapper h2 {
     font-size: 4em;
     letter-spacing: -8px;

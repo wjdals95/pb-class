@@ -4,9 +4,44 @@
   const $loadTop = document.querySelector(".load_top");
   let scrollY = 0; // window.scrollY 대신 쓸 변수
   let headerHeight = document.querySelector("header").offsetHeight;
+  const screenHeight = screen.availHeight;
   const homeSpan1 = document.querySelectorAll(".home-span-section1 .home-span");
   const homeSpan2 = document.querySelectorAll(".home-span-section2 .home-span");
- 
+  // const sceneInfo = [
+  //   // 0 - home
+  //   {
+  //     scrollHeight: document.querySelector("#home").offsetHeight, //862,
+  //     objs: {
+  //       homeSection: document.querySelector("#home"),
+  //     },
+  //     values: {},
+  //   },
+  //   // 1 - aobut
+  //   {
+  //     scrollHeight: document.querySelector("#about").offsetHeight, //1136,
+  //     objs: {
+  //       homeSection: document.querySelector("#about"),
+  //     },
+  //     values: {},
+  //   },
+  //   // 2 - project
+  //   {
+  //     scrollHeight: document.querySelector("#portfolio").offsetHeight, //2335,
+  //     objs: {
+  //       homeSection: document.querySelector("#portfolio"),
+  //     },
+  //     values: {},
+  //   },
+  //   // 3 - footer
+  //   {
+  //     scrollHeight: document.querySelector("#footer").offsetHeight, //862,
+  //     objs: {
+  //       homeSection: document.querySelector("#footer"),
+  //     },
+  //     values: {},
+  //   },
+  // ];
+
 
   html.style.overflow = "hidden";
 
@@ -70,7 +105,7 @@
   const navLinks = document.querySelectorAll("header nav a");
   const quickMenu = document.querySelector(".quickmenu");
   const homeButton = document.querySelector(".home-btn");
-
+  const logoBtn  = document.querySelector(".logo");
   menuIcon.addEventListener("click", (e) => {
     menuIcon.classList.toggle("bx-x");
     navBar.classList.toggle("active");
@@ -101,6 +136,10 @@
     homeButton.addEventListener("click", () => {
       window.scrollTo(0, sections[1].offsetTop - headerHeight);
     });
+    logoBtn.addEventListener("click", () => {
+      window.scrollTo(0, 0);
+    });
+
     navLinks[i].addEventListener("click", () => {
       window.scrollTo(0, sections[i].offsetTop - headerHeight);
     });
@@ -110,6 +149,8 @@
 
     window.addEventListener("scroll", () => {
       scrollY = window.scrollY;
+      const windowHeight = document.body.offsetHeight;
+      // console.log(windowHeight);
       if (
         scrollY >= sectionOffsetTop - headerHeight &&
         scrollY < sectionOffsetTop + sectionOffsetHeight - headerHeight
@@ -197,5 +238,124 @@
     }
     randomColor();
   });
+  function contactScroll () {
+    let scrollY = window.scrollY
+    const footerTop = document.querySelector(".footer").offsetTop;
+    const footerHeight = document.querySelector(".footer").offsetHeight;
+    const footerTitle = document.querySelector(".contact-title");
+    let scrollRatio = (scrollY + screenHeight - footerTop )* 30/ footerHeight;
+    if(scrollY + screenHeight >= footerTop){
+      footerTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
+    }
+  }
+  function aboutScroll () {
+    scrollY = window.scrollY;
+    const aboutTop = document.querySelector('.about').offsetTop;
+    const aboutHeight = document.querySelector(".about").offsetHeight;
+    const aboutTitle = document.querySelector(".about-title");
+    let scrollRatio = (scrollY + screenHeight - aboutTop )* 40/ aboutHeight;
+    if(scrollY + screenHeight >= aboutTop){
+      aboutTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
+    }
+  }
+  window.addEventListener("scroll",() => {
+    contactScroll()
+    aboutScroll()
+  })
+  //  //스크롤
+  //  function totalScroll() {
+  //   scrollY = window.scrollY;
+  //   let totalScrollHeight = 0;
+  //   for (let i = 0; i < sceneInfo.length; i++) {
+  //     totalScrollHeight += sceneInfo[i].scrollHeight;
+  //     if (totalScrollHeight >= scrollY) {
+  //       currentScene = i;
+  //       break;
+  //     }
+  //   }
 
+  //   const currentYOffset = yOffset - prevScrollHeight;
+  //   const scrollHeight = sceneInfo[currentScene].scrollHeight;
+  //   const scrollRatio = currentYOffset / scrollHeight;
+
+  //   function calcValues(values, currentYOffset) {
+  //     let rv;
+  //     //현재 씬(스크롤섹션)에서 스크롤 된 범위를 비율로 구하기
+  //   const currentYOffset = yOffset - prevScrollHeight;
+  //     const scrollHeight = sceneInfo[currentScene].scrollHeight;
+  //     const scrollRatio = currentYOffset / scrollHeight;
+  
+  //     if (values.length === 3) {
+  //       // start ~ end 사이에 애니메이션 실행
+  //       const partScrollStart = values[2].start * scrollHeight;
+  //       const partScrollEnd = values[2].end * scrollHeight;
+  //       const partScrollHeight = partScrollEnd - partScrollStart;
+  //       if (
+  //         currentYOffset >= partScrollStart &&
+  //         currentYOffset <= partScrollEnd
+  //       ) {
+  //         rv =
+  //           ((currentYOffset - partScrollStart) / partScrollHeight) *
+  //             (values[1] - values[0]) +
+  //           values[0];
+  //       } else if (currentYOffset < partScrollStart) {
+  //         rv = values[0];
+  //       } else if (currentYOffset > partScrollEnd) {
+  //         rv = values[1];
+  //       }
+  //     } else {
+  //       rv = scrollRatio * (values[1] - values[0]) + values[0];
+  //     }
+  
+  //     return rv;
+  //   }
+
+  //   prevScrollHeight = 0;
+
+  //   for (let i = 0; i < currentScene; i++) {
+  //     prevScrollHeight += sceneInfo[i].scrollHeight;
+  //   }
+  //   if (scrollY > prevScrollHeight + sceneInfo[currentScene].scrollHeight - headerHeight) {
+  //     currentScene++;
+  //   }
+  //   if (scrollY < prevScrollHeight - headerHeight) {
+  //     currentScene--;
+  //   }
+
+  //   console.log(scrollY, currentScene, prevScrollHeight );
+  // }
+
+
+  //FadeIn
+{/* <section class="aboutPage fade fadeOut"></section>
+
+  .fade {
+    transition: opacity 0.7s ease-in;
+  }
+  
+  .fadeOut { opacity: 0; }
+  .fadeIn { opacity: 1; }
+
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.3,
+};
+
+function observerCallback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // fade in observed elements that are in view
+      entry.target.classList.replace("fadeOut", "fadeIn");
+    } else {
+      // fade out observed elements that are not in view
+      entry.target.classList.replace("fadeIn", "fadeOut");
+    }
+  });
+}
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+const fadeElms = document.querySelectorAll(".fade");
+fadeElms.forEach((el) => observer.observe(el)); */}
 })();

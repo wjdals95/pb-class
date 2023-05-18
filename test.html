@@ -11,66 +11,350 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
       body {
         background-color: #c1c0b6;
-        color: #3f3b37;
       }
-      .home {
-        min-height: 100vh;
-        padding: 50px 0;
+      .box {
+        box-sizing: content-box;
+        height: 100vh;
+        border: 1px solid red;
+      }
+      .footer {
         display: flex;
+        height: 100vh;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        background: rgb(136 96 96 / 10%);
+        padding: 150px 0 0;
       }
-      .home-wrapper {
-        display: flex;
-        justify-content: center;
+      .footer .contact-title {
         width: 100%;
+        overflow: hidden;
+        display: flex;
+        transform: translate3d(50%, 0, 0);
       }
-      .home-wrapper h2 {
+      .footer .contact-title h2 {
         font-size: 10rem;
+        white-space: nowrap;
+      }
+      .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-wrapper h2 {
+        font-size: 5em;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .footer-wrapper h2 .footer-colored {
         cursor: default;
+        transition: 0.2s;
       }
-      .home-span-section {
-        display: block;
+      .footer-wrapper .footer-btn {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        overflow: hidden;
+        width: 70%;
+        margin-top: 1em;
+        padding: 1.5em 5em;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #3f3b37;
+        border-radius: 100vw;
+        background-color: #3f3b37;
+        color: #3f3b37;
+        font-size: 1em;
+        text-transform: uppercase;
       }
-      @media (max-width: 992px) {
-        .home-wrapper {
-          padding: 0 2em;
-        }
-        .home-wrapper h2 {
-          font-size: 4rem;
-        }
-        .home-span-section {
-          display: block;
-          font-size: 3.5rem;
-          letter-spacing: -5px;
-        }
+      .footer-wrapper .footer-btn .footer-btn-1 {
+        position: absolute;
+        z-index: 3;
+        color: rgb(193, 192, 182);
+        transform: translate3d(0, 3em, 0);
+        transition: 0.6s;
+      }
+      .footer-wrapper .footer-btn .footer-btn-2 {
+        color: #deddcf;
+        transform: translate3d(0, 0, 0);
+        transition: 0.6s;
+      }
+      .footer-wrapper .footer-btn .footer-btn-3 {
+        position: absolute;
+        left: 0;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        height: 0;
+        border-radius: 100vw;
+        background-color: #d6ae5d;
+        transition: 1s;
+      }
+      .footer-bottom-wrapper {
+        position: relative;
+
+        display: flex;
+        width: 100%;
+        background-color: #c1c0b6;
+      }
+      .footer-bottom-wrapper .footer-block {
+        display: flex;
+        width: 25%;
+        min-height: 8em;
+        padding: 1.3em 1.3em 0.3em;
+        flex-direction: column;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+      .footer-bottom-wrapper .footer-block .footer-p {
+        width: 100%;
+        height: 100%;
+        font-size: 0.9em;
+      }
+      .footer-block a {
+        text-decoration: none;
+        position: relative;
+      }
+      .footer-block h3 {
+        color: #3f3b37;
+        text-align: left;
+        padding-bottom: 1em;
+        font-family: Neuehaasdisplaymediu, sans-serif;
+        font-size: 1em;
+        text-transform: uppercase;
+      }
+      .footer-block .footer-social-wrapper {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+      }
+      .footer-block .footer-social-wrapper .social {
+        position: relative;
+        display: flex;
+        width: 1.4em;
+        margin-right: 1em;
+        flex-direction: column;
       }
     </style>
   </head>
   <body>
-    <section id="home" class="home">
-      <div class="home-wrapper">
-        <h2>
-          <span class="home-span">W</span>
-          <span class="home-span">E</span>
-          <span class="home-span">B</span>
-          <span class="home-span-section">
-            <span class="home-span">P</span>
-            <span class="home-span">U</span>
-            <span class="home-span">B</span>
-            <span class="home-span">L</span>
-            <span class="home-span">I</span>
-            <span class="home-span">S</span>
-            <span class="home-span">H</span>
-            <span class="home-span">E</span>
-            <span class="home-span">R</span>
-          </span>
-        </h2>
+    <section class="box"></section>
+    <section id="footer" class="footer">
+      <div class="contact-title">
+        <h2>&nbsp;- &nbsp;C<span>ONTACT</span></h2>
+        <h2>&nbsp;- &nbsp;C<span>ONTACT</span></h2>
+        <h2>&nbsp;- &nbsp;C<span>ONTACT</span></h2>
+        <h2>&nbsp;- &nbsp;C<span>ONTACT</span></h2>
+      </div>
+      <article class="footer-wrapper">
+        <div>
+          <h2 class="footer-colored">
+            <span class="footer-span">L</span>
+            <span class="footer-span">E</span>
+            <span class="footer-span">T</span>
+            <span class="footer-span">'</span>
+            <span class="footer-span">S</span>
+            <span class="footer-span"></span>
+            <span class="footer-span">C</span>
+            <span class="footer-span">H</span>
+            <span class="footer-span">A</span>
+            <span class="footer-span">T</span>
+            <span class="footer-span">!</span>
+          </h2>
+        </div>
+        <a
+          class="footer-btn"
+          href="https://open.kakao.com/o/s66Slcff"
+          target="_blank"
+        >
+          <div class="footer-btn-1">Let's Go</div>
+          <div class="footer-btn-2">START A KAKAOTALK</div>
+          <div class="footer-btn-3"></div>
+        </a>
+      </article>
+      <div class="footer-bottom-wrapper">
+        <div class="footer-block">
+          <p class="footer-p">©2023 Choi-Jeongmin - All Rights Reserved</p>
+        </div>
+        <div class="footer-block">
+          <h3>Social</h3>
+          <div class="footer-social-wrapper">
+            <a
+              href="https://github.com/wjdals95"
+              target="_blank"
+              class="social"
+            >
+              <img src="./assets/git1.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="footer-block">
+          <h3>Contacts</h3>
+          <div class="footer-social-wrapper">
+            <a href="mailto:wjdals992@naver.com" target="_blank" class="social">
+              <img src="./assets/naver 1.svg" alt="네이버 이메일 이미지" /> </a
+            ><a
+              href="https://open.kakao.com/o/s66Slcff"
+              target="_blank"
+              class="social"
+            >
+              <img
+                src="./assets/kakaotalk 1.svg"
+                alt="카카오 오픈채팅 이미지"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer-block"></div>
       </div>
     </section>
 
-    <script></script>
+    <script>
+      const sceneInfo = [
+        //0
+        {
+          scrollHeight: document.querySelector('.footer'), //스크롤높이
+          objs: {
+            title: document.querySelector(".section-title"),
+          },
+          values: {
+            messageA_translateY_in: [20, 0, { start: 0.1, end: 0.2 }],
+            messageA_translateY_out: [0, -20, { start: 0.25, end: 0.3 }],
+          },
+        },
+        //1
+        {
+          scrollHeight: 0, //스크롤높이
+          objs: {
+            title: document.querySelector(".section-title"),
+          },
+          values: {
+            messageA_translateY_in: [20, 0, { start: 0.1, end: 0.2 }],
+            messageA_translateY_out: [0, -20, { start: 0.25, end: 0.3 }],
+          },
+        },
+      ];
+      const footerHieght = document.querySelector(".footer").offsetHeight;
+      const footerTop = document.querySelector(".footer").offsetTop;
+      // window.addEventListener("scroll", () => {
+      //   let scrollY = window.scrollY;
+      //   console.log(scrollY, footerHieght, footerTop);
+      //   if (scrollY >= footerTop) {
+      //   }
+      // });
+
+      let yOffset = 0; // window.pageYOffset 대신 쓸 변수
+      let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
+      let currentScene = 0; //현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
+      let enterNewScene = false; //새로운 scene이 시작되는 순간 true
+      function setLayout() {
+        yOffset = window.pageYOffset;
+        let totalScrollHeight = 0;
+        for (let i = 0; i < sceneInfo.length; i++) {
+          totalScrollHeight += sceneInfo[i].scrollHeight;
+          if (totalScrollHeight >= yOffset) {
+            currentScene = i;
+            break;
+          }
+        }
+      }
+      function calcValues(values, currentYOffset) {
+        let rv;
+        //현재 씬(스크롤섹션)에서 스크롤 된 범위를 비율로 구하기
+        const scrollHeight = sceneInfo[currentScene].scrollHeight;
+        const scrollRatio = currentYOffset / scrollHeight;
+
+        if (values.length === 3) {
+          // start ~ end 사이에 애니메이션 실행
+          const partScrollStart = values[2].start * scrollHeight;
+          const partScrollEnd = values[2].end * scrollHeight;
+          const partScrollHeight = partScrollEnd - partScrollStart;
+          if (
+            currentYOffset >= partScrollStart &&
+            currentYOffset <= partScrollEnd
+          ) {
+            rv =
+              ((currentYOffset - partScrollStart) / partScrollHeight) *
+                (values[1] - values[0]) +
+              values[0];
+          } else if (currentYOffset < partScrollStart) {
+            rv = values[0];
+          } else if (currentYOffset > partScrollEnd) {
+            rv = values[1];
+          }
+        } else {
+          rv = scrollRatio * (values[1] - values[0]) + values[0];
+        }
+
+        return rv;
+      }
+
+      function playAnimation() {
+        const objs = sceneInfo[currentScene].objs;
+        const values = sceneInfo[currentScene].values;
+        const currentYOffset = yOffset - prevScrollHeight;
+        const scrollHeight = sceneInfo[currentScene].scrollHeight;
+        const scrollRatio = currentYOffset / scrollHeight;
+
+        switch (currentScene) {
+          case 0:
+            // console.log('0 play');
+            if (scrollRatio <= 0.22) {
+              // in
+              objs.messageA.style.opacity = calcValues(
+                values.messageA_opacity_in,
+                currentYOffset
+              );
+              objs.messageA.style.transform = `translate3d(0, ${calcValues(
+                values.messageA_translateY_in, // messageA_translateY_in: [20, 0, { start: 0.1, end: 0.2 }],
+                currentYOffset
+              )}%, 0)`;
+            } else {
+              // out
+              objs.messageA.style.opacity = calcValues(
+                values.messageA_opacity_out,
+                currentYOffset
+              );
+              objs.messageA.style.transform = `translate3d(0, ${calcValues(
+                values.messageA_translateY_out,
+                currentYOffset
+              )}%, 0)`;
+            }
+        }
+      }
+      function scrollLoop() {
+        prevScrollHeight = 0;
+        enterNewScene = false;
+        for (let i = 0; i < currentScene; i++) {
+          prevScrollHeight += sceneInfo[i].scrollHeight;
+        }
+        if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+          enterNewScene = true;
+          currentScene++;
+        }
+        if (yOffset < prevScrollHeight) {
+          enterNewScene = true;
+          if (currentScene === 0) return; //브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
+          currentScene--;
+        }
+        if (enterNewScene) return;
+        playAnimation();
+      }
+      window.addEventListener("scroll", () => {
+        yOffset = window.pageYOffset;
+        scrollLoop();
+        console.log(prevScrollHeight);
+      });
+    </script>
   </body>
 </html>

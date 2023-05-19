@@ -7,41 +7,6 @@
   const screenHeight = screen.availHeight;
   const homeSpan1 = document.querySelectorAll(".home-span-section1 .home-span");
   const homeSpan2 = document.querySelectorAll(".home-span-section2 .home-span");
-  // const sceneInfo = [
-  //   // 0 - home
-  //   {
-  //     scrollHeight: document.querySelector("#home").offsetHeight, //862,
-  //     objs: {
-  //       homeSection: document.querySelector("#home"),
-  //     },
-  //     values: {},
-  //   },
-  //   // 1 - aobut
-  //   {
-  //     scrollHeight: document.querySelector("#about").offsetHeight, //1136,
-  //     objs: {
-  //       homeSection: document.querySelector("#about"),
-  //     },
-  //     values: {},
-  //   },
-  //   // 2 - project
-  //   {
-  //     scrollHeight: document.querySelector("#portfolio").offsetHeight, //2335,
-  //     objs: {
-  //       homeSection: document.querySelector("#portfolio"),
-  //     },
-  //     values: {},
-  //   },
-  //   // 3 - footer
-  //   {
-  //     scrollHeight: document.querySelector("#footer").offsetHeight, //862,
-  //     objs: {
-  //       homeSection: document.querySelector("#footer"),
-  //     },
-  //     values: {},
-  //   },
-  // ];
-
 
   html.style.overflow = "hidden";
 
@@ -105,7 +70,7 @@
   const navLinks = document.querySelectorAll("header nav a");
   const quickMenu = document.querySelector(".quickmenu");
   const homeButton = document.querySelector(".home-btn");
-  const logoBtn  = document.querySelector(".logo");
+  const logoBtn = document.querySelector(".logo");
   menuIcon.addEventListener("click", (e) => {
     menuIcon.classList.toggle("bx-x");
     navBar.classList.toggle("active");
@@ -238,124 +203,146 @@
     }
     randomColor();
   });
-  function contactScroll () {
-    let scrollY = window.scrollY
+  //textSCroll
+  function contactScroll() {
+    let scrollY = window.scrollY;
     const footerTop = document.querySelector(".footer").offsetTop;
     const footerHeight = document.querySelector(".footer").offsetHeight;
     const footerTitle = document.querySelector(".contact-title");
-    let scrollRatio = (scrollY + screenHeight - footerTop )* 30/ footerHeight;
-    if(scrollY + screenHeight >= footerTop){
+    let scrollRatio =
+      ((scrollY + screenHeight - footerTop) * 30) / footerHeight;
+    if (scrollY + screenHeight >= footerTop) {
       footerTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
     }
   }
-  function aboutScroll () {
+  function aboutScroll() {
     scrollY = window.scrollY;
-    const aboutTop = document.querySelector('.about').offsetTop;
+    const aboutTop = document.querySelector(".about").offsetTop;
     const aboutHeight = document.querySelector(".about").offsetHeight;
     const aboutTitle = document.querySelector(".about-title");
-    let scrollRatio = (scrollY + screenHeight - aboutTop )* 40/ aboutHeight;
-    if(scrollY + screenHeight >= aboutTop){
+    let scrollRatio = ((scrollY + screenHeight - aboutTop) * 40) / aboutHeight;
+    if (scrollY + screenHeight >= aboutTop) {
       aboutTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
     }
   }
-  window.addEventListener("scroll",() => {
-    contactScroll()
-    aboutScroll()
-  })
-  //  //스크롤
-  //  function totalScroll() {
-  //   scrollY = window.scrollY;
-  //   let totalScrollHeight = 0;
-  //   for (let i = 0; i < sceneInfo.length; i++) {
-  //     totalScrollHeight += sceneInfo[i].scrollHeight;
-  //     if (totalScrollHeight >= scrollY) {
-  //       currentScene = i;
-  //       break;
-  //     }
-  //   }
+  //about interactive(getBoundingClientRect())
+  function aboutScrollEvent() {
+    const about = document.querySelector("#about");
 
-  //   const currentYOffset = yOffset - prevScrollHeight;
-  //   const scrollHeight = sceneInfo[currentScene].scrollHeight;
-  //   const scrollRatio = currentYOffset / scrollHeight;
+    const languageTop = document.querySelectorAll(
+      ".skill .language li .skill-top"
+    );
+    const languageBottom = document.querySelectorAll(
+      ".skill .language li .skill-bottom"
+    );
+    const aboutTop = about.getBoundingClientRect().top;
+    let scrollY = window.scrollY;
 
-  //   function calcValues(values, currentYOffset) {
-  //     let rv;
-  //     //현재 씬(스크롤섹션)에서 스크롤 된 범위를 비율로 구하기
-  //   const currentYOffset = yOffset - prevScrollHeight;
-  //     const scrollHeight = sceneInfo[currentScene].scrollHeight;
-  //     const scrollRatio = currentYOffset / scrollHeight;
-  
-  //     if (values.length === 3) {
-  //       // start ~ end 사이에 애니메이션 실행
-  //       const partScrollStart = values[2].start * scrollHeight;
-  //       const partScrollEnd = values[2].end * scrollHeight;
-  //       const partScrollHeight = partScrollEnd - partScrollStart;
-  //       if (
-  //         currentYOffset >= partScrollStart &&
-  //         currentYOffset <= partScrollEnd
-  //       ) {
-  //         rv =
-  //           ((currentYOffset - partScrollStart) / partScrollHeight) *
-  //             (values[1] - values[0]) +
-  //           values[0];
-  //       } else if (currentYOffset < partScrollStart) {
-  //         rv = values[0];
-  //       } else if (currentYOffset > partScrollEnd) {
-  //         rv = values[1];
-  //       }
-  //     } else {
-  //       rv = scrollRatio * (values[1] - values[0]) + values[0];
-  //     }
-  
-  //     return rv;
-  //   }
+    for (let i = 0; i < languageTop.length; i++) {
+      aboutTop >= -screenHeight * 0.8 &&
+        aboutTop <= screenHeight * 0.15 &&
+        (languageTop[0].style.opacity = "1");
 
-  //   prevScrollHeight = 0;
+      aboutTop >= -screenHeight * 0.8 &&
+        aboutTop <= screenHeight * 0.05 &&
+        (languageTop[1].style.opacity = "1");
 
-  //   for (let i = 0; i < currentScene; i++) {
-  //     prevScrollHeight += sceneInfo[i].scrollHeight;
-  //   }
-  //   if (scrollY > prevScrollHeight + sceneInfo[currentScene].scrollHeight - headerHeight) {
-  //     currentScene++;
-  //   }
-  //   if (scrollY < prevScrollHeight - headerHeight) {
-  //     currentScene--;
-  //   }
-
-  //   console.log(scrollY, currentScene, prevScrollHeight );
-  // }
-
-
-  //FadeIn
-{/* <section class="aboutPage fade fadeOut"></section>
-
-  .fade {
-    transition: opacity 0.7s ease-in;
-  }
-  
-  .fadeOut { opacity: 0; }
-  .fadeIn { opacity: 1; }
-
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.3,
-};
-
-function observerCallback(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // fade in observed elements that are in view
-      entry.target.classList.replace("fadeOut", "fadeIn");
-    } else {
-      // fade out observed elements that are not in view
-      entry.target.classList.replace("fadeIn", "fadeOut");
+      aboutTop >= -screenHeight * 0.8 &&
+        aboutTop <= 0 &&
+        (languageTop[2].style.opacity = "1");
     }
+    for (let i = 0; i < languageBottom.length; i++) {
+      aboutTop >= -screenHeight * 0.7 &&
+        aboutTop <= -screenHeight * 0.1 &&
+        languageBottom[i].classList.add("show");
+    }
+  }
+  async function strengthScroll() {
+    const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+    const aboutTop = document
+      .querySelector("#about")
+      .getBoundingClientRect().top;
+
+    const strengthLi = document.querySelectorAll(".strength ul li");
+
+    for (let i = 0; i < strengthLi.length; i++) {
+      if (aboutTop >= -screenHeight * 1.15 && aboutTop <= -screenHeight * 0.5) {
+        strengthLi[i].style.opacity = "1";
+        await timer(100);
+      }
+    }
+  }
+  function footerScroll() {
+    const footerTop = document
+      .querySelector("#footer")
+      .getBoundingClientRect().top;
+    const footerText = document.querySelector(".footer-colored");
+    const footerBtn = document.querySelector(".footer-btn");
+
+    if (footerTop <= 0) {
+      footerText.style.transform = "scaleY(1)";
+      footerBtn.style.opacity = "1";
+    }else{
+      footerText.style.transform = "scaleY(0)";
+      footerBtn.style.opacity = "0";
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    contactScroll();
+    aboutScroll();
+    aboutScrollEvent();
+    strengthScroll();
+    footerScroll();
   });
-}
+  //FadeIn
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
 
-const observer = new IntersectionObserver(observerCallback, observerOptions);
+  function observerCallback(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // fade in observed elements that are in view
+        entry.target.classList.replace("fadeOut", "fadeIn");
+      } else {
+        // fade out observed elements that are not in view
+        entry.target.classList.replace("fadeIn", "fadeOut");
+      }
+    });
+  }
 
-const fadeElms = document.querySelectorAll(".fade");
-fadeElms.forEach((el) => observer.observe(el)); */}
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  const fadeElms = document.querySelectorAll(".fade");
+  fadeElms.forEach((el) => observer.observe(el));
+
+  //fadeUp
+  const observerOptions1 = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.4,
+  };
+  function observerCallback1(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // fade in observed elements that are in view
+        entry.target.classList.replace("fadeUpOut", "fadeUpIn");
+      } else {
+        // fade out observed elements that are not in view
+        entry.target.classList.replace("fadeUpIn", "fadeUpOut");
+      }
+    });
+  }
+
+  const observer1 = new IntersectionObserver(
+    observerCallback1,
+    observerOptions1
+  );
+
+  const fadeElms1 = document.querySelectorAll(".fadeUp");
+  fadeElms1.forEach((el) => observer1.observe(el));
 })();

@@ -21,9 +21,7 @@ window.addEventListener("scroll", () => {
   console.log(scrolled);
 
   for (i = 0; i < fadeIn.length; i++) {
-    const popularHeight = document
-      .querySelector("#popular")
-      .getBoundingClientRect().height;
+   
     console.log(popularHeight);
 
     for (i = 0; i < fadeIn.length; i++) {

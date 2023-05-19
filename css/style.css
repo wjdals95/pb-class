@@ -347,7 +347,7 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 .skill .language li .skill-top {
-  opacity: 0;
+  transform: scaleY(0);
   transition: 1.5s;
 }
 .skill .language li .skill-top img {
@@ -366,14 +366,11 @@ body::-webkit-scrollbar {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 10px 20px 10px 30px;
-  transform: translate3d(0, 50%, 0);
   opacity: 0;
-  transition: 1.5s;
+  transition: 2s;
+  
 }
-.skill .language li .skill-bottom.show {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
-}
+
 .skill .language li .skill-bottom p {
   display: block;
   position: relative;

@@ -227,10 +227,9 @@
   }
   //about interactive(getBoundingClientRect())
   function aboutScrollEvent() {
-    
     const aboutTop = document
-    .querySelector("#about")
-    .getBoundingClientRect().top;
+      .querySelector("#about")
+      .getBoundingClientRect().top;
     const languageTop = document.querySelectorAll(
       ".skill .language li .skill-top"
     );
@@ -240,21 +239,21 @@
 
     for (let i = 0; i < languageTop.length; i++) {
       aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.15
-        ? (languageTop[0].style.opacity = "1")
-        : (languageTop[0].style.opacity = "0");
+        ? (languageTop[0].style.transform = "scaleY(1)")
+        : (languageTop[0].style.transform = "scaleY(0)");
 
       aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.05
-        ? (languageTop[1].style.opacity = "1")
-        : (languageTop[1].style.opacity = "0");
+        ? (languageTop[1].style.transform = "scaleY(1)")
+        : (languageTop[1].style.transform = "scaleY(0)");
 
       aboutTop >= -screenHeight * 0.8 && aboutTop <= 0
-        ? (languageTop[2].style.opacity = "1")
-        : (languageTop[2].style.opacity = "0");
+        ? (languageTop[2].style.transform = "scaleY(1)")
+        : (languageTop[2].style.transform = "scaleY(0)");
     }
     for (let i = 0; i < languageBottom.length; i++) {
       aboutTop >= -screenHeight * 0.7 && aboutTop <= -screenHeight * 0.1
-        ? languageBottom[i].classList.add("show")
-        : languageBottom[i].classList.remove("show");
+        ? (languageBottom[i].style.opacity = "1")
+        : (languageBottom[i].style.opacity = "0");
     }
   }
   async function strengthScroll() {
@@ -270,7 +269,7 @@
       if (aboutTop >= -screenHeight * 1.15 && aboutTop <= -screenHeight * 0.5) {
         strengthLi[i].style.opacity = "1";
         await timer(100);
-      }else{
+      } else {
         strengthLi[i].style.opacity = "0";
         await timer(0);
       }

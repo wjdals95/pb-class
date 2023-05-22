@@ -210,7 +210,7 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 .home-wrapper h2 {
-  font-size: 10rem;
+  font-size: 10vw;
   font-weight: 500;
   cursor: default;
 }
@@ -312,7 +312,7 @@ body::-webkit-scrollbar {
   position: relative;
   padding: 150px 0;
 }
-.about .about-title {  
+.about .about-title {
   margin-bottom: 100px;
 }
 .about .about-title h2 {
@@ -790,11 +790,7 @@ body::-webkit-scrollbar {
     padding: 0 2em;
   }
   .home-wrapper h2 {
-    font-size: 4rem;
-  }
-  .home-span-section2 {
-    font-size: 3.5rem;
-    letter-spacing: -5px;
+    font-size: 12vw;
   }
   .about {
     padding: 50px 0;
@@ -902,7 +898,7 @@ body::-webkit-scrollbar {
     margin: 1em 0 0 0;
   }
   .footer {
-    padding: 50px 0 0 0;
+    padding: 100px 0 0 0;
   }
   .footer .contact-title {
     margin-bottom: 0;
@@ -989,5 +985,10 @@ body::-webkit-scrollbar {
   }
   .nav_bg.active {
     display: block;
+  }
+}
+@media (max-width: 460px) {
+  .home-wrapper h2 {
+    letter-spacing: -2px;
   }
 }

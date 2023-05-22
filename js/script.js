@@ -98,6 +98,7 @@
   for (let i = 0; i < navLinks.length; i++) {
     let sectionOffsetTop = sections[i].offsetTop;
     let sectionOffsetHeight = sections[i].offsetHeight;
+
     homeButton.addEventListener("click", () => {
       window.scrollTo(0, sections[1].offsetTop - headerHeight);
     });
@@ -114,8 +115,6 @@
 
     window.addEventListener("scroll", () => {
       scrollY = window.scrollY;
-      const windowHeight = document.body.offsetHeight;
-      // console.log(windowHeight);
       if (
         scrollY >= sectionOffsetTop - headerHeight &&
         scrollY < sectionOffsetTop + sectionOffsetHeight - headerHeight
@@ -230,6 +229,9 @@
     const aboutTop = document
       .querySelector("#about")
       .getBoundingClientRect().top;
+    const aboutHeight = document
+      .querySelector("#about")
+      .getBoundingClientRect().height;
     const languageTop = document.querySelectorAll(
       ".skill .language li .skill-top"
     );
@@ -238,22 +240,16 @@
     );
 
     for (let i = 0; i < languageTop.length; i++) {
-      aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.15
-        ? (languageTop[0].style.transform = "scaleY(1)")
-        : (languageTop[0].style.transform = "scaleY(0)");
-
-      aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.05
-        ? (languageTop[1].style.transform = "scaleY(1)")
-        : (languageTop[1].style.transform = "scaleY(0)");
-
-      aboutTop >= -screenHeight * 0.8 && aboutTop <= 0
-        ? (languageTop[2].style.transform = "scaleY(1)")
-        : (languageTop[2].style.transform = "scaleY(0)");
+      aboutTop <= aboutHeight * 0.1 &&
+        (languageTop[0].style.transform = "scaleY(1)");
+      aboutTop <= aboutHeight * 0.01 &&
+        (languageTop[1].style.transform = "scaleY(1)");
+      aboutTop <= aboutHeight * 0.001 &&
+        (languageTop[2].style.transform = "scaleY(1)");
     }
     for (let i = 0; i < languageBottom.length; i++) {
-      aboutTop >= -screenHeight * 0.7 && aboutTop <= -screenHeight * 0.1
-        ? (languageBottom[i].style.opacity = "1")
-        : (languageBottom[i].style.opacity = "0");
+      aboutTop <= -aboutHeight * 0.01 &&
+        (languageBottom[i].style.opacity = "1");
     }
   }
   async function strengthScroll() {
@@ -262,16 +258,15 @@
     const aboutTop = document
       .querySelector("#about")
       .getBoundingClientRect().top;
-
+    const aboutHeight = document
+      .querySelector("#about")
+      .getBoundingClientRect().height;
     const strengthLi = document.querySelectorAll(".strength ul li");
 
     for (let i = 0; i < strengthLi.length; i++) {
-      if (aboutTop >= -screenHeight * 1.15 && aboutTop <= -screenHeight * 0.5) {
+      if (aboutTop <= -aboutHeight * 0.2) {
         strengthLi[i].style.opacity = "1";
         await timer(100);
-      } else {
-        strengthLi[i].style.opacity = "0";
-        await timer(0);
       }
     }
   }
@@ -298,6 +293,7 @@
     strengthScroll();
     footerScroll();
   });
+
   //FadeIn
   const observerOptions = {
     root: null,

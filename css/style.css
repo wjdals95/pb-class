@@ -952,6 +952,9 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
   #menu_icon {
     display: block;
   }
@@ -990,5 +993,12 @@ body::-webkit-scrollbar {
 @media (max-width: 460px) {
   .home-wrapper h2 {
     letter-spacing: -2px;
+  }
+  .strength ul li {
+    margin: 10px 20px;
+  }
+  .footer-wrapper h2 {
+    font-size: 3rem;
+    letter-spacing: -1px;
   }
 }

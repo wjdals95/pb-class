@@ -10,6 +10,12 @@
 
   html.style.overflow = "hidden";
 
+  window.onkeydown = function () {
+    const kcode = event.keyCode;
+    if (kcode == 116 || kcode == 82) {
+      window.location.reload(true);
+    }
+  };
   //로딩화면
   function loadingTop() {
     setTimeout(() => {
@@ -127,6 +133,7 @@
   }
 
   //Color
+
   const footerBtn = document.querySelector(".footer-btn");
   const footerBtn1 = document.querySelector(".footer-btn-1");
   const footerBtn2 = document.querySelector(".footer-btn-2");
@@ -143,8 +150,36 @@
   function randomItem(a) {
     return a[Math.floor(Math.random() * a.length)];
   }
-
+  function printRandomBinary() {
+    setInterval(function () {
+      for (let i = 0; i < homeSpan.length; i++) {
+        homeSpan[i].dataset.value = Math.floor(Math.random() * 2);
+        if (homeSpan[i].dataset.value == 1) {
+          homeSpan[i].classList.add("onmouseover");
+        } else {
+          setTimeout(() => {
+            homeSpan[i].classList.remove("onmouseover");
+          }, 1000);
+        }
+      }
+    }, 2000);
+  }
+  setTimeout(()=> {
+    printRandomBinary();
+  },3000)
+  
   function randomColor() {
+    homeSpan.forEach((elem, index) => {
+      elem.addEventListener("mouseover", () => {
+        homeSpan[index].classList.add("onmouseover");
+      });
+      elem.addEventListener("mouseout", () => {
+        setTimeout(() => {
+          homeSpan[index].classList.remove("onmouseover");
+        }, 3000);
+      });
+    });
+
     footerSpan.forEach((content, index) => {
       content.addEventListener("mouseover", () => {
         footerSpan[index].style.color = `${randomItem(colorRandom)}`;
@@ -152,16 +187,6 @@
       content.addEventListener("mouseout", () => {
         setTimeout(() => {
           footerSpan[index].style.color = "inherit";
-        }, 3000);
-      });
-    });
-    homeSpan.forEach((elem, index) => {
-      elem.addEventListener("mouseover", () => {
-        homeSpan[index].style.color = `${randomItem(colorRandom)}`;
-      });
-      elem.addEventListener("mouseout", () => {
-        setTimeout(() => {
-          homeSpan[index].style.color = "inherit";
         }, 3000);
       });
     });
@@ -200,30 +225,32 @@
       homeBtn2.style.transform = "translate3d(0px, 0, 0px)";
       homeBtn3.style.height = "0%";
     }
-    randomColor();
+    
+      randomColor();
+    
   });
   //textSCroll
-  function contactScroll() {
-    let scrollY = window.scrollY;
-    const footerTop = document.querySelector(".footer").offsetTop;
-    const footerHeight = document.querySelector(".footer").offsetHeight;
-    const footerTitle = document.querySelector(".contact-title");
-    let scrollRatio =
-      ((scrollY + screenHeight - footerTop) * 30) / footerHeight;
-    if (scrollY + screenHeight >= footerTop) {
-      footerTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
-    }
-  }
-  function aboutScroll() {
-    scrollY = window.scrollY;
-    const aboutTop = document.querySelector(".about").offsetTop;
-    const aboutHeight = document.querySelector(".about").offsetHeight;
-    const aboutTitle = document.querySelector(".about-title");
-    let scrollRatio = ((scrollY + screenHeight - aboutTop) * 40) / aboutHeight;
-    if (scrollY + screenHeight >= aboutTop) {
-      aboutTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
-    }
-  }
+  // function contactScroll() {
+  //   let scrollY = window.scrollY;
+  //   const footerTop = document.querySelector(".footer").offsetTop;
+  //   const footerHeight = document.querySelector(".footer").offsetHeight;
+  //   const footerTitle = document.querySelector(".contact-title");
+  //   // let scrollRatio =
+  //   //   ((scrollY + screenHeight - footerTop) * 30) / footerHeight;
+  //   // if (scrollY + screenHeight >= footerTop) {
+  //   //   footerTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
+  //   // }
+  // }
+  // function aboutScroll() {
+  //   scrollY = window.scrollY;
+  //   const aboutTop = document.querySelector(".about").offsetTop;
+  //   const aboutHeight = document.querySelector(".about").offsetHeight;
+  //   const aboutTitle = document.querySelector(".about-title");
+  //   // let scrollRatio = ((scrollY + screenHeight - aboutTop) * 40) / aboutHeight;
+  //   // if (scrollY + screenHeight >= aboutTop) {
+  //   //   aboutTitle.style.transform = `translate3d(${20 - scrollRatio}%, 0, 0)`;
+  //   // }
+  // }
   //about interactive(getBoundingClientRect())
   function aboutScrollEvent() {
     const aboutTop = document
@@ -287,8 +314,6 @@
   }
 
   window.addEventListener("scroll", () => {
-    contactScroll();
-    aboutScroll();
     aboutScrollEvent();
     strengthScroll();
     footerScroll();

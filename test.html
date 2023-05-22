@@ -26,494 +26,216 @@
         height: 100vh;
         border: 1px solid red;
       }
-      .about {
+      .home {
+        min-height: 100vh;
+        padding: 50px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow: hidden;
-        position: relative;
-        padding: 150px 0;
-      }
-      .about .about-title {
-        overflow: hidden;
-        display: flex;
-        transform: translate3d(20%, 0, 0);
-        margin-bottom: 100px;
-      }
-      .about .about-title h2 {
-        font-size: 10rem;
-        font-weight: 500;
-        font-style: italic;
-        white-space: nowrap;
-      }
-
-      .skill {
-        width: 1180px;
-        max-width: 100%;
-        margin: 30px auto;
-        display: flex;
-        flex-direction: column;
-      }
-      .skill h3 {
-        margin: 0 0 2em 1em;
-        font-size: 1.5rem;
-        font-weight: 500;
-      }
-
-      .skill .language {
-        display: flex;
         justify-content: space-around;
-        margin-bottom: 4em;
+        /* background: rgb(136 96 96 / 10%); */
       }
-      .skill .language li {
-        display: inline-block;
-        text-align: center;
-        font-size: 20px;
-        width: 30%;
-        overflow: hidden;
-      }
-      .skill .language li .skill-top {
-        transform: scaleY(0);
-        transition: 1.5s;
-      }
-      .skill .language li .skill-top img {
-        display: block;
-        width: 150px;
-        margin: 0 auto 20px;
-      }
-      .skill .language li .skill-top p {
-        font-size: 1.5rem;
-      }
-      .skill .language li .skill-bottom {
-        font-size: 1.2rem;
-        text-align: left;
-        margin: 10px 0 0;
-        line-height: 30px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 20px;
-        padding: 10px 20px 10px 30px;
-        opacity: 0;
-        transition: 2s;
-      }
-
-      .skill .language li .skill-bottom p {
-        display: block;
-        position: relative;
-        margin: 5px 0;
-      }
-      .skill .language li .skill-bottom p::before {
-        content: "";
-        width: 5px;
-        height: 5px;
-        border-radius: 5px;
-        position: absolute;
-        left: -11px;
-        top: 8px;
-        background: #fff;
-      }
-      .strength {
-        width: 1180px;
-        max-width: 100%;
-        margin: 0 auto;
-      }
-      .strength h3 {
-        margin: 0 0 2em 1em;
-        font-size: 1.5rem;
-        font-weight: 500;
-      }
-      .strength ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-grow: 0;
-        margin: 0 auto 2em;
-        padding: 0 20px;
-      }
-
-      .strength ul li {
-        font-size: 1.5rem;
+      .home-wrapper {
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 130px;
-        height: 60px;
-        padding: 0;
-        margin: 20px 30px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.6);
-        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transition: 1s;
+        width: 100%;
       }
-      .strength ul li:hover {
-        background: rgba(255, 255, 255, 1);
-      }
-      .education {
-        width: 1180px;
-        max-width: 100%;
-        margin: 30px auto;
-        clear: both;
-      }
-      .education h3 {
-        margin: 0 0 2em 1em;
-        font-size: 1.5rem;
+      .home-wrapper h2 {
+        font-size: 10rem;
         font-weight: 500;
-      }
-      .swiper-container {
-        overflow: hidden;
-        position: relative;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide {
-        position: relative;
-        padding: 0px 20px 0px 60px;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div {
-        width: 920px;
-        max-width: 100%;
-        margin: 0 auto;
-        position: relative;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: -41px;
-        bottom: 0px;
-        border-left: 1px solid rgba(255, 255, 255, 0.5);
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .icon {
-        position: absolute;
-        left: -60px;
-        right: 0px;
-        z-index: 1;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 40px;
-        color: #3f3b37;
-        background-color: rgba(255, 255, 255, 0.5);
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .icon i {
-        margin-top: 7px;
-        font-size: 25px;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div .time {
-        display: block;
-        width: 165px;
-        text-align: center;
-        padding: 1px 10px;
-        margin-bottom: 12px;
-        border-radius: 20px;
-        background-color: rgba(255, 255, 255, 0.5);
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: 0.6px;
-        opacity: 0.8;
+        cursor: default;
       }
 
-      .education .swiper-container .swiper-wrapper .swiper-slide > div > h4 {
-        margin: 7px 0px 10px;
-        font-size: 2rem;
-        font-weight: 500;
-        opacity: 0.8;
-      }
-      .education
-        .swiper-container
-        .swiper-wrapper
-        .swiper-slide
-        > div
-        > p
-        span {
-        position: relative;
-        padding-left: 26px;
-        font-size: 15px;
-        font-weight: 600;
-        opacity: 0.6;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div > p {
-        font-size: 1.2rem;
-        line-height: 40px;
-      }
-      .education
-        .swiper-container
-        .swiper-wrapper
-        .swiper-slide
-        > div
-        > p
-        span::before {
-        position: absolute;
-        content: "";
-        width: 10px;
-        height: 2px;
-        background-color: rgb(255, 255, 255);
-        left: 7px;
-        top: 9px;
-        opacity: 0.8;
-      }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div a {
-        background: url(../assets/notion.svg) no-repeat center;
-        padding-left: 37px;
-        width: 30px;
-        height: 25px;
-        color: #3f3b37;
-        margin: 12px 0 0;
+      .home-span {
         display: inline-block;
-        line-height: 25px;
-        font-size: 14px;
-        left: -7px;
+      }
+
+      .home-span-section2 {
+        display: block;
+      }
+      .home-span-section1 .home-span,
+      .home-span-section2 .home-span {
+        transition: 0.2s;
+        opacity: 0;
+      }
+      .home-span-section1 .home-span.onmouseover,
+      .home-span-section2 .home-span.onmouseover {
+        color: white;
+        text-shadow: 0 0 15px white, 0 0 25px white;
+      }
+      .home-span-section1 .home-span.home-animation,
+      .home-span-section2 .home-span.home-animation {
+        opacity: 1;
+      }
+      .home-animation {
+        animation: homeanimation 1s ease-in;
+      }
+      @keyframes homeanimation {
+        0% {
+          transform: translate3d(0, -40%, 0);
+        }
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes loading {
+        from {
+          height: 100vh;
+        }
+        to {
+          height: 0;
+        }
+      }
+
+      .home .home-btn {
         position: relative;
+        z-index: 1;
+        display: flex;
+        overflow: hidden;
+        margin-top: 1em;
+        padding: 1.5em 5em;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #3f3b37;
+        border-radius: 100vw;
+        background-color: #3f3b37;
+        color: #3f3b37;
+        font-size: 1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 1s;
       }
-      .education .swiper-container .swiper-wrapper .swiper-slide > div a:hover {
-        color: #d6ae5d;
+      .home .home-btn .home-btn-1 {
+        position: absolute;
+        z-index: 3;
+        color: rgb(193, 192, 182);
+        transform: translate3d(0, 3em, 0);
+        transition: 0.6s;
       }
-      .swiper-horizontal > .swiper-pagination-bullets,
-      .swiper-pagination-bullets.swiper-pagination-horizontal,
-      .swiper-pagination-custom,
-      .swiper-pagination-fraction {
-        top: 90% !important;
+      .home .home-btn .home-btn-2 {
+        color: #deddcf;
+        transform: translate3d(0, 0, 0);
+        transition: 0.6s;
       }
-      .swiper-pagination-bullet-active {
-        background: #fff !important;
-      }
-      .swiper-button-prev,
-      .swiper-button-next {
-        color: #3f3b37 !important;
+      .home .home-btn .home-btn-3 {
+        position: absolute;
+        left: 0;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        height: 0;
+        border-radius: 100vw;
+        background-color: #d6ae5d;
+        transition: 1s;
       }
     </style>
   </head>
   <body>
-    <section class="box"></section>
-    <section id="about" class="about">
-      <div class="about-title">
-        <h2>&nbsp;- &nbsp;A<span>BOUT</span></h2>
-        <h2>&nbsp;- &nbsp;A<span>BOUT</span></h2>
-        <h2>&nbsp;- &nbsp;A<span>BOUT</span></h2>
-        <h2>&nbsp;- &nbsp;A<span>BOUT</span></h2>
-        <h2>&nbsp;- &nbsp;A<span>BOUT</span></h2>
+    <section id="home" class="home">
+      <div class="home-wrapper">
+        <h2>
+          <span class="home-span-section1">
+            <span data-vlaue="0" class="home-span">W</span>
+            <span data-vlaue="0" class="home-span">E</span>
+            <span data-vlaue="0" class="home-span">B</span>
+          </span>
+          <span class="home-span-section2">
+            <span data-vlaue="0" class="home-span">P</span>
+            <span data-vlaue="0" class="home-span">U</span>
+            <span data-vlaue="0" class="home-span">B</span>
+            <span data-vlaue="0" class="home-span">L</span>
+            <span data-vlaue="0" class="home-span">I</span>
+            <span data-vlaue="0" class="home-span">S</span>
+            <span data-vlaue="0" class="home-span">H</span>
+            <span data-vlaue="0" class="home-span">E</span>
+            <span data-vlaue="0" class="home-span">R</span>
+          </span>
+        </h2>
       </div>
-      <div class="skill">
-        <h3>SKILLS</h3>
-        <ul class="language">
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/html5 1.svg" alt="" />
-              <p>HTML5 & CSS3</p>
-            </div>
-            <div class="skill-bottom">
-              <p>
-                표준과 웹 접근성 준수, SEO 최적화를 위해 페이지 구조와 태그의
-                의미를 고려하며 마크업하는 것을 지향합니다.
-              </p>
-              <p>CSS 및 전처리기(scss)를 사용할 수 있습니다.</p>
-            </div>
-          </li>
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/javascript 1.svg" alt="" />
-              <p>JAVASCRIPT & React</p>
-            </div>
-            <div class="skill-bottom">
-              <p>
-                Javascript 인터렉션을 위한 다양한 이벤트를 적용하고 선택한
-                요소의 스타일을 변경 할 수 있습니다.
-              </p>
-              <p>
-                React 컴포넌트의 역할에 따라 코드를 구분할 수 있어 유지보수를
-                용이하게할 수 있습니다.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="skill-top">
-              <img src="./assets/about/github (1) 1.svg" alt="" />
-              <p>GITHUB</p>
-            </div>
-            <div class="skill-bottom">
-              <p>
-                git flow가 무엇인지 알고 있으며 왜 사용해야 하는지 이해하고
-                있습니다.
-              </p>
-              <p>
-                git과 github를 사용하여 다른 개발자들과 협업을 할 수 있습니다.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="strength">
-        <h3>STRENGTH</h3>
-        <ul class="strength">
-          <li>#신중함</li>
-          <li>#꼼꼼함</li>
-          <li>#실행력</li>
-          <li>#계획성</li>
-          <li>#목표달성</li>
-          <li>#끈기력</li>
-          <li>#I.S.T.J</li>
-          <li>#health</li>
-        </ul>
-      </div>
-      <div class="education">
-        <h3>EDUCATIONS</h3>
-
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2023.04~2023.04</span>
-                <h4>Interactive Page</h4>
-                <p>
-                  BBC 인터랙티브 페이지 "코로나19가 바꿀 사무실의 미래" 클론
-                  <span class="place"> 1분 코딩 </span><br />
-                  마진병합현상과, will-change에 대해 공부했으며, javascript의
-                  즉시실행 익명함수, dataset속성과 스크롤이벤트를
-                  getBoundingClientRect와 intersectionObserver를 활용하는 방법에
-                  대해 공부하였습니다.
-                </p>
-                <a
-                  href="https://lyrical-emoji-3f3.notion.site/BBC-19-1-1b28668b3a504805911613e291c137ba"
-                  target="_blank"
-                  >notion</a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2023.01~2023.03</span>
-                <h4>React</h4>
-                <p>
-                  React 완벽 가이드
-                  <span class="place">
-                    udemy(Academind by Maximilian Schwarzmüller) </span
-                  ><br />
-                  리액티브 웹 앱의 성능을 향상시키는 법과, React hooks, 상태
-                  관리(Redux, Context API), React 심화 개념(useCallback,
-                  useMemo, useReducer..), 프론트엔드 웹 개발 실무를 경험하기
-                  위한 프로젝트 학습을 했습니다.
-                </p>
-                <a href="#">notion</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2022.10~2022.10</span>
-                <h4>Javscript</h4>
-                <p>
-                  디지털역량 제고를 위한 다이나믹 클라이언트 사이드 스크립트
-                  기초
-                  <span class="place"> 그린 컴퓨터 아카데미 </span><br />
-                  Javascript의 변수, 함수, 연산자, 조건문 등 기초 문법들을
-                  이해하였고, 다양한 이벤트를 적용하고 선택한 요소의 스타일을
-                  변경할 수 있습니다.실전 예제를 연습해보고 웹 애니메이션 효과를
-                  적용한 웹 페이지를 만들 수 있습니다.
-                </p>
-                <a
-                  href="https://lyrical-emoji-3f3.notion.site/14c22daa53464bd49788700b1c705f65"
-                  target="_blank"
-                  >notion</a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div>
-                <div class="icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <span class="time">2022.09~2023.03</span>
-                <h4>Publishing</h4>
-                <p>
-                  NCS (스마트웹&콘텐츠개발) UI/UX 반응형 웹
-                  <span class="place"> 그린 컴퓨터 아카데미 </span><br />
-                  <!-- 다양한 스마트기기 플렛폼에 적용 가능한 웹기반의 콘텐츠서비스를
-                  기획, 분석, 설계, 구현 테스트, 배포 및 유지 보수하는 능력을
-                  길렀습니다.<br /> -->
-                  반응형 웹 제작을 위한 마크업 및 스타일링(HTML5 & CSS3),
-                  프론트엔드 스크립트 언어(ECMAScript & jQuery)의 동작 패턴 및
-                  원리를 이해하고 콘텐츠 제작 및 서비스에 적용하는 능력을
-                  길렀습니다.
-                </p>
-                <a href="#">notion</a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
+      <button class="home-btn" title="Show Portfolio">
+        <div class="home-btn-1">Let's Go</div>
+        <div class="home-btn-2">Show Portfolio</div>
+        <div class="home-btn-3"></div>
+      </button>
     </section>
-    <div class="box"></div>
     <script>
-      let headerHeight = document.querySelector("header").offsetHeight;
-      const screenHeight = screen.availHeight;
+      const homeSpan1 = document.querySelectorAll(
+        ".home-span-section1 .home-span"
+      );
+      const homeSpan2 = document.querySelectorAll(
+        ".home-span-section2 .home-span"
+      );
 
-      function aboutScrollEvent() {
-        const aboutTop = document
-          .querySelector("#about")
-          .getBoundingClientRect().top;
-        const languageTop = document.querySelectorAll(
-          ".skill .language li .skill-top"
-        );
-        const languageBottom = document.querySelectorAll(
-          ".skill .language li .skill-bottom"
-        );
+      //메인화면
+      const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
-        for (let i = 0; i < languageTop.length; i++) {
-          aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.15
-            ? (languageTop[0].style.transform = "scaleY(1)")
-            : (languageTop[0].style.transform = "scaleY(0)");
-
-          aboutTop >= -screenHeight * 0.8 && aboutTop <= screenHeight * 0.05
-            ? (languageTop[1].style.transform = "scaleY(1)")
-            : (languageTop[1].style.transform = "scaleY(0)");
-
-          aboutTop >= -screenHeight * 0.8 && aboutTop <= 0
-            ? (languageTop[2].style.transform = "scaleY(1)")
-            : (languageTop[2].style.transform = "scaleY(0)");
-        }
-        for (let i = 0; i < languageBottom.length; i++) {
-          aboutTop >= -screenHeight * 0.7 && aboutTop <= -screenHeight * 0.1
-            ? (languageBottom[i].style.opacity = "1")
-            : (languageBottom[i].style.opacity = "0");
+      async function mainLoad() {
+        for (let i = 0; i < homeSpan1.length; i++) {
+          homeSpan1[i].classList.add("home-animation");
+          await timer(100);
         }
       }
-      async function strengthScroll() {
-        const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
-        const aboutTop = document
-          .querySelector("#about")
-          .getBoundingClientRect().top;
+      async function mainLoad2() {
+        for (let i = 0; i < homeSpan2.length; i++) {
+          homeSpan2[i].classList.add("home-animation");
+          await timer(100);
+        }
+      }
 
-        const strengthLi = document.querySelectorAll(".strength ul li");
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          mainLoad();
+        }, 0);
+        setTimeout(() => {
+          mainLoad2();
+          homeBtn.style.opacity = "1";
+        }, 0);
+      });
+      //Color
+      const homeBtn = document.querySelector(".home-btn");
+      const homeBtn1 = document.querySelector(".home-btn-1");
+      const homeBtn2 = document.querySelector(".home-btn-2");
+      const homeBtn3 = document.querySelector(".home-btn-3");
+      const homeSpan = document.querySelectorAll(".home-span");
+  
+  
 
-        for (let i = 0; i < strengthLi.length; i++) {
-          if (
-            aboutTop >= -screenHeight * 1.15 &&
-            aboutTop <= -screenHeight * 0.5
-          ) {
-            strengthLi[i].style.opacity = "1";
-            await timer(100);
-          } else {
-            strengthLi[i].style.opacity = "0";
-            await timer(0);
+      function printRandomBinary() {
+        setInterval(function () {
+          for (let i = 0; i < homeSpan.length; i++) {
+            homeSpan[i].dataset.value = Math.floor(Math.random() * 2);
+            if (homeSpan[i].dataset.value == 1) {
+              homeSpan[i].classList.add("onmouseover");
+            } else {
+              setTimeout(()=>{
+                homeSpan[i].classList.remove("onmouseover");
+              },1000)
+            }
           }
-        }
+        }, 2000);
       }
+      printRandomBinary();
 
-      window.addEventListener("scroll", () => {
-        aboutScroll();
-        aboutScrollEvent();
-        strengthScroll();
+      function randomColor() {
+        homeSpan.forEach((elem, index) => {
+          elem.addEventListener("mouseover", () => {
+            homeSpan[index].classList.add("onmouseover");
+          });
+          elem.addEventListener("mouseout", () => {
+            setTimeout(() => {
+              homeSpan[index].classList.remove("onmouseover");
+            }, 3000);
+          });
+        });
+      }
+      window.addEventListener("mouseover", () => {
+        randomColor();
       });
     </script>
   </body>

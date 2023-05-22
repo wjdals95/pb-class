@@ -226,7 +226,11 @@ body::-webkit-scrollbar {
   transition: 0.2s;
   opacity: 0;
 }
-
+.home-span-section1 .home-span.onmouseover,
+.home-span-section2 .home-span.onmouseover {
+  color: white;
+  text-shadow: 0 0 15px white, 0 0 25px white;
+}
 .home-span-section1 .home-span.home-animation,
 .home-span-section2 .home-span.home-animation {
   opacity: 1;
@@ -308,14 +312,11 @@ body::-webkit-scrollbar {
   position: relative;
   padding: 150px 0;
 }
-.about .about-title {
-  overflow: hidden;
-  display: flex;
-  transform: translate3d(20%, 0, 0);
+.about .about-title {  
   margin-bottom: 100px;
 }
 .about .about-title h2 {
-  font-size: 10rem;
+  font-size: 6rem;
   font-weight: 500;
   font-style: italic;
   white-space: nowrap;
@@ -368,7 +369,6 @@ body::-webkit-scrollbar {
   padding: 10px 20px 10px 30px;
   opacity: 0;
   transition: 2s;
-  
 }
 
 .skill .language li .skill-bottom p {
@@ -396,7 +396,7 @@ body::-webkit-scrollbar {
   font-size: 1.5rem;
   font-weight: 500;
 }
-.strength  ul{
+.strength ul {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 0;
@@ -623,13 +623,10 @@ body::-webkit-scrollbar {
   padding: 200px 0 0 0;
 }
 .footer .contact-title {
-  overflow: hidden;
-  display: flex;
-  transform: translate3d(20%, 0, 0);
   margin-bottom: 100px;
 }
 .footer .contact-title h2 {
-  font-size: 10rem;
+  font-size: 6rem;
   font-weight: 500;
   font-style: italic;
   white-space: nowrap;
@@ -638,7 +635,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 200px 0;
+  margin: 150px 0;
 }
 .footer-wrapper > div {
   overflow: hidden;
@@ -799,10 +796,10 @@ body::-webkit-scrollbar {
     font-size: 3.5rem;
     letter-spacing: -5px;
   }
-  .about{
-    padding: 50px 0 ;
+  .about {
+    padding: 50px 0;
   }
-  .about .about-title{
+  .about .about-title {
     margin-bottom: 50px;
   }
   .about .about-title h2 {
@@ -841,7 +838,7 @@ body::-webkit-scrollbar {
   .strength h3 {
     margin: 0 0 0.5em 1em;
   }
-  .strength ul{
+  .strength ul {
     flex-grow: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -885,6 +882,12 @@ body::-webkit-scrollbar {
   .portfolio .left span {
     font-size: 2rem;
   }
+  .portfolio .left span:first-child {
+    font-size: 2.5rem;
+  }
+  .portfolio .left span:last-child {
+    font-size: 4rem;
+  }
   .portfolio .right {
     width: 100%;
   }
@@ -898,18 +901,18 @@ body::-webkit-scrollbar {
   .portfolio .right a p .project-description {
     margin: 1em 0 0 0;
   }
-  .footer{
-    padding: 50px 0 0 0 ;
+  .footer {
+    padding: 50px 0 0 0;
   }
   .footer .contact-title {
     margin-bottom: 0;
-}
+  }
   .footer .contact-title h2 {
     font-size: 5rem;
   }
   .footer-wrapper {
     margin: 0;
-}
+  }
   .footer-wrapper h2 {
     font-size: 4em;
     letter-spacing: -8px;
@@ -926,7 +929,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     font-size: 0.7em;
   }
-  
+
   .footer-bottom-wrapper .footer-block {
     width: 100%;
     display: flex;
